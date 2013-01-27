@@ -1,9 +1,8 @@
- # Airbnb JavaScript Style Guide() {
+# Airbnb JavaScript スタイルガイド() {
 
-*A mostly reasonable approach to JavaScript*
+*常に気をつけたい、JavaScriptへの合理的なアプローチ*
 
-
-## Table of Contents
+## 目次
 
   1. [Types](#types)
   1. [Objects](#objects)
@@ -34,9 +33,9 @@
   1. [Contributors](#contributors)
   1. [License](#license)
 
-## Types
+## 型
 
-  - **Primitives**: When you access a primitive type you work directly on its value
+  - **プリミティブ型**: プリミティブ型にアクセスした場合は、その値を直接操作していることになります。
 
     + `string`
     + `number`
@@ -52,7 +51,7 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value
+  - **参照型**: 参照型にアクセスした場合、参照を通して値を操作していることになります。
 
     + `object`
     + `array`
@@ -69,9 +68,9 @@
 
     **[[⬆]](#TOC)**
 
-## Objects
+## オブジェクト
 
-  - Use the literal syntax for object creation.
+  - オブジェクトを作成する際は、リテラル構文を使用してください。
 
     ```javascript
     // bad
@@ -81,7 +80,7 @@
     var item = {};
     ```
 
-  - Don't use [reserved words](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words) as keys.
+  - [予約語](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words)をキーとして使用しないでください。
 
     ```javascript
     // bad
@@ -100,9 +99,9 @@
     ```
     **[[⬆]](#TOC)**
 
-## Arrays
+## 配列
 
-  - Use the literal syntax for array creation
+  - 配列を作成する際は、リテラル構文を使用してください。
 
     ```javascript
     // bad
@@ -112,8 +111,8 @@
     var items = [];
     ```
 
-  - If you don't know array length use Array#push.
-
+  - 長さが不明な場合はArray#pushを使用してください。
+  
     ```javascript
     var someStack = [];
 
@@ -125,7 +124,7 @@
     someStack.push('abracadabra');
     ```
 
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - 配列をコピーする必要がある場合、Array #sliceを使用してください。参考（英語）→[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -144,9 +143,9 @@
     **[[⬆]](#TOC)**
 
 
-## Strings
+## 文字列
 
-  - Use single quotes `''` for strings
+  - 文字列にはシングルクオート `''` を使用してください。
 
     ```javascript
     // bad
@@ -162,7 +161,7 @@
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
+  - 80文字以上の文字列は、文字列連結を使用して複数行にまたがって記述する必要があります。
   - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
@@ -187,7 +186,7 @@
       'fast.';
     ```
 
-  - When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+  - プログラムにて文字列を生成する必要がある場合は、（特にIEは）文字列連結の代わりにArray#joinを使用してください。参考（英語）→[jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items,
@@ -240,28 +239,28 @@
     **[[⬆]](#TOC)**
 
 
-## Functions
+## 関数
 
-  - Function expressions:
+  - 関数式
 
     ```javascript
-    // anonymous function expression
+    // 無名関数
     var anonymous = function() {
       return true;
     };
 
-    // named function expression
+    // 名前付き関数
     var named = function named() {
       return true;
     };
 
-    // immediately-invoked function expression (IIFE)
+    // 即時関数
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
-  - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
+  - （ifやwhileなど）ブロック内で、変数に関数を代入する代わりに関数を宣言しないでください。ブラウザはそのことを許可しますが、（それはまるで「頑張れベアーズ」の悪ガキ達のように）すべて違ったように解釈されます。
   - **Note:** ECMA-262 defines a `block` as a list of statements. A function declartion is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
@@ -280,7 +279,7 @@
     }
     ```
 
-  - Never name a parameter `arguments`, this will take precendence over the `arguments` object that is given to every function scope.
+  - パラメータに `arguments` を指定しないでください。これは、関数スコープに渡される `arguments` オブジェクトの参照を上書きしてしまうためです。
 
     ```javascript
     // bad
@@ -298,9 +297,9 @@
 
 
 
-## Properties
+## プロパティ
 
-  - Use dot notation when accessing properties.
+  - プロパティにアクセスする場合は、ドット `.` を使用してください。
 
     ```javascript
     var luke = {
@@ -315,7 +314,7 @@
     var isJedi = luke.jedi;
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+  - 変数を使用してプロパティにアクセスする場合は、角括弧 `[]` を使用してください。
 
     ```javascript
     var luke = {
@@ -333,9 +332,9 @@
     **[[⬆]](#TOC)**
 
 
-## Variables
+## 変数
 
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+  - 変数を宣言する際は、常に `var` を使用してください。使用しない場合、グローバル変数として宣言されます。グローバルな名前空間を汚染しないように、キャプテンプラネット（環境保護とエコロジーをテーマにしたスーパーヒーローアニメ）も警告しています。
 
     ```javascript
     // bad
@@ -345,7 +344,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline.
+  - 複数の変数を宣言する場合は、1つの `var` を使用し、変数ごとに改行して宣言してください。
 
     ```javascript
     // bad
