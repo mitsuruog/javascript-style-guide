@@ -1,0 +1,3 @@
+[submodule "orign"]
+	path = orign
+	url = git://github.com/airbnb/javascript.git
