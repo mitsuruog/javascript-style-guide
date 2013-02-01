@@ -12,13 +12,13 @@
   1. [プロパティ](#プロパティ)
   1. [変数](#変数)
   1. [巻き上げ](#巻き上げ)
-  1. [Conditional Expressions & Equality](#conditionals)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Leading Commas](#leading-commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-coercion)
+  1. [条件式と等価式](#条件式と等価式)
+  1. [ブロック](#ブロック)
+  1. [コメント](#コメント)
+  1. [空白](#空白)
+  1. [先頭のカンマ](#先頭のカンマ)
+  1. [セミコロン](#セミコロン)
+  1. [型変換と強制](#型変換と強制)
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Constructors](#constructors)
@@ -522,32 +522,33 @@
     }
     ```
 
-  - もっと詳細を知りたい場合は、[Ben Cherry](http://www.adequatelygood.com/)による[JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting)を参照してください。
+  - さらに詳細な情報を求める場合は[Ben Cherry](http://www.adequatelygood.com/)による[JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting)を参照してください。
 
     **[[⬆]](#TOC)**
 
 
 
-## Conditional Expressions & Equality
+## 条件式と等価式
 
-  - Use `===` and `!==` over `==` and `!=`.
-  - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
+  - `==` や`!=`より `===` と `!==` を使用してください。 
+  - 条件式は `ToBoolean` メソッドにより厳密に比較されます。常にこのシンプルはルールに従ってください。
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evalute to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **オブジェクト** は **true** と評価されます。
+    + **undefined** は **false** と評価されます。
+    + **null** は **false** と評価されます。
+    + **真偽値** は **boolean型の値** として評価されます。
+    + **数値** は **true** と評価されます。しかし、 **+0, -0, or NaN** の場合は **false** です。
+    + **文字列** は **true** と評価されます。 しかし、空文字 `''` の場合は **false** です。
+
 
     ```javascript
     if ([0]) {
       // true
-      // An array is an object, objects evaluate to true
+      // 配列はオブジェクトなのでtrueとして評価されます。
     }
     ```
 
-  - Use shortcuts.
+  - 短縮形を使用してください。
 
     ```javascript
     // bad
@@ -571,14 +572,14 @@
     }
     ```
 
-  - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
+  - さらに詳細な情報を求める場合はAngus Crollによる [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108)を参照してください。
 
     **[[⬆]](#TOC)**
 
 
-## Blocks
+## ブロック
 
-  - Use braces with all multi-line blocks.
+  - 複数行のブロックには中括弧（{}）を使用してください。
 
     ```javascript
     // bad
@@ -605,9 +606,9 @@
     **[[⬆]](#TOC)**
 
 
-## Comments
+## コメント
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - 複数行のコメントは`/** ... */` を使用してください。その中には説明とすべてのパラメータと戻り値についての型や値を記述してください。
 
     ```javascript
     // bad
@@ -639,7 +640,7 @@
     }
     ```
 
-  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an emptyline before the comment.
+  - 単一行コメントには`//` を使用してください。コメントを加えたいコードの上部に配置してください。また、コメントの前に空行を入れてください。
 
     ```javascript
     // bad
@@ -672,9 +673,9 @@
     **[[⬆]](#TOC)**
 
 
-## Whitespace
+## 空白
 
-  - Use soft tabs set to 2 spaces
+  - タブにはスペース2つを設定してください。
 
     ```javascript
     // bad
@@ -692,7 +693,7 @@
     ∙∙var name;
     }
     ```
-  - Place 1 space before the leading brace.
+  - 重要な中括弧（{}）の前にはスペースを1つ入れてください。
 
     ```javascript
     // bad
@@ -717,7 +718,7 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
-  - Place an empty newline at the end of the file.
+  - ファイルの最後は空行を1つ入れてください。
 
     ```javascript
     // bad
@@ -736,7 +737,7 @@
 
     **[[⬆]](#TOC)**
 
-  - Use indentation when making long method chains.
+  - メソッドチェーンが長くなる場合は、適宜インデントしてください。
 
   ```javascript
   // bad
@@ -767,9 +768,9 @@
       .call(tron.led);
   ```
 
-## Leading Commas
+## 先頭のカンマ
 
-  - **Nope.**
+  - **やめてください。**
 
     ```javascript
     // bad
@@ -802,9 +803,9 @@
     **[[⬆]](#TOC)**
 
 
-## Semicolons
+## セミコロン
 
-  - **Yup.**
+  - **ええ。使いましょう。**
 
     ```javascript
     // bad
@@ -829,10 +830,10 @@
     **[[⬆]](#TOC)**
 
 
-## Type Casting & Coercion
+## 型変換と強制
 
-  - Perform type coercion at the beginning of the statement.
-  - Strings:
+  - 文の先頭で型の強制を行います。
+  - 文字列
 
     ```javascript
     //  => this.reviewScore = 9;
@@ -850,7 +851,7 @@
     var totalScore = this.reviewScore + ' total score';
     ```
 
-  - Use `parseInt` for Numbers and always with a radix for type casting.
+  - 数値には`parseInt` を使用てください。常に型変換のための基数を引数に渡してください。
   - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
 
     ```javascript
@@ -883,7 +884,7 @@
     var val = inputValue >> 0;
     ```
 
-  - Booleans:
+  - 真偽値
 
     ```javascript
     var age = 0;
