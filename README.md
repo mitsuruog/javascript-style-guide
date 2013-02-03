@@ -19,8 +19,8 @@
   1. [先頭のカンマ](#先頭のカンマ)
   1. [セミコロン](#セミコロン)
   1. [型変換と強制](#型変換と強制)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
+  1. [命名規則](#命名規則)
+  1. [アクセサ（Accessors）](#アクセサ（accessors）)
   1. [Constructors](#constructors)
   1. [Modules](#modules)
   1. [jQuery](#jquery)
@@ -902,9 +902,9 @@
     **[[⬆]](#TOC)**
 
 
-## Naming Conventions
+## 命名規則
 
-  - Avoid single letter names. Be descriptive with your naming.
+  - 1文字の名前は避けてください。 名前から意図が読み取れるようにしてください。
 
     ```javascript
     // bad
@@ -918,7 +918,7 @@
     }
     ```
 
-  - Use camelCase when naming objects, functions, and instances
+  - オブジェクト、関数、インスタンスにはキャメルケース（小文字から始まる）を使用してください。
 
     ```javascript
     // bad
@@ -938,7 +938,7 @@
     });
     ```
 
-  - Use PascalCase when naming constructors or classes
+  - クラスやコンストラクタにはパスカルケース（大文字から始まる）を使用してください。
 
     ```javascript
     // bad
@@ -960,7 +960,7 @@
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties
+  - プライベートなプロパティ名は先頭にアンダースコア `_` を使用してください。
 
     ```javascript
     // bad
@@ -971,7 +971,7 @@
     this._firstName = 'Panda';
     ```
 
-  - When saving a reference to `this` use `_this`.
+  - `this` の参照を保存する場合、 `_this` を使用してください。
 
     ```javascript
     // bad
@@ -999,7 +999,7 @@
     }
     ```
 
-  - Name your functions. This is helpful for stack traces.
+  - 関数には名前を付けてください。これは、スタックトレースが追跡し易くなるためです。
 
     ```javascript
     // bad
@@ -1016,10 +1016,10 @@
     **[[⬆]](#TOC)**
 
 
-## Accessors
+## アクセサ（Accessors）
 
-  - Accessor functions for properties are not required
-  - If you do make accessor functions use getVal() and setVal('hello')
+  - プロパティのためのアクセサ（Accessor）関数は必須ではありません。
+  - アクセサ関数が必要な場合、`getVal()` や `setVal('hello')` としてください。
 
     ```javascript
     // bad
@@ -1035,7 +1035,7 @@
     dragon.setAge(25);
     ```
 
-  - If the property is a boolean, use isVal() or hasVal()
+  - プロパティが真偽値の場合、`isVal()` や`hasVal()` としてください。
 
     ```javascript
     // bad
@@ -1049,7 +1049,7 @@
     }
     ```
 
-  - It's okay to create get() and set() functions, but be consistent.
+  - 一貫していれば、`get()` や`set()` という関数を作成することも可能です。
 
     ```javascript
     function Jedi(options) {
