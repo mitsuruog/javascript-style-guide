@@ -21,8 +21,8 @@
   1. [型変換と強制](#型変換と強制)
   1. [命名規則](#命名規則)
   1. [アクセサ（Accessors）](#アクセサ（accessors）)
-  1. [Constructors](#constructors)
-  1. [Modules](#modules)
+  1. [コンストラクタ](#コンストラクタ)
+  1. [モジュール](#モジュール)
   1. [jQuery](#jquery)
   1. [ES5 Compatibility](#es5)
   1. [Testing](#testing)
@@ -1070,11 +1070,9 @@
     **[[⬆]](#TOC)**
 
 
-## Constructors
+## コンストラクタ
 
-  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
-
- - 新しいオブジェクトでプロトタイプをオーバーライドするのではなく、プロトタイプオブジェクトにメソッドを追加してください。プロトタイプをオーバーライドすると継承が不可能になります。プロトタイプをリセットすることで、基底クラスをオーバーライドできます。
+  - 新しいオブジェクトでプロトタイプをオーバーライドするのではなく、プロトタイプオブジェクトにメソッドを追加してください。プロトタイプをオーバーライドすると継承が不可能になります。プロトタイプをリセットすることで、基底クラスをオーバーライドできます。
 
     ```javascript
     function Jedi() {
@@ -1101,8 +1099,6 @@
       console.log('blocking');
     };
     ```
-
-  - Methods can return `this` to help with method chaining.
 
   - メソッドの戻り値で `this` を返すことで、メソッドチェーンをすることができます。
 
@@ -1139,9 +1135,7 @@
     ```
 
 
-  - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
-
-  - toString()をカスタムすることは良いことです。
+  - 独自のtoString()を作成することもできますが、正しく動作すること、副作用がないことだけは確認してください。
 
 
     ```javascript
@@ -1162,13 +1156,9 @@
     **[[⬆]](#TOC)**
 
 
-## Modules
+## モジュール
 
-  - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated.
-  - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
-  - Add a method called noConflict() that sets the exported module to the previous version and returns this one.
-  - Always declare `'use strict';` at the top of the module.
-
+  - モジュールは `!` で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。
   - ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。
   - noConflict()という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。
   - 常にモジュールの先頭で`'use strict';` を宣言してください。
@@ -1199,7 +1189,7 @@
 
 ## jQuery
 
-  - Prefix jQuery object variables with a `$`.
+  - jQueryオブジェクトの変数は、先頭に `$` を付与してください。
 
     ```javascript
     // bad
@@ -1209,7 +1199,7 @@
     var $sidebar = $('.sidebar');
     ```
 
-  - Cache jQuery lookups.
+  - jQueryの検索結果をキャッシュしてください。
 
     ```javascript
     // bad
@@ -1236,8 +1226,9 @@
     }
     ```
 
-  - For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > .ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - Use `find` with scoped jQuery object queries.
+  - DOMの検索には、 `$('.sidebar ul')` や `$('.sidebar > .ul')` のカスケードを使用してください。 参考（英語）→[jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+
+  - jQueryオブジェクトの検索には、スコープ付きの `find` を使用してください。
 
     ```javascript
     // bad
