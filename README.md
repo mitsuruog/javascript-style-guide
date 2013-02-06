@@ -1074,6 +1074,8 @@
 
   - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
+ - 新しいオブジェクトでプロトタイプをオーバーライドするのではなく、プロトタイプオブジェクトにメソッドを追加してください。プロトタイプをオーバーライドすると継承が不可能になります。プロトタイプをリセットすることで、基底クラスをオーバーライドできます。
+
     ```javascript
     function Jedi() {
       console.log('new jedi');
@@ -1101,6 +1103,8 @@
     ```
 
   - Methods can return `this` to help with method chaining.
+
+  - メソッドの戻り値で `this` を返すことで、メソッドチェーンをすることができます。
 
     ```javascript
     // bad
@@ -1137,6 +1141,9 @@
 
   - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
 
+  - toString()をカスタムすることは良いことです。
+
+
     ```javascript
     function Jedi(options) {
       options || (options = {});
@@ -1161,6 +1168,10 @@
   - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
   - Add a method called noConflict() that sets the exported module to the previous version and returns this one.
   - Always declare `'use strict';` at the top of the module.
+
+  - ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。
+  - noConflict()という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。
+  - 常にモジュールの先頭で`'use strict';` を宣言してください。
 
     ```javascript
     // fancyInput/fancyInput.js
