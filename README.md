@@ -26,12 +26,12 @@
   1. [jQuery](#jquery)
   1. [ES5 Compatibility](#es5)
   1. [Testing](#testing)
-  1. [Performance](#performance)
+  1. [パフォーマンスについての参考資料](#パフォーマンスについての参考資料)
   1. [Resources](#resources)
   1. [In the Wild](#in-the-wild)
   1. [The JavaScript Style Guide Guide](#guide-guide)
-  1. [Contributors](#contributors)
-  1. [License](#license)
+  1. [貢献者](#貢献者)
+  1. [ライセンス](#ライセンス)
 
 ## 型
 
@@ -261,7 +261,7 @@
     ```
 
   - （ifやwhileなど）ブロック内で、変数に関数を代入する代わりに関数を宣言しないでください。ブラウザはそのことを許可しますが、（それはまるで「頑張れベアーズ」の悪ガキ達のように）すべて違ったように解釈されます。
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declartion is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - **注意:** ECMA-262 では `block` はstatementsの一覧に定義されていますが、関数宣言はstatementsではありません。[この問題についてはECMA-262の記述を参照してください。](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -1273,7 +1273,7 @@
     **[[⬆]](#TOC)**
 
 
-## Performance
+## パフォーマンスについての参考資料
 
   - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
   - [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
@@ -1346,35 +1346,29 @@
 
   - [Reference](//github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## Contributors
+## 貢献者
 
-  - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
+  - [貢献者一覧](https://github.com/airbnb/javascript/graphs/contributors)
 
 
-## License
+## ライセンス
 
-(The MIT License)
+MITライセンス
+ 
+著作権(c)　2012 Airbnb
 
-Copyright (c) 2012 Airbnb
+このソフトウェアおよび関連する文書ファイル（以下「本ソフトウェア」という。）の複製物を取得するあらゆる者に対し、
+以下の条件にしたがって本ソフトウェアを制限なしに扱うことを無償で許諾する。
+そこには、本ソフトウェアの複製を使用し、複製し、改変し、結合し、公表し、頒布し、サブライセンスし、
+および/または販売する権利、また、本ソフトウェアを与えられた者に上記のようにすることを許諾する権利を含むがそれらに限られない。
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+上記の著作権表示および本許諾表示は「本ソフトウェア」のすべての複製物または重要部分の中に含めなければならない。
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+「本ソフトウェア」は「現状のまま」で提供され、明示または黙示を問わず、
+商品性、特定目的への適合性および非侵害を含むがそれに限られない、あらゆる種類の保証も伴わないものとする。
+著作者または著作権者は、契約、不法行為またはその他の行為であるかにかかわらず、
+ソフトウェアまたはソフトウェアの使用もしくはその他の取り扱いから、またはそれらに関連して生じた、
+いかなるクレーム、損害賠償その他の責任を負わない。
 
 **[[⬆]](#TOC)**
 
