@@ -1,0 +1,1448 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Javacript-style-guide by mitsuruog</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Javacript-style-guide</h1>
+        <p>A mostly reasonable approach to JavaScript</p>
+        <p class="view"><a href="https://github.com/mitsuruog/javacript-style-guide">View the Project on GitHub <small>mitsuruog/javacript-style-guide</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mitsuruog/javacript-style-guide/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mitsuruog/javacript-style-guide/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mitsuruog/javacript-style-guide">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p># Airbnb JavaScript スタイルガイド() {</p>
+
+<p><em>常に気をつけたい、JavaScriptへの正しい接し方</em></p>
+
+<h2>目次</h2>
+
+<ol>
+<li><a href="#%E5%9E%8B">型</a></li>
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">オブジェクト</a></li>
+<li><a href="#%E9%85%8D%E5%88%97">配列</a></li>
+<li><a href="#%E6%96%87%E5%AD%97%E5%88%97">文字列</a></li>
+<li><a href="#%E9%96%A2%E6%95%B0">関数</a></li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">プロパティ</a></li>
+<li><a href="#%E5%A4%89%E6%95%B0">変数</a></li>
+<li><a href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92">巻き上げ</a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F">条件式と等価式</a></li>
+<li><a href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF">ブロック</a></li>
+<li><a href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88">コメント</a></li>
+<li><a href="#%E7%A9%BA%E7%99%BD">空白</a></li>
+<li><a href="#%E5%85%88%E9%A0%AD%E3%81%AE%E3%82%AB%E3%83%B3%E3%83%9E">先頭のカンマ</a></li>
+<li><a href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3">セミコロン</a></li>
+<li><a href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6">型変換と強制</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87">命名規則</a></li>
+<li><a href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%EF%BC%88accessors%EF%BC%89">アクセサ（Accessors）</a></li>
+<li><a href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">コンストラクタ</a></li>
+<li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li>
+<li><a href="#jquery">jQuery</a></li>
+<li><a href="#es5">ES5 Compatibility</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">パフォーマンスについての参考資料</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#in-the-wild">In the Wild</a></li>
+<li><a href="#guide-guide">The JavaScript Style Guide Guide</a></li>
+<li><a href="#%E8%B2%A2%E7%8C%AE%E8%80%85">貢献者</a></li>
+<li><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9">ライセンス</a></li>
+</ol><h2>型</h2>
+
+<ul>
+<li>
+<p><strong>プリミティブ型</strong>: プリミティブ型にアクセスした場合は、その値を直接操作していることになります。</p>
+
+<ul>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>boolean</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+</ul>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">;</span>
+
+<span class="nx">bar</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">bar</span><span class="p">);</span> <span class="c1">// =&gt; 1, 9</span>
+</pre></div>
+</li>
+<li>
+<p><strong>参照型</strong>: 参照型にアクセスした場合、参照を通して値を操作していることになります。</p>
+
+<ul>
+<li><code>object</code></li>
+<li><code>array</code></li>
+<li><code>function</code></li>
+</ul>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="nx">bar</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">;</span>
+
+<span class="nx">bar</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">bar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// =&gt; 9, 9</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>オブジェクト</h2>
+
+<ul>
+<li>
+<p>オブジェクトを作成する際は、リテラル構文を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">item</span> <span class="o">=</span> <span class="p">{};</span>
+</pre></div>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words">予約語</a>をキーとして使用しないでください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">superman</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="kr">class</span><span class="o">:</span> <span class="s1">'superhero'</span><span class="p">,</span>
+  <span class="k">default</span><span class="o">:</span> <span class="p">{</span> <span class="nx">clark</span><span class="o">:</span> <span class="s1">'kent'</span> <span class="p">},</span>
+  <span class="kr">private</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">superman</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">klass</span><span class="o">:</span> <span class="s1">'superhero'</span><span class="p">,</span>
+  <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span> <span class="nx">clark</span><span class="o">:</span> <span class="s1">'kent'</span> <span class="p">},</span>
+  <span class="nx">hidden</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>配列</h2>
+
+<ul>
+<li>
+<p>配列を作成する際は、リテラル構文を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+</pre></div>
+</li>
+<li>
+<p>長さが不明な場合はArray#pushを使用してください。</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">someStack</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="c1">// bad</span>
+<span class="nx">someStack</span><span class="p">[</span><span class="nx">someStack</span><span class="p">.</span><span class="nx">length</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'abracadabra'</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="nx">someStack</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'abracadabra'</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>配列をコピーする必要がある場合、Array #sliceを使用してください。参考（英語）→<a href="http://jsperf.com/converting-arguments-to-an-array/7">jsPerf</a></p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+    <span class="nx">itemsCopy</span> <span class="o">=</span> <span class="p">[],</span>
+    <span class="nx">i</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">itemsCopy</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="nx">itemsCopy</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>文字列</h2>
+
+<ul>
+<li>
+<p>文字列にはシングルクオート <code>''</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">"Bob Parr"</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Bob Parr'</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="s2">"Bob "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="s1">'Bob '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+</pre></div>
+</li>
+<li><p>80文字以上の文字列は、文字列連結を使用して複数行にまたがって記述する必要があります。</p></li>
+<li>
+<p>注意: 文字連結を多用した場合、パフォーマンスに影響を与えることがあります。参考（英語）→<a href="http://jsperf.com/ya-string-concat">jsPerf</a> &amp; <a href="https://github.com/airbnb/javascript/issues/40">Discussion</a></p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.'</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that \</span>
+<span class="s1">was thrown because of Batman. \</span>
+<span class="s1">When you stop to think about \</span>
+<span class="s1">how Batman had anything to do \</span>
+<span class="s1">with this, you would get nowhere \</span>
+<span class="s1">fast.'</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that '</span> <span class="o">+</span>
+  <span class="s1">'was thrown because of Batman.'</span> <span class="o">+</span>
+  <span class="s1">'When you stop to think about '</span> <span class="o">+</span>
+  <span class="s1">'how Batman had anything to do '</span> <span class="o">+</span>
+  <span class="s1">'with this, you would get nowhere '</span> <span class="o">+</span>
+  <span class="s1">'fast.'</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p>プログラムにて文字列を生成する必要がある場合は、（特にIEは）文字列連結の代わりにArray#joinを使用してください。参考（英語）→<a href="http://jsperf.com/string-vs-array-concat/2">jsPerf</a>.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">items</span><span class="p">,</span>
+    <span class="nx">messages</span><span class="p">,</span>
+    <span class="nx">length</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
+
+<span class="nx">messages</span> <span class="o">=</span> <span class="p">[{</span>
+    <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
+    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked.'</span>
+<span class="p">},{</span>
+    <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
+    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked as well.'</span>
+<span class="p">},{</span>
+    <span class="nx">state</span><span class="o">:</span> <span class="s1">'error'</span><span class="p">,</span>
+    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one did not work.'</span>
+<span class="p">}];</span>
+
+<span class="nx">length</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">inbox</span><span class="p">(</span><span class="nx">messages</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">items</span> <span class="o">=</span> <span class="s1">'</span>
+<span class="s1">'</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">items</span> <span class="o">+=</span> <span class="s1">'</span>
+<span class="s1">'</span> <span class="o">+</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">message</span> <span class="o">+</span> <span class="s1">'</span>
+<span class="s1">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">items</span> <span class="o">+</span> <span class="s1">'</span>
+<span class="s1">'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">inbox</span><span class="p">(</span><span class="nx">messages</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">message</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="s1">'</span>
+<span class="s1">'</span> <span class="o">+</span> <span class="nx">items</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'</span>
+<span class="s1">'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span>
+<span class="s1">'</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>関数</h2>
+
+<ul>
+<li>
+<p>関数式</p>
+
+<div class="highlight"><pre><span class="c1">// 無名関数</span>
+<span class="kd">var</span> <span class="nx">anonymous</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 名前付き関数</span>
+<span class="kd">var</span> <span class="nx">named</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">named</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 即時関数</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Welcome to the Internet. Please follow me.'</span><span class="p">);</span>
+<span class="p">})();</span>
+</pre></div>
+</li>
+<li><p>（ifやwhileなど）ブロック内で、変数に関数を代入する代わりに関数を宣言しないでください。ブラウザはそのことを許可しますが、（それはまるで「頑張れベアーズ」の悪ガキ達のように）すべて違ったように解釈されます。</p></li>
+<li>
+<p><strong>注意:</strong> ECMA-262 では <code>block</code> はstatementsの一覧に定義されていますが、関数宣言はstatementsではありません。<a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97">この問題についてはECMA-262の記述を参照してください。</a>.</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">currentUser</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Nope.'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">currentUser</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Yup.'</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>パラメータに <code>arguments</code> を指定しないでください。これは、関数スコープに渡される <code>arguments</code> オブジェクトの参照を上書きしてしまうためです。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">nope</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">yup</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>プロパティ</h2>
+
+<ul>
+<li>
+<p>プロパティにアクセスする場合は、ドット <code>.</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">luke</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">jedi</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">28</span>
+<span class="p">};</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">isJedi</span> <span class="o">=</span> <span class="nx">luke</span><span class="p">[</span><span class="s1">'jedi'</span><span class="p">];</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">isJedi</span> <span class="o">=</span> <span class="nx">luke</span><span class="p">.</span><span class="nx">jedi</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p>変数を使用してプロパティにアクセスする場合は、角括弧 <code>[]</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">luke</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">jedi</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">28</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getProp</span><span class="p">(</span><span class="nx">prop</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">luke</span><span class="p">[</span><span class="nx">prop</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">isJedi</span> <span class="o">=</span> <span class="nx">getProp</span><span class="p">(</span><span class="s1">'jedi'</span><span class="p">);</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>変数</h2>
+
+<ul>
+<li>
+<p>変数を宣言する際は、常に <code>var</code> を使用してください。使用しない場合、グローバル変数として宣言されます。グローバルな名前空間を汚染しないように、キャプテンプラネット（環境保護とエコロジーをテーマにしたスーパーヒーローアニメ）も警告しています。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="nx">superPower</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SuperPower</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">superPower</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SuperPower</span><span class="p">();</span>
+</pre></div>
+</li>
+<li>
+<p>複数の変数を宣言する場合は、1つの <code>var</code> を使用し、変数ごとに改行して宣言してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">goSportsTeam</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">dragonball</span> <span class="o">=</span> <span class="s1">'z'</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(),</span>
+    <span class="nx">goSportsTeam</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">dragonball</span> <span class="o">=</span> <span class="s1">'z'</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p>未定義変数を最後に宣言してください。これは、後ほど既に割り当て済みの変数のいずれかを、割り当てる必要がある場合に便利です。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">len</span><span class="p">,</span> <span class="nx">dragonball</span><span class="p">,</span>
+    <span class="nx">items</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(),</span>
+    <span class="nx">goSportsTeam</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(),</span>
+    <span class="nx">dragonball</span><span class="p">,</span>
+    <span class="nx">goSportsTeam</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">len</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">getItems</span><span class="p">(),</span>
+    <span class="nx">goSportsTeam</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">dragonball</span><span class="p">,</span>
+    <span class="nx">i</span><span class="p">,</span> <span class="nx">length</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p>変数の割り当てはスコープの先頭で行ってください。これは、変数宣言と巻上げに関連する問題を回避するためです。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">test</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'doing stuff..'</span><span class="p">);</span>
+
+  <span class="c1">//..other stuff..</span>
+
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'test'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">();</span>
+
+  <span class="nx">test</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'doing stuff..'</span><span class="p">);</span>
+
+  <span class="c1">//..other stuff..</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'test'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>巻き上げ</h2>
+
+<ul>
+<li>
+<p>未割当ての変数は、そのスコープの先頭に巻き上げられます。</p>
+
+<div class="highlight"><pre><span class="c1">// （notDefinedがグローバル変数に存在しないと過程した場合。）</span>
+<span class="c1">// これはうまく動作しません。</span>
+<span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">notDefined</span><span class="p">);</span> <span class="c1">// =&gt; throws a ReferenceError</span>
+<span class="p">}</span>
+
+<span class="c1">// その変数を参照するコードの後でその変数を宣言した場合、</span>
+<span class="c1">// 変数が巻上げられた上で動作します。</span>
+<span class="c1">// 注意：`true` という値自体は巻き上げられません。</span>
+<span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">declaredButNotAssigned</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+  <span class="kd">var</span> <span class="nx">declaredButNotAssigned</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// インタープリンタは変数宣言をスコープの先頭に巻き上げます。</span>
+<span class="c1">// 上の例は次のように書き直すことが出来ます。</span>
+<span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">declaredButNotAssigned</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">declaredButNotAssigned</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+  <span class="nx">declaredButNotAssigned</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>無名関数の場合、関数が割当てされる前の変数が巻き上げられます。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">anonymous</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+
+  <span class="nx">anonymous</span><span class="p">();</span> <span class="c1">// =&gt; TypeError anonymous is not a function</span>
+
+  <span class="kd">var</span> <span class="nx">anonymous</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'anonymous function expression'</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>名前付き関数の場合も同様に変数が巻き上げられます。関数名や関数本体は巻き上げられません。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">named</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+
+  <span class="nx">named</span><span class="p">();</span> <span class="c1">// =&gt; TypeError named is not a function</span>
+
+  <span class="nx">superPower</span><span class="p">();</span> <span class="c1">// =&gt; ReferenceError superPower is not defined</span>
+
+  <span class="kd">var</span> <span class="nx">named</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">superPower</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Flying'</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="c1">// 関数名と変数名が同じ場合も同じことが起きます。</span>
+  <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">named</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+
+    <span class="nx">named</span><span class="p">();</span> <span class="c1">// =&gt; TypeError named is not a function</span>
+
+    <span class="kd">var</span> <span class="nx">named</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">named</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'named'</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>関数宣言は関数名と関数本体が巻き上げられます。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">superPower</span><span class="p">();</span> <span class="c1">// =&gt; Flying</span>
+
+  <span class="kd">function</span> <span class="nx">superPower</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Flying'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>さらに詳細な情報を求める場合は<a href="http://www.adequatelygood.com/">Ben Cherry</a>による<a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping &amp; Hoisting</a>を参照してください。</p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>条件式と等価式</h2>
+
+<ul>
+<li>
+<code>==</code> や<code>!=</code>より <code>===</code> と <code>!==</code> を使用してください。 </li>
+<li>
+<p>条件式は <code>ToBoolean</code> メソッドにより厳密に比較されます。常にこのシンプルはルールに従ってください。</p>
+
+<ul>
+<li>
+<strong>オブジェクト</strong> は <strong>true</strong> と評価されます。</li>
+<li>
+<strong>undefined</strong> は <strong>false</strong> と評価されます。</li>
+<li>
+<strong>null</strong> は <strong>false</strong> と評価されます。</li>
+<li>
+<strong>真偽値</strong> は <strong>boolean型の値</strong> として評価されます。</li>
+<li>
+<strong>数値</strong> は <strong>true</strong> と評価されます。しかし、 <strong>+0, -0, or NaN</strong> の場合は <strong>false</strong> です。</li>
+<li>
+<strong>文字列</strong> は <strong>true</strong> と評価されます。 しかし、空文字 <code>''</code> の場合は <strong>false</strong> です。</li>
+</ul>
+<div class="highlight"><pre><span class="k">if</span> <span class="p">([</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+  <span class="c1">// true</span>
+  <span class="c1">// 配列はオブジェクトなのでtrueとして評価されます。</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>短縮形を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">!==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">collection</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">collection</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>さらに詳細な情報を求める場合はAngus Crollによる <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a>を参照してください。</p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>ブロック</h2>
+
+<ul>
+<li>
+<p>複数行のブロックには中括弧（{}）を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">test</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>コメント</h2>
+
+<ul>
+<li>
+<p>複数行のコメントは<code>/** ... */</code> を使用してください。その中には説明とすべてのパラメータと戻り値についての型や値を記述してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="c1">// make() returns a new element</span>
+<span class="c1">// based on the passed in tag name</span>
+<span class="c1">//</span>
+<span class="c1">// @param  tag</span>
+<span class="c1">// @return  element</span>
+<span class="kd">function</span> <span class="nx">make</span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// ...stuff...</span>
+
+  <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="cm">/**</span>
+<span class="cm"> * make() returns a new element</span>
+<span class="cm"> * based on the passed in tag name</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param  tag</span>
+<span class="cm"> * @return  element</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">make</span><span class="p">(</span><span class="nx">tag</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// ...stuff...</span>
+
+  <span class="k">return</span> <span class="nx">element</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>単一行コメントには<code>//</code> を使用してください。コメントを加えたいコードの上部に配置してください。また、コメントの前に空行を入れてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">active</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>  <span class="c1">// is current tab</span>
+
+<span class="c1">// good</span>
+<span class="c1">// is current tab</span>
+<span class="kd">var</span> <span class="nx">active</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">getType</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'fetching type...'</span><span class="p">);</span>
+  <span class="c1">// set the default type to 'no type'</span>
+  <span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_type</span> <span class="o">||</span> <span class="s1">'no type'</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">type</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">getType</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'fetching type...'</span><span class="p">);</span>
+
+  <span class="c1">// set the default type to 'no type'</span>
+  <span class="kd">var</span> <span class="nx">type</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_type</span> <span class="o">||</span> <span class="s1">'no type'</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">type</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>空白</h2>
+
+<ul>
+<li>
+<p>タブにはスペース2つを設定してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">∙∙∙∙</span><span class="kd">var</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">∙</span><span class="kd">var</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">∙∙</span><span class="kd">var</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>重要な中括弧（{}）の前にはスペースを1つ入れてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'attr'</span><span class="p">,{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="s1">'1 year'</span><span class="p">,</span>
+  <span class="nx">breed</span><span class="o">:</span> <span class="s1">'Bernese Mountain Dog'</span>
+<span class="p">});</span>
+
+<span class="c1">// good</span>
+<span class="nx">dog</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'attr'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="s1">'1 year'</span><span class="p">,</span>
+  <span class="nx">breed</span><span class="o">:</span> <span class="s1">'Bernese Mountain Dog'</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+<li>
+<p>ファイルの最後は空行を1つ入れてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">);</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="c1">// good</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">);</span>
+
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+<li>
+<p>メソッドチェーンが長くなる場合は、適宜インデントしてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#items'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.selected'</span><span class="p">).</span><span class="nx">highlight</span><span class="p">().</span><span class="nx">end</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">).</span><span class="nx">updateCount</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#items'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.selected'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">highlight</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">updateCount</span><span class="p">();</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">leds</span> <span class="o">=</span> <span class="nx">stage</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.led'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg:svg"</span><span class="p">).</span><span class="kr">class</span><span class="p">(</span><span class="s1">'led'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg:g"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate("</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">leds</span> <span class="o">=</span> <span class="nx">stage</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.led'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg:svg"</span><span class="p">)</span>
+  <span class="p">.</span><span class="kr">class</span><span class="p">(</span><span class="s1">'led'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"svg:g"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate("</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
+</pre></div>
+</li>
+</ul><h2>先頭のカンマ</h2>
+
+<ul>
+<li>
+<p><strong>やめてください。</strong></p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">once</span>
+  <span class="p">,</span> <span class="nx">upon</span>
+  <span class="p">,</span> <span class="nx">aTime</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">once</span><span class="p">,</span>
+    <span class="nx">upon</span><span class="p">,</span>
+    <span class="nx">aTime</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Bob'</span>
+  <span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Parr'</span>
+  <span class="p">,</span> <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Mr. Incredible'</span>
+  <span class="p">,</span> <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'strength'</span>
+<span class="p">};</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">hero</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">firstName</span><span class="o">:</span> <span class="s1">'Bob'</span><span class="p">,</span>
+  <span class="nx">lastName</span><span class="o">:</span> <span class="s1">'Parr'</span><span class="p">,</span>
+  <span class="nx">heroName</span><span class="o">:</span> <span class="s1">'Mr. Incredible'</span><span class="p">,</span>
+  <span class="nx">superPower</span><span class="o">:</span> <span class="s1">'strength'</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>セミコロン</h2>
+
+<ul>
+<li>
+<p><strong>ええ。使いましょう。</strong></p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span>
+  <span class="k">return</span> <span class="nx">name</span>
+<span class="p">})()</span>
+
+<span class="c1">// good</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">})();</span>
+
+<span class="c1">// good</span>
+<span class="p">;(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">})();</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>型変換と強制</h2>
+
+<ul>
+<li>文の先頭で型の強制を行います。</li>
+<li>
+<p>文字列</p>
+
+<div class="highlight"><pre><span class="c1">//  =&gt; this.reviewScore = 9;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">totalScore</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">reviewScore</span> <span class="o">+</span> <span class="s1">''</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">totalScore</span> <span class="o">=</span> <span class="s1">''</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">reviewScore</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">totalScore</span> <span class="o">=</span> <span class="s1">''</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">reviewScore</span> <span class="o">+</span> <span class="s1">' total score'</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">totalScore</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">reviewScore</span> <span class="o">+</span> <span class="s1">' total score'</span><span class="p">;</span>
+</pre></div>
+</li>
+<li><p>数値には<code>parseInt</code> を使用てください。常に型変換のための基数を引数に渡してください。</p></li>
+<li>
+<p>If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for <a href="http://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you're doing.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">inputValue</span> <span class="o">=</span> <span class="s1">'4'</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="o">+</span><span class="nx">inputValue</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">inputValue</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="cm">/**</span>
+<span class="cm"> * parseInt was the reason my code was slow.</span>
+<span class="cm"> * Bitshifting the String to coerce it to a</span>
+<span class="cm"> * Number made it a lot faster.</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">inputValue</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p>真偽値</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">hasAge</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">hasAge</span> <span class="o">=</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">age</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">hasAge</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">age</span><span class="p">;</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>命名規則</h2>
+
+<ul>
+<li>
+<p>1文字の名前は避けてください。 名前から意図が読み取れるようにしてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">q</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// ...stuff...</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">query</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// ..stuff..</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>オブジェクト、関数、インスタンスにはキャメルケース（小文字から始まる）を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">OBJEcttsssss</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">this_is_my_object</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="k">this</span><span class="o">-</span><span class="nx">is</span><span class="o">-</span><span class="nx">my</span><span class="o">-</span><span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">u</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">user</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">'Bob Parr'</span>
+<span class="p">});</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">thisIsMyObject</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">function</span> <span class="nx">thisIsMyFunction</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">'Bob Parr'</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+<li>
+<p>クラスやコンストラクタにはパスカルケース（大文字から始まる）を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">user</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">bad</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">user</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">'nope'</span>
+<span class="p">});</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">User</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">good</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">({</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="s1">'yup'</span>
+<span class="p">});</span>
+</pre></div>
+</li>
+<li>
+<p>プライベートなプロパティ名は先頭にアンダースコア <code>_</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">__firstName__</span> <span class="o">=</span> <span class="s1">'Panda'</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">firstName_</span> <span class="o">=</span> <span class="s1">'Panda'</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">_firstName</span> <span class="o">=</span> <span class="s1">'Panda'</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p><code>this</code> の参照を保存する場合、 <code>_this</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">self</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">that</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_this</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>関数には名前を付けてください。これは、スタックトレースが追跡し易くなるためです。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>アクセサ（Accessors）</h2>
+
+<ul>
+<li>プロパティのためのアクセサ（Accessor）関数は必須ではありません。</li>
+<li>
+<p>アクセサ関数が必要な場合、<code>getVal()</code> や <code>setVal('hello')</code> としてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="nx">dragon</span><span class="p">.</span><span class="nx">age</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="nx">dragon</span><span class="p">.</span><span class="nx">getAge</span><span class="p">();</span>
+
+<span class="c1">// bad</span>
+<span class="nx">dragon</span><span class="p">.</span><span class="nx">age</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="nx">dragon</span><span class="p">.</span><span class="nx">setAge</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>プロパティが真偽値の場合、<code>isVal()</code> や<code>hasVal()</code> としてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">dragon</span><span class="p">.</span><span class="nx">age</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">dragon</span><span class="p">.</span><span class="nx">hasAge</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li>
+<p>一貫していれば、<code>get()</code> や<code>set()</code> という関数を作成することも可能です。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">Jedi</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">options</span> <span class="o">||</span> <span class="p">(</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="kd">var</span> <span class="nx">lightsaber</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">lightsaber</span> <span class="o">||</span> <span class="s1">'blue'</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'lightsaber'</span><span class="p">,</span> <span class="nx">lightsaber</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">set</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">get</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>コンストラクタ</h2>
+
+<ul>
+<li>
+<p>新しいオブジェクトでプロトタイプをオーバーライドするのではなく、プロトタイプオブジェクトにメソッドを追加してください。プロトタイプをオーバーライドすると継承が不可能になります。プロトタイプをリセットすることで、基底クラスをオーバーライドできます。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">Jedi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'new jedi'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// bad</span>
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">fight</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">fight</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'fighting'</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">block</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">block</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'blocking'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// good</span>
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">fight</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fight</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'fighting'</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">block</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">block</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'blocking'</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</li>
+<li>
+<p>メソッドの戻り値で <code>this</code> を返すことで、メソッドチェーンをすることができます。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">jump</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">jumping</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setHeight</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">luke</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Jedi</span><span class="p">();</span>
+<span class="nx">luke</span><span class="p">.</span><span class="nx">jump</span><span class="p">();</span> <span class="c1">// =&gt; true</span>
+<span class="nx">luke</span><span class="p">.</span><span class="nx">setHeight</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="c1">// =&gt; undefined</span>
+
+<span class="c1">// good</span>
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">jump</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">jumping</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setHeight</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">height</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">height</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">luke</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Jedi</span><span class="p">();</span>
+
+<span class="nx">luke</span><span class="p">.</span><span class="nx">jump</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">setHeight</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>独自のtoString()を作成することもできますが、正しく動作すること、副作用がないことだけは確認してください。</p>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">Jedi</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">options</span> <span class="o">||</span> <span class="p">(</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">name</span> <span class="o">||</span> <span class="s1">'no name'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getName</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">Jedi</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">toString</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'Jedi - '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getName</span><span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>モジュール</h2>
+
+<ul>
+<li>モジュールは <code>!</code> で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。</li>
+<li>ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。</li>
+<li>noConflict()という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。</li>
+<li>
+<p>常にモジュールの先頭で<code>'use strict';</code> を宣言してください。</p>
+
+<div class="highlight"><pre><span class="c1">// fancyInput/fancyInput.js</span>
+
+<span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+
+  <span class="kd">var</span> <span class="nx">previousFancyInput</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">FancyInput</span><span class="p">;</span>
+
+  <span class="kd">function</span> <span class="nx">FancyInput</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="nx">options</span> <span class="o">||</span> <span class="p">{};</span>
+  <span class="p">}</span>
+
+  <span class="nx">FancyInput</span><span class="p">.</span><span class="nx">noConflict</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">noConflict</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">global</span><span class="p">.</span><span class="nx">FancyInput</span> <span class="o">=</span> <span class="nx">previousFancyInput</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">FancyInput</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="nx">global</span><span class="p">.</span><span class="nx">FancyInput</span> <span class="o">=</span> <span class="nx">FancyInput</span><span class="p">;</span>
+<span class="p">}(</span><span class="k">this</span><span class="p">);</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>jQuery</h2>
+
+<ul>
+<li>
+<p>jQueryオブジェクトの変数は、先頭に <code>$</code> を付与してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">$sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
+</pre></div>
+</li>
+<li>
+<p>jQueryの検索結果をキャッシュしてください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="kd">function</span> <span class="nx">setSidebar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+  <span class="c1">// ...stuff...</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
+    <span class="s1">'background-color'</span><span class="o">:</span> <span class="s1">'pink'</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// good</span>
+<span class="kd">function</span> <span class="nx">setSidebar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">$sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
+  <span class="nx">$sidebar</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+
+  <span class="c1">// ...stuff...</span>
+
+  <span class="nx">$sidebar</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span>
+    <span class="s1">'background-color'</span><span class="o">:</span> <span class="s1">'pink'</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</li>
+<li><p>DOMの検索には、 <code>$('.sidebar ul')</code> や <code>$('.sidebar &gt; .ul')</code> のカスケードを使用してください。 参考（英語）→<a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a></p></li>
+<li>
+<p>jQueryオブジェクトの検索には、スコープ付きの <code>find</code> を使用してください。</p>
+
+<div class="highlight"><pre><span class="c1">// bad</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">,</span> <span class="s1">'ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+<span class="c1">// bad</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+<span class="c1">// good</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar &gt; ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+
+<span class="c1">// good (slower)</span>
+<span class="nx">$sidebar</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">);</span>
+
+<span class="c1">// good (faster)</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">$sidebar</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">);</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>ECMAScript 5 Compatibility</h2>
+
+<ul>
+<li>
+<p>Refer to <a href="https://twitter.com/kangax/">Kangax</a>'s ES5 <a href="http://kangax.github.com/es5-compat-table/">compatibility table</a></p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>Testing</h2>
+
+<ul>
+<li>
+<p><strong>Yup.</strong></p>
+
+<div class="highlight"><pre><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>パフォーマンスについての参考資料</h2>
+
+<ul>
+<li><a href="http://jsperf.com/string-vs-array-concat/2">String vs Array Concat</a></li>
+<li><a href="http://jsperf.com/try-catch-in-loop-cost">Try/Catch Cost In a Loop</a></li>
+<li><a href="http://jsperf.com/bang-function">Bang Function</a></li>
+<li><a href="http://jsperf.com/jquery-find-vs-context-sel/13">jQuery Find vs Context, Selector</a></li>
+<li><a href="http://jsperf.com/innerhtml-vs-textcontent-for-script-text">innerHTML vs textContent for script text</a></li>
+<li><a href="http://jsperf.com/ya-string-concat">Long String Concatenation</a></li>
+<li>
+<p>Loading...</p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>Resources</h2>
+
+<p><strong>Read This</strong></p>
+
+<ul>
+<li><a href="http://es5.github.com/">Annotated ECMAScript 5.1</a></li>
+</ul><p><strong>Other Styleguides</strong></p>
+
+<ul>
+<li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
+<li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
+<li><a href="https://github.com/rwldrn/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
+</ul><p><strong>Other Styles</strong></p>
+
+<ul>
+<li>
+<a href="https://gist.github.com/4135065">Naming this in nested functions</a> - Christian Johansen</li>
+</ul><p><strong>Books</strong></p>
+
+<ul>
+<li>
+<a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> - Douglas Crockford</li>
+<li>
+<a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns</a> - Stoyan Stefanov</li>
+<li>
+<a href="http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X">Pro JavaScript Design Patterns</a>  - Ross Harmes and Dustin Diaz</li>
+<li>
+<a href="http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309">High Performance Web Sites: Essential Knowledge for Front-End Engineers</a> - Steve Souders</li>
+<li>
+<a href="http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680">Maintainable JavaScript</a> - Nicholas C. Zakas</li>
+<li>
+<a href="http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X">JavaScript Web Applications</a> - Alex MacCaw</li>
+<li>
+<a href="http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273">Pro JavaScript Techniques</a> - John Resig</li>
+<li>
+<a href="http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595">Smashing Node.js: JavaScript Everywhere</a> - Guillermo Rauch</li>
+</ul><p><strong>Blogs</strong></p>
+
+<ul>
+<li><a href="http://dailyjs.com/">DailyJS</a></li>
+<li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+<li><a href="http://javascriptweblog.wordpress.com/">JavaScript, JavaScript...</a></li>
+<li><a href="http://weblog.bocoup.com/">Bocoup Weblog</a></li>
+<li><a href="http://www.adequatelygood.com/">Adequately Good</a></li>
+<li><a href="http://www.nczonline.net/">NCZOnline</a></li>
+<li><a href="http://perfectionkills.com/">Perfection Kills</a></li>
+<li><a href="http://benalman.com/">Ben Alman</a></li>
+<li><a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a></li>
+<li><a href="http://dustindiaz.com/">Dustin Diaz</a></li>
+<li>
+<p><a href="http://net.tutsplus.com/?s=javascript">nettuts</a></p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+</li>
+</ul><h2>In the Wild</h2>
+
+<p>This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.</p>
+
+<ul>
+<li>
+<strong>Airbnb</strong>: <a href="//github.com/airbnb/javascript">airbnb/javascript</a>
+</li>
+<li>
+<strong>American Insitutes for Research</strong>: <a href="//github.com/AIRAST/javascript">AIRAST/javascript</a>
+</li>
+<li>
+<strong>GoodData</strong>: <a href="//github.com/gooddata/gdc-js-style">gooddata/gdc-js-style</a>
+</li>
+<li>
+<strong>How About We</strong>: <a href="//github.com/howaboutwe/javascript">howaboutwe/javascript</a>
+</li>
+<li>
+<strong>MinnPost</strong>: <a href="//github.com/MinnPost/javascript">MinnPost/javascript</a>
+</li>
+<li>
+<strong>National Geographic</strong>: <a href="https://github.com/natgeo/javascript">natgeo/javascript</a>
+</li>
+<li>
+<strong>Shutterfly</strong>: <a href="//github.com/shutterfly/javascript">shutterfly/javascript</a>
+</li>
+</ul><h2>The JavaScript Style Guide Guide</h2>
+
+<ul>
+<li><a href="//github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide">Reference</a></li>
+</ul><h2>貢献者</h2>
+
+<ul>
+<li><a href="https://github.com/airbnb/javascript/graphs/contributors">貢献者一覧</a></li>
+</ul><h2>ライセンス</h2>
+
+<p>MITライセンス</p>
+
+<p>著作権(c)　2012 Airbnb</p>
+
+<p>このソフトウェアおよび関連する文書ファイル（以下「本ソフトウェア」という。）の複製物を取得するあらゆる者に対し、
+以下の条件にしたがって本ソフトウェアを制限なしに扱うことを無償で許諾する。
+そこには、本ソフトウェアの複製を使用し、複製し、改変し、結合し、公表し、頒布し、サブライセンスし、
+および/または販売する権利、また、本ソフトウェアを与えられた者に上記のようにすることを許諾する権利を含むがそれらに限られない。</p>
+
+<p>上記の著作権表示および本許諾表示は「本ソフトウェア」のすべての複製物または重要部分の中に含めなければならない。</p>
+
+<p>「本ソフトウェア」は「現状のまま」で提供され、明示または黙示を問わず、
+商品性、特定目的への適合性および非侵害を含むがそれに限られない、あらゆる種類の保証も伴わないものとする。
+著作者または著作権者は、契約、不法行為またはその他の行為であるかにかかわらず、
+ソフトウェアまたはソフトウェアの使用もしくはその他の取り扱いから、またはそれらに関連して生じた、
+いかなるクレーム、損害賠償その他の責任を負わない。</p>
+
+<p><strong><a href="#TOC">[⬆]</a></strong></p>
+
+<h1>};</h1>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mitsuruog">mitsuruog</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
