@@ -24,12 +24,12 @@
   1. [コンストラクタ](#コンストラクタ)
   1. [モジュール](#モジュール)
   1. [jQuery](#jquery)
-  1. [ES5 Compatibility](#es5)
+  1. [ES5 互換性](#ES5)
   1. [Testing](#testing)
   1. [パフォーマンスについての参考資料](#パフォーマンスについての参考資料)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [The JavaScript Style Guide Guide](#guide-guide)
+  1. [情報源](#情報源)
+  1. [共鳴者](#共鳴者)
+  1. [JavaScriptスタイルガイドへの手引き](#JavaScriptスタイルガイドへの手引き)
   1. [貢献者](#貢献者)
   1. [ライセンス](#ライセンス)
 
@@ -1253,9 +1253,9 @@
     **[[⬆]](#TOC)**
 
 
-## ECMAScript 5 Compatibility
+## ECMAScript 5 互換性
 
-  - Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
+  - [Kangax](https://twitter.com/kangax/)の ES5 [互換表](http://kangax.github.com/es5-compat-table/)を参照してください。
 
   **[[⬆]](#TOC)**
 
@@ -1286,24 +1286,24 @@
   **[[⬆]](#TOC)**
 
 
-## Resources
+## 情報源
 
 
-**Read This**
+**まず、これを読んでください。**
 
-  - [Annotated ECMAScript 5.1](http://es5.github.com/)
+  - [注釈付き ECMAScript 5.1](http://es5.github.com/)
 
-**Other Styleguides**
+**他のスタイルガイド**
 
   - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
   - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 
-**Other Styles**
+**スタイルについての他の意見**
 
   - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
 
-**Books**
+**参考文献**
 
   - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -1330,9 +1330,11 @@
 
   **[[⬆]](#TOC)**
 
-## In the Wild
+## 共鳴者
 
-  This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.
+_（注：原文は「感染者」としている。）_
+
+  これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。
 
   - **Airbnb**: [airbnb/javascript](//github.com/airbnb/javascript)
   - **American Insitutes for Research**: [AIRAST/javascript](//github.com/AIRAST/javascript)
@@ -1342,14 +1344,13 @@
   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
   - **Shutterfly**: [shutterfly/javascript](//github.com/shutterfly/javascript)
 
-## The JavaScript Style Guide Guide
+## JavaScriptスタイルガイドへの手引き
 
-  - [Reference](//github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
+  - [こちらを参照](//github.com/mitsuruog/javacript-style-guide/wiki/The-JavaScript-Style-Guide-Guide)
 
 ## 貢献者
 
   - [貢献者一覧](https://github.com/airbnb/javascript/graphs/contributors)
-
 
 ## ライセンス
 
