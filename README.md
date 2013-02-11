@@ -1346,7 +1346,7 @@ _（注：原文は「感染者」としている。）_
 
 ## JavaScriptスタイルガイドへの手引き
 
-  - [こちらを参照](//github.com/mitsuruog/javacript-style-guide/wiki/The-JavaScript-Style-Guide-Guide)
+  - [こちらを参照](https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
 
 ## 貢献者
 
