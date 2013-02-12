@@ -1,39 +1,41 @@
+[元文書:https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
+
 # Airbnb JavaScript スタイルガイド() {
 
 *常に気をつけたい、JavaScriptへの正しい接し方*
 
-## 目次
+## <a name='TOC'>目次</a>
 
-  1. [型](#型)
-  1. [オブジェクト](#オブジェクト)
-  1. [配列](#配列)
-  1. [文字列](#文字列)
-  1. [関数](#関数)
-  1. [プロパティ](#プロパティ)
-  1. [変数](#変数)
-  1. [巻き上げ](#巻き上げ)
-  1. [条件式と等価式](#条件式と等価式)
-  1. [ブロック](#ブロック)
-  1. [コメント](#コメント)
-  1. [空白](#空白)
-  1. [先頭のカンマ](#先頭のカンマ)
-  1. [セミコロン](#セミコロン)
-  1. [型変換と強制](#型変換と強制)
-  1. [命名規則](#命名規則)
-  1. [アクセサ（Accessors）](#アクセサ（accessors）)
-  1. [コンストラクタ](#コンストラクタ)
-  1. [モジュール](#モジュール)
+  1. [型](#-)
+  1. [オブジェクト](#--1)
+  1. [配列](#--2)
+  1. [文字列](#--3)
+  1. [関数](#--4)
+  1. [プロパティ](#--5)
+  1. [変数](#--6)
+  1. [巻き上げ](#--7)
+  1. [条件式と等価式](#--8)
+  1. [ブロック](#--9)
+  1. [コメント](#--10)
+  1. [空白](#--11)
+  1. [先頭のカンマ](#--12)
+  1. [セミコロン](#--13)
+  1. [型変換と強制](#--14)
+  1. [命名規則](#--15)
+  1. [アクセサ（Accessors）](#accessors)
+  1. [コンストラクタ](#--16)
+  1. [モジュール](#--17)
   1. [jQuery](#jquery)
-  1. [ES5 互換性](#ES5)
-  1. [Testing](#testing)
-  1. [パフォーマンスについての参考資料](#パフォーマンスについての参考資料)
-  1. [情報源](#情報源)
-  1. [共鳴者](#共鳴者)
-  1. [JavaScriptスタイルガイドへの手引き](#JavaScriptスタイルガイドへの手引き)
-  1. [貢献者](#貢献者)
-  1. [ライセンス](#ライセンス)
+  1. [ES5 互換性](#ecmascript-5-)
+  1. [Testing](#testing-)
+  1. [パフォーマンスについての参考資料](#--18)
+  1. [情報源](#--19)
+  1. [共鳴者](#--20)
+  1. [JavaScriptスタイルガイドへの手引き](#javascript-)
+  1. [貢献者](#--21)
+  1. [ライセンス](#--22)
 
-## 型
+## 型 [原文](https://github.com/airbnb/javascript#types)
 
   - **プリミティブ型**: プリミティブ型にアクセスした場合は、その値を直接操作していることになります。
 
@@ -68,7 +70,7 @@
 
     **[[⬆]](#TOC)**
 
-## オブジェクト
+## オブジェクト [原文](https://github.com/airbnb/javascript#objects)
 
   - オブジェクトを作成する際は、リテラル構文を使用してください。
 
@@ -99,7 +101,7 @@
     ```
     **[[⬆]](#TOC)**
 
-## 配列
+## 配列 [原文](https://github.com/airbnb/javascript#arrays)
 
   - 配列を作成する際は、リテラル構文を使用してください。
 
@@ -143,7 +145,7 @@
     **[[⬆]](#TOC)**
 
 
-## 文字列
+## 文字列 [原文](https://github.com/airbnb/javascript#strings)
 
   - 文字列にはシングルクオート `''` を使用してください。
 
@@ -239,7 +241,7 @@
     **[[⬆]](#TOC)**
 
 
-## 関数
+## 関数 [原文](https://github.com/airbnb/javascript#functions)
 
   - 関数式
 
@@ -297,7 +299,7 @@
 
 
 
-## プロパティ
+## プロパティ [原文](https://github.com/airbnb/javascript#properties)
 
   - プロパティにアクセスする場合は、ドット `.` を使用してください。
 
@@ -332,7 +334,7 @@
     **[[⬆]](#TOC)**
 
 
-## 変数
+## 変数 [原文](https://github.com/airbnb/javascript#variables)
 
   - 変数を宣言する際は、常に `var` を使用してください。使用しない場合、グローバル変数として宣言されます。グローバルな名前空間を汚染しないように、キャプテンプラネット（環境保護とエコロジーをテーマにしたスーパーヒーローアニメ）も警告しています。
 
@@ -440,7 +442,7 @@
     **[[⬆]](#TOC)**
 
 
-## 巻き上げ
+## 巻き上げ [原文](https://github.com/airbnb/javascript#hoisting)
 
   - 未割当ての変数は、そのスコープの先頭に巻き上げられます。
 
@@ -528,7 +530,7 @@
 
 
 
-## 条件式と等価式
+## 条件式と等価式 [原文](https://github.com/airbnb/javascript#conditionals)
 
   - `==` や`!=`より `===` と `!==` を使用してください。 
   - 条件式は `ToBoolean` メソッドにより厳密に比較されます。常にこのシンプルはルールに従ってください。
@@ -577,7 +579,7 @@
     **[[⬆]](#TOC)**
 
 
-## ブロック
+## ブロック [原文](https://github.com/airbnb/javascript#blocks)
 
   - 複数行のブロックには中括弧（{}）を使用してください。
 
@@ -606,7 +608,7 @@
     **[[⬆]](#TOC)**
 
 
-## コメント
+## コメント [原文](https://github.com/airbnb/javascript#comments)
 
   - 複数行のコメントは`/** ... */` を使用してください。その中には説明とすべてのパラメータと戻り値についての型や値を記述してください。
 
@@ -673,7 +675,7 @@
     **[[⬆]](#TOC)**
 
 
-## 空白
+## 空白 [原文](https://github.com/airbnb/javascript#whitespace)
 
   - タブにはスペース2つを設定してください。
 
@@ -768,7 +770,7 @@
       .call(tron.led);
   ```
 
-## 先頭のカンマ
+## 先頭のカンマ [原文](https://github.com/airbnb/javascript#leading-commas)
 
   - **やめてください。**
 
@@ -803,9 +805,9 @@
     **[[⬆]](#TOC)**
 
 
-## セミコロン
+## セミコロン [原文](https://github.com/airbnb/javascript#semicolons)
 
-  - **ええ。使いましょう。**
+  - **もちろん使いましょう。**
 
     ```javascript
     // bad
@@ -830,7 +832,7 @@
     **[[⬆]](#TOC)**
 
 
-## 型変換と強制
+## 型変換と強制 [原文](https://github.com/airbnb/javascript#type-coercion)
 
   - 文の先頭で型の強制を行います。
   - 文字列
@@ -902,7 +904,7 @@
     **[[⬆]](#TOC)**
 
 
-## 命名規則
+## 命名規則 [原文](https://github.com/airbnb/javascript#naming-conventions)
 
   - 1文字の名前は避けてください。 名前から意図が読み取れるようにしてください。
 
@@ -1016,7 +1018,7 @@
     **[[⬆]](#TOC)**
 
 
-## アクセサ（Accessors）
+## アクセサ（Accessors） [原文](https://github.com/airbnb/javascript#accessors)
 
   - プロパティのためのアクセサ（Accessor）関数は必須ではありません。
   - アクセサ関数が必要な場合、`getVal()` や `setVal('hello')` としてください。
@@ -1070,7 +1072,7 @@
     **[[⬆]](#TOC)**
 
 
-## コンストラクタ
+## コンストラクタ [原文](https://github.com/airbnb/javascript#constructors)
 
   - 新しいオブジェクトでプロトタイプをオーバーライドするのではなく、プロトタイプオブジェクトにメソッドを追加してください。プロトタイプをオーバーライドすると継承が不可能になります。プロトタイプをリセットすることで、基底クラスをオーバーライドできます。
 
@@ -1156,7 +1158,7 @@
     **[[⬆]](#TOC)**
 
 
-## モジュール
+## モジュール [原文](https://github.com/airbnb/javascript#modules)
 
   - モジュールは `!` で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。
   - ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。
@@ -1187,7 +1189,7 @@
     **[[⬆]](#TOC)**
 
 
-## jQuery
+## jQuery [原文](https://github.com/airbnb/javascript#jquery)
 
   - jQueryオブジェクトの変数は、先頭に `$` を付与してください。
 
@@ -1253,14 +1255,14 @@
     **[[⬆]](#TOC)**
 
 
-## ECMAScript 5 互換性
+## ECMAScript 5 互換性 [原文](https://github.com/airbnb/javascript#es5)
 
   - [Kangax](https://twitter.com/kangax/)の ES5 [互換表](http://kangax.github.com/es5-compat-table/)を参照してください。
 
   **[[⬆]](#TOC)**
 
 
-## Testing
+## Testing [原文](https://github.com/airbnb/javascript#testing)
 
   - **Yup.**
 
@@ -1273,7 +1275,7 @@
     **[[⬆]](#TOC)**
 
 
-## パフォーマンスについての参考資料
+## パフォーマンスについての参考資料 [原文](https://github.com/airbnb/javascript#performance)
 
   - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
   - [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
@@ -1286,7 +1288,7 @@
   **[[⬆]](#TOC)**
 
 
-## 情報源
+## 情報源 [原文](https://github.com/airbnb/javascript#resources)
 
 
 **まず、これを読んでください。**
@@ -1330,7 +1332,7 @@
 
   **[[⬆]](#TOC)**
 
-## 共鳴者
+## 共鳴者 [原文](https://github.com/airbnb/javascript#in-the-wild)
 
 _（注：原文は「感染者」としている。）_
 
@@ -1344,15 +1346,15 @@ _（注：原文は「感染者」としている。）_
   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
   - **Shutterfly**: [shutterfly/javascript](//github.com/shutterfly/javascript)
 
-## JavaScriptスタイルガイドへの手引き
+## JavaScriptスタイルガイドへの手引き [原文](https://github.com/airbnb/javascript#guide-guide)
 
   - [こちらを参照](https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
 
-## 貢献者
+## 貢献者 [原文](https://github.com/airbnb/javascript#contributors)
 
   - [貢献者一覧](https://github.com/airbnb/javascript/graphs/contributors)
 
-## ライセンス
+## ライセンス [原文](https://github.com/airbnb/javascript#license)
 
 MITライセンス
  
