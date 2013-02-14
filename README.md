@@ -37,7 +37,7 @@
 
 ## <a name='types'>型</a> [原文](https://github.com/airbnb/javascript#types)
 
-  - **プリミティブ型**: プリミティブ型にアクセスした場合は、その値を直接操作していることになります。
+  - **プリミティブ型**: プリミティブ型は、その値を直接操作します。
 
     + `string`
     + `number`
@@ -53,7 +53,7 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **参照型**: 参照型にアクセスした場合、参照を通して値を操作していることになります。
+  - **参照型**: 参照型は、参照を通して値を操作します。
 
     + `object`
     + `array`
@@ -854,7 +854,8 @@
     ```
 
   - 数値には`parseInt` を使用てください。常に型変換のための基数を引数に渡してください。
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビッシフトを使用す必要がある場合、
+  やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。
 
     ```javascript
     var inputValue = '4';
@@ -879,9 +880,9 @@
 
     // good
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseIntがボトルネックとなっていたため、
+     * ビットシフトで文字列を数値へ強制的に変換することで
+     * パフォーマンスを改善させます。
      */
     var val = inputValue >> 0;
     ```
