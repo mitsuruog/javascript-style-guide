@@ -27,46 +27,49 @@
         </ul>
       </header>
       <section>
-        <p># Airbnb JavaScript スタイルガイド() {</p>
+        <p><a href="https://github.com/airbnb/javascript">元文書:https://github.com/airbnb/javascript</a></p>
+
+<h1>Airbnb JavaScript スタイルガイド() {</h1>
 
 <p><em>常に気をつけたい、JavaScriptへの正しい接し方</em></p>
 
 <h2>目次</h2>
 
 <ol>
-<li><a href="#%E5%9E%8B">型</a></li>
-<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88">オブジェクト</a></li>
-<li><a href="#%E9%85%8D%E5%88%97">配列</a></li>
-<li><a href="#%E6%96%87%E5%AD%97%E5%88%97">文字列</a></li>
-<li><a href="#%E9%96%A2%E6%95%B0">関数</a></li>
-<li><a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3">プロパティ</a></li>
-<li><a href="#%E5%A4%89%E6%95%B0">変数</a></li>
-<li><a href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92">巻き上げ</a></li>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F">条件式と等価式</a></li>
-<li><a href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF">ブロック</a></li>
-<li><a href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88">コメント</a></li>
-<li><a href="#%E7%A9%BA%E7%99%BD">空白</a></li>
-<li><a href="#%E5%85%88%E9%A0%AD%E3%81%AE%E3%82%AB%E3%83%B3%E3%83%9E">先頭のカンマ</a></li>
-<li><a href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3">セミコロン</a></li>
-<li><a href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6">型変換と強制</a></li>
-<li><a href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87">命名規則</a></li>
-<li><a href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%EF%BC%88accessors%EF%BC%89">アクセサ（Accessors）</a></li>
-<li><a href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF">コンストラクタ</a></li>
-<li><a href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">モジュール</a></li>
+<li><a href="#types">型</a></li>
+<li><a href="#objects">オブジェクト</a></li>
+<li><a href="#arrays">配列</a></li>
+<li><a href="#strings">文字列</a></li>
+<li><a href="#functions">関数</a></li>
+<li><a href="#properties">プロパティ</a></li>
+<li><a href="#variables">変数</a></li>
+<li><a href="#hoisting">巻き上げ</a></li>
+<li><a href="#conditionals">条件式と等価式</a></li>
+<li><a href="#blocks">ブロック</a></li>
+<li><a href="#comments">コメント</a></li>
+<li><a href="#whitespace">空白</a></li>
+<li><a href="#leading-commas">先頭のカンマ</a></li>
+<li><a href="#semicolons">セミコロン</a></li>
+<li><a href="#type-coercion">型変換と強制</a></li>
+<li><a href="#naming-conventions">命名規則</a></li>
+<li><a href="#accessors">アクセサ（Accessors）</a></li>
+<li><a href="#constructors">コンストラクタ</a></li>
+<li><a href="#modules">モジュール</a></li>
 <li><a href="#jquery">jQuery</a></li>
-<li><a href="#es5">ES5 Compatibility</a></li>
-<li><a href="#testing">Testing</a></li>
-<li><a href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">パフォーマンスについての参考資料</a></li>
-<li><a href="#resources">Resources</a></li>
-<li><a href="#in-the-wild">In the Wild</a></li>
-<li><a href="#guide-guide">The JavaScript Style Guide Guide</a></li>
-<li><a href="#%E8%B2%A2%E7%8C%AE%E8%80%85">貢献者</a></li>
-<li><a href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9">ライセンス</a></li>
-</ol><h2>型</h2>
+<li><a href="#es5">ES5 互換性</a></li>
+<li><a href="#testing">テスト</a></li>
+<li><a href="#performance">パフォーマンスについての参考資料</a></li>
+<li><a href="#resources">情報源</a></li>
+<li><a href="#in-the-wild">共鳴者</a></li>
+<li><a href="#guide-guide">JavaScriptスタイルガイドへの手引き</a></li>
+<li><a href="#contributors">貢献者</a></li>
+<li><a href="#license">ライセンス</a></li>
+</ol><h2>型 <a href="https://github.com/airbnb/javascript#types">原文</a>
+</h2>
 
 <ul>
 <li>
-<p><strong>プリミティブ型</strong>: プリミティブ型にアクセスした場合は、その値を直接操作していることになります。</p>
+<p><strong>プリミティブ型</strong>: プリミティブ型は、その値を直接操作します。</p>
 
 <ul>
 <li><code>string</code></li>
@@ -84,7 +87,7 @@
 </pre></div>
 </li>
 <li>
-<p><strong>参照型</strong>: 参照型にアクセスした場合、参照を通して値を操作していることになります。</p>
+<p><strong>参照型</strong>: 参照型は、参照を通して値を操作します。</p>
 
 <ul>
 <li><code>object</code></li>
@@ -101,7 +104,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>オブジェクト</h2>
+</ul><h2>オブジェクト <a href="https://github.com/airbnb/javascript#objects">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -134,7 +138,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>配列</h2>
+</ul><h2>配列 <a href="https://github.com/airbnb/javascript#arrays">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -177,7 +182,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>文字列</h2>
+</ul><h2>文字列 <a href="https://github.com/airbnb/javascript#strings">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -272,7 +278,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>関数</h2>
+</ul><h2>関数 <a href="https://github.com/airbnb/javascript#functions">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -329,7 +336,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>プロパティ</h2>
+</ul><h2>プロパティ <a href="https://github.com/airbnb/javascript#properties">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -364,7 +372,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>変数</h2>
+</ul><h2>変数 <a href="https://github.com/airbnb/javascript#variables">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -472,7 +481,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>巻き上げ</h2>
+</ul><h2>巻き上げ <a href="https://github.com/airbnb/javascript#hoisting">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -559,7 +569,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>条件式と等価式</h2>
+</ul><h2>条件式と等価式 <a href="https://github.com/airbnb/javascript#conditionals">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -616,7 +627,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>ブロック</h2>
+</ul><h2>ブロック <a href="https://github.com/airbnb/javascript#blocks">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -645,7 +657,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>コメント</h2>
+</ul><h2>コメント <a href="https://github.com/airbnb/javascript#comments">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -712,7 +725,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>空白</h2>
+</ul><h2>空白 <a href="https://github.com/airbnb/javascript#whitespace">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -809,7 +823,8 @@
   <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
 </pre></div>
 </li>
-</ul><h2>先頭のカンマ</h2>
+</ul><h2>先頭のカンマ <a href="https://github.com/airbnb/javascript#leading-commas">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -844,11 +859,12 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>セミコロン</h2>
+</ul><h2>セミコロン <a href="https://github.com/airbnb/javascript#semicolons">原文</a>
+</h2>
 
 <ul>
 <li>
-<p><strong>ええ。使いましょう。</strong></p>
+<p><strong>もちろん使いましょう。</strong></p>
 
 <div class="highlight"><pre><span class="c1">// bad</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -871,7 +887,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>型変換と強制</h2>
+</ul><h2>型変換と強制 <a href="https://github.com/airbnb/javascript#type-coercion">原文</a>
+</h2>
 
 <ul>
 <li>文の先頭で型の強制を行います。</li>
@@ -895,7 +912,8 @@
 </li>
 <li><p>数値には<code>parseInt</code> を使用てください。常に型変換のための基数を引数に渡してください。</p></li>
 <li>
-<p>If for whatever reason you are doing something wild and <code>parseInt</code> is your bottleneck and need to use Bitshift for <a href="http://jsperf.com/coercion-vs-casting/3">performance reasons</a>, leave a comment explaining why and what you're doing.</p>
+<p>何らかの理由により <code>parseInt</code> がボトルネックとなっており、<a href="http://jsperf.com/coercion-vs-casting/3">パフォーマンス的な理由</a>でビッシフトを使用す必要がある場合、
+やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。</p>
 
 <div class="highlight"><pre><span class="kd">var</span> <span class="nx">inputValue</span> <span class="o">=</span> <span class="s1">'4'</span><span class="p">;</span>
 
@@ -919,9 +937,9 @@
 
 <span class="c1">// good</span>
 <span class="cm">/**</span>
-<span class="cm"> * parseInt was the reason my code was slow.</span>
-<span class="cm"> * Bitshifting the String to coerce it to a</span>
-<span class="cm"> * Number made it a lot faster.</span>
+<span class="cm"> * parseIntがボトルネックとなっていたため、</span>
+<span class="cm"> * ビットシフトで文字列を数値へ強制的に変換することで</span>
+<span class="cm"> * パフォーマンスを改善させます。</span>
 <span class="cm"> */</span>
 <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">inputValue</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
@@ -943,7 +961,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>命名規則</h2>
+</ul><h2>命名規則 <a href="https://github.com/airbnb/javascript#naming-conventions">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -1057,7 +1076,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>アクセサ（Accessors）</h2>
+</ul><h2>アクセサ（Accessors） <a href="https://github.com/airbnb/javascript#accessors">原文</a>
+</h2>
 
 <ul>
 <li>プロパティのためのアクセサ（Accessor）関数は必須ではありません。</li>
@@ -1111,7 +1131,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>コンストラクタ</h2>
+</ul><h2>コンストラクタ <a href="https://github.com/airbnb/javascript#constructors">原文</a>
+</h2>
 
 <ul>
 <li>
@@ -1195,7 +1216,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>モジュール</h2>
+</ul><h2>モジュール <a href="https://github.com/airbnb/javascript#modules">原文</a>
+</h2>
 
 <ul>
 <li>モジュールは <code>!</code> で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。</li>
@@ -1226,47 +1248,10 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>jQuery</h2>
+</ul><h2>.ul')` のカスケードを使用してください。 参考（英語）→<a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a>
+</h2>
 
 <ul>
-<li>
-<p>jQueryオブジェクトの変数は、先頭に <code>$</code> を付与してください。</p>
-
-<div class="highlight"><pre><span class="c1">// bad</span>
-<span class="kd">var</span> <span class="nx">sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
-
-<span class="c1">// good</span>
-<span class="kd">var</span> <span class="nx">$sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
-</pre></div>
-</li>
-<li>
-<p>jQueryの検索結果をキャッシュしてください。</p>
-
-<div class="highlight"><pre><span class="c1">// bad</span>
-<span class="kd">function</span> <span class="nx">setSidebar</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-
-  <span class="c1">// ...stuff...</span>
-
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span>
-    <span class="s1">'background-color'</span><span class="o">:</span> <span class="s1">'pink'</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-
-<span class="c1">// good</span>
-<span class="kd">function</span> <span class="nx">setSidebar</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">$sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">);</span>
-  <span class="nx">$sidebar</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-
-  <span class="c1">// ...stuff...</span>
-
-  <span class="nx">$sidebar</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span>
-    <span class="s1">'background-color'</span><span class="o">:</span> <span class="s1">'pink'</span>
-  <span class="p">});</span>
-<span class="p">}</span>
-</pre></div>
-</li>
-<li><p>DOMの検索には、 <code>$('.sidebar ul')</code> や <code>$('.sidebar &gt; .ul')</code> のカスケードを使用してください。 参考（英語）→<a href="http://jsperf.com/jquery-find-vs-context-sel/16">jsPerf</a></p></li>
 <li>
 <p>jQueryオブジェクトの検索には、スコープ付きの <code>find</code> を使用してください。</p>
 
@@ -1291,19 +1276,21 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>ECMAScript 5 Compatibility</h2>
+</ul><h2>ECMAScript 5 互換性 <a href="https://github.com/airbnb/javascript#es5">原文</a>
+</h2>
 
 <ul>
 <li>
-<p>Refer to <a href="https://twitter.com/kangax/">Kangax</a>'s ES5 <a href="http://kangax.github.com/es5-compat-table/">compatibility table</a></p>
+<p><a href="https://twitter.com/kangax/">Kangax</a>の ES5 <a href="http://kangax.github.com/es5-compat-table/">互換表</a>を参照してください。</p>
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>Testing</h2>
+</ul><h2>テスト <a href="https://github.com/airbnb/javascript#testing">原文</a>
+</h2>
 
 <ul>
 <li>
-<p><strong>Yup.</strong></p>
+<p><strong>もちろん</strong></p>
 
 <div class="highlight"><pre><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
@@ -1312,7 +1299,8 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>パフォーマンスについての参考資料</h2>
+</ul><h2>パフォーマンスについての参考資料 <a href="https://github.com/airbnb/javascript#performance">原文</a>
+</h2>
 
 <ul>
 <li><a href="http://jsperf.com/string-vs-array-concat/2">String vs Array Concat</a></li>
@@ -1326,24 +1314,25 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>Resources</h2>
+</ul><h2>情報源 <a href="https://github.com/airbnb/javascript#resources">原文</a>
+</h2>
 
-<p><strong>Read This</strong></p>
+<p><strong>まず、これを読んでください。</strong></p>
 
 <ul>
-<li><a href="http://es5.github.com/">Annotated ECMAScript 5.1</a></li>
-</ul><p><strong>Other Styleguides</strong></p>
+<li><a href="http://es5.github.com/">注釈付き ECMAScript 5.1</a></li>
+</ul><p><strong>他のスタイルガイド</strong></p>
 
 <ul>
 <li><a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">Google JavaScript Style Guide</a></li>
 <li><a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a></li>
 <li><a href="https://github.com/rwldrn/idiomatic.js/">Principles of Writing Consistent, Idiomatic JavaScript</a></li>
-</ul><p><strong>Other Styles</strong></p>
+</ul><p><strong>スタイルについての他の意見</strong></p>
 
 <ul>
 <li>
 <a href="https://gist.github.com/4135065">Naming this in nested functions</a> - Christian Johansen</li>
-</ul><p><strong>Books</strong></p>
+</ul><p><strong>参考文献</strong></p>
 
 <ul>
 <li>
@@ -1380,9 +1369,12 @@
 
 <p><strong><a href="#TOC">[⬆]</a></strong></p>
 </li>
-</ul><h2>In the Wild</h2>
+</ul><h2>共鳴者 <a href="https://github.com/airbnb/javascript#in-the-wild">原文</a>
+</h2>
 
-<p>This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.</p>
+<p><em>訳注: 原文は「in the wild:感染者」となっている。</em></p>
+
+<p>これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。</p>
 
 <ul>
 <li>
@@ -1406,15 +1398,18 @@
 <li>
 <strong>Shutterfly</strong>: <a href="//github.com/shutterfly/javascript">shutterfly/javascript</a>
 </li>
-</ul><h2>The JavaScript Style Guide Guide</h2>
+</ul><h2>JavaScriptスタイルガイドへの手引き <a href="https://github.com/airbnb/javascript#guide-guide">原文</a>
+</h2>
 
 <ul>
-<li><a href="//github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide">Reference</a></li>
-</ul><h2>貢献者</h2>
+<li><a href="https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D">こちらを参照</a></li>
+</ul><h2>貢献者 <a href="https://github.com/airbnb/javascript#contributors">原文</a>
+</h2>
 
 <ul>
 <li><a href="https://github.com/airbnb/javascript/graphs/contributors">貢献者一覧</a></li>
-</ul><h2>ライセンス</h2>
+</ul><h2>ライセンス <a href="https://github.com/airbnb/javascript#license">原文</a>
+</h2>
 
 <p>MITライセンス</p>
 
