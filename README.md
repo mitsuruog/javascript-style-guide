@@ -1048,17 +1048,6 @@
       return false;
     }
   
-+## <a name='translation'>Translation</a>
- 	 1346	
-+
- 	 1347	
-+  This style guide is also available in other languages:
- 	 1348	
-+
- 	 1349	
-+  - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
- 	 1350	
-+  - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
     // good
     if (!dragon.hasAge()) {
       return false;
