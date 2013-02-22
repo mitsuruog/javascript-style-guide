@@ -31,6 +31,7 @@
   1. [パフォーマンスについての参考資料](#performance)
   1. [情報源](#resources)
   1. [共鳴者](#in-the-wild)
+  1. [翻訳](#translation) 
   1. [JavaScriptスタイルガイドへの手引き](#guide-guide)
   1. [貢献者](#contributors)
   1. [ライセンス](#license)
@@ -378,7 +379,8 @@
     var items = getItems(),
         goSportsTeam = true,
         dragonball,
-        i, length;
+        i, 
+        length;
     ```
 
   - 変数の割り当てはスコープの先頭で行ってください。これは、変数宣言と巻上げに関連する問題を回避するためです。
@@ -737,8 +739,6 @@
 
     ```
 
-    **[[⬆]](#TOC)**
-
   - メソッドチェーンが長くなる場合は、適宜インデントしてください。
 
   ```javascript
@@ -769,6 +769,8 @@
       .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
       .call(tron.led);
   ```
+
+    **[[⬆]](#TOC)**
 
 ## <a name='leading-commas'>先頭のカンマ</a> [原文](https://github.com/airbnb/javascript#leading-commas)
 
@@ -1045,7 +1047,18 @@
     if (!dragon.age()) {
       return false;
     }
-
+  
++## <a name='translation'>Translation</a>
+ 	 1346	
++
+ 	 1347	
++  This style guide is also available in other languages:
+ 	 1348	
++
+ 	 1349	
++  - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
+ 	 1350	
++  - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
     // good
     if (!dragon.hasAge()) {
       return false;
@@ -1341,11 +1354,19 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
   - **Airbnb**: [airbnb/javascript](//github.com/airbnb/javascript)
   - **American Insitutes for Research**: [AIRAST/javascript](//github.com/AIRAST/javascript)
+  - **ExatTarget**: [ExactTarget/javascript](//github.com/ExactTarget/javascript)
   - **GoodData**: [gooddata/gdc-js-style](//github.com/gooddata/gdc-js-style)
   - **How About We**: [howaboutwe/javascript](//github.com/howaboutwe/javascript)
   - **MinnPost**: [MinnPost/javascript](//github.com/MinnPost/javascript)
   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
   - **Shutterfly**: [shutterfly/javascript](//github.com/shutterfly/javascript)
+
+## <a name='translation'>翻訳</a> [原文](https://github.com/airbnb/javascript#translation)
+
+  このスタイルガイドは他の言語でも利用できます。
+ 
+ - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
+ - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
 
 ## <a name='guide-guide'>JavaScriptスタイルガイドへの手引き</a> [原文](https://github.com/airbnb/javascript#guide-guide)
 
