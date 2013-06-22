@@ -763,19 +763,19 @@
       .updateCount();
 
   // bad
-  var leds = stage.selectAll('.led').data(data).enter().append("svg:svg").class('led', true)
-      .attr('width',  (radius + margin) * 2).append("svg:g")
-      .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
+  var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').class('led', true)
+      .attr('width',  (radius + margin) * 2).append('svg:g')
+      .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
       .call(tron.led);
 
   // good
   var leds = stage.selectAll('.led')
       .data(data)
-    .enter().append("svg:svg")
+    .enter().append('svg:svg')
       .class('led', true)
       .attr('width',  (radius + margin) * 2)
-    .append("svg:g")
-      .attr("transform", "translate(" + (radius + margin) + "," + (radius + margin) + ")")
+    .append('svg:g')
+      .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
       .call(tron.led);
   ```
 
@@ -1240,7 +1240,7 @@
     }
     ```
 
-  - DOMの検索には、 `$('.sidebar ul')` や `$('.sidebar > .ul')` のカスケードを使用してください。 参考（英語）→[jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - DOMの検索には、 `$('.sidebar ul')` や `$('.sidebar > ul')` のカスケードを使用してください。 参考（英語）→[jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
 
   - jQueryオブジェクトの検索には、スコープ付きの `find` を使用してください。
 
@@ -1316,6 +1316,7 @@
 **スタイルについての他の意見**
 
   - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
+  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
 
 **参考文献**
 
@@ -1350,22 +1351,28 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
   これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。
 
-  - **Airbnb**: [airbnb/javascript](//github.com/airbnb/javascript)
-  - **American Insitutes for Research**: [AIRAST/javascript](//github.com/AIRAST/javascript)
-  - **ExatTarget**: [ExactTarget/javascript](//github.com/ExactTarget/javascript)
-  - **GoodData**: [gooddata/gdc-js-style](//github.com/gooddata/gdc-js-style)
-  - **How About We**: [howaboutwe/javascript](//github.com/howaboutwe/javascript)
-  - **MinnPost**: [MinnPost/javascript](//github.com/MinnPost/javascript)
+  - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
+  - **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
+  - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
+  - **GeneralElectric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
+  - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
+  - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript)
+  - **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
+  - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
-  - **Shutterfly**: [shutterfly/javascript](//github.com/shutterfly/javascript)
-
+  - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
+  - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
+  - **Userify**: [userify/javascript](https://github.com/userify/javascript)
+  - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
+  
 ## <a name='translation'>翻訳</a> [原文](https://github.com/airbnb/javascript#translation)
 
   このスタイルガイドは他の言語でも利用できます。
  
  - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
  - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
-
+ - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
+ - 
 ## <a name='guide-guide'>JavaScriptスタイルガイドへの手引き</a> [原文](https://github.com/airbnb/javascript#guide-guide)
 
   - [こちらを参照](https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
