@@ -127,7 +127,7 @@
     someStack.push('abracadabra');
     ```
 
-  - 配列をコピーする必要がある場合、Array #sliceを使用してください。参考（英語）→[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - 配列をコピーする必要がある場合、Array#sliceを使用してください。参考（英語）→[jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -140,10 +140,19 @@
     }
 
     // good
-    itemsCopy = Array.prototype.slice.call(items);
+    itemsCopy = items.slice();
     ```
 
-    **[[⬆]](#TOC)**
+  - Allay-LikeなオブジェクトをArrayに変換する場合は、Array#sliceを使用してください。
+  
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+   ```
+
+**[[⬆]](#TOC)**
 
 
 ## <a name='strings'>文字列</a> [原文](https://github.com/airbnb/javascript#strings)
