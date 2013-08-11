@@ -18,12 +18,13 @@
   1. [ブロック](#blocks)
   1. [コメント](#comments)
   1. [空白](#whitespace)
-  1. [先頭のカンマ](#leading-commas)
+  1. [カンマ](#commas)
   1. [セミコロン](#semicolons)
   1. [型変換と強制](#type-coercion)
   1. [命名規則](#naming-conventions)
   1. [アクセサ（Accessors）](#accessors)
   1. [コンストラクタ](#constructors)
+  1. [イベント](#events)
   1. [モジュール](#modules)
   1. [jQuery](#jquery)
   1. [ES5 互換性](#es5)
@@ -83,22 +84,40 @@
     var item = {};
     ```
 
-  - [予約語](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words)をキーとして使用しないでください。
+  - [予約語](http://es5.github.io/#x7.6.1)をキーとして使用しないでください。これはIE8で動作しません。参照→[Issue](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
     // bad
     var superman = {
-      class: 'superhero',
       default: { clark: 'kent' },
       private: true
     };
 
     // good
     var superman = {
-      klass: 'superhero',
       defaults: { clark: 'kent' },
       hidden: true
     };
+    ````
+    
+  - 予約語の代わりに分かりやすい同義語を使用してください。
+
+    ```javascript
+    // bad
+    var superman = {
+      class: 'alien'
+    };
+
+    // bad
+    var superman = {
+      klass: 'alien'
+    };
+
+    // good
+    var superman = {
+      type: 'alien'
+    };
+
     ```
     **[[⬆]](#TOC)**
 
@@ -682,6 +701,30 @@
       return type;
     }
     ```
+  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+
+  - Use `// FIXME:` to annotate problems
+
+    ```javascript
+    function Calculator() {
+
+      // FIXME: shouldn't use a global here
+      total = 0;
+
+      return this;
+    }
+    ```
+
+  - Use `// TODO:` to annotate solutions to problems
+
+    ```javascript
+    function Calculator() {
+
+      // TODO: total should be configurable by an options param
+      this.total = 0;
+      return this;
+    }
+  ```
 
     **[[⬆]](#TOC)**
 
@@ -781,9 +824,9 @@
 
     **[[⬆]](#TOC)**
 
-## <a name='leading-commas'>先頭のカンマ</a> [原文](https://github.com/airbnb/javascript#leading-commas)
+## <a name='commas'>カンマ</a> [原文](https://github.com/airbnb/javascript#commas)
 
-  - **やめてください。**
+  - 先頭のカンマは **やめてください。**
 
     ```javascript
     // bad
@@ -813,7 +856,35 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+　- Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+
+  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
+
+  ```javascript
+    // bad
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn',
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman',
+    ];
+
+    // good
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn'
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman'
+    ];
+  ```
+
+  **[[⬆]](#TOC)**
 
 
 ## <a name='semicolons'>セミコロン</a> [原文](https://github.com/airbnb/javascript#semicolons)
@@ -865,9 +936,7 @@
     ```
 
   - 数値には`parseInt` を使用てください。常に型変換のための基数を引数に渡してください。
-  - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビッシフトを使用す必要がある場合、
-  やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。
-
+ 
     ```javascript
     var inputValue = '4';
 
@@ -888,7 +957,12 @@
 
     // good
     var val = parseInt(inputValue, 10);
+    ````
 
+  - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビッシフトを使用す必要がある場合、
+  やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。
+
+    ```javascript
     // good
     /**
      * parseIntがボトルネックとなっていたため、
@@ -1169,6 +1243,35 @@
 
     **[[⬆]](#TOC)**
 
+## <a name='events'>イベント</a>
+
+  - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+
+    ```js
+    // bad
+    $(this).trigger('listingUpdated', listing.id);
+
+    ...
+
+    $(this).on('listingUpdated', function(e, listingId) {
+      // do something with listingId
+    });
+    ```
+
+    prefer:
+
+    ```js
+    // good
+    $(this).trigger('listingUpdated', { listingId : listing.id });
+
+    ...
+
+    $(this).on('listingUpdated', function(e, data) {
+    // do something with data.listingId
+    });
+    ```
+
+  **[[⬆]](#TOC)**
 
 ## <a name='modules'>モジュール</a> [原文](https://github.com/airbnb/javascript#modules)
 
@@ -1201,7 +1304,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='jquery</a> [原文](https://github.com/airbnb/javascript#jquery)
+## <a name='jquery'>jQuery</a> [原文](https://github.com/airbnb/javascript#jquery)
 
   - jQueryオブジェクトの変数は、先頭に `$` を付与してください。
 
@@ -1320,6 +1423,10 @@
 
 **参考文献**
 
+  - [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
+
+**参考図書**
+
   - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
   - [Pro JavaScript Design Patterns](http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
@@ -1353,18 +1460,21 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
   - **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
+  - **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
   - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
   - **GeneralElectric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
   - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
   - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript)
   - **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
   - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
-  - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
+   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
+   - **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
   - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
   - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
   - **Userify**: [userify/javascript](https://github.com/userify/javascript)
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
-  
+  - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
+
 ## <a name='translation'>翻訳</a> [原文](https://github.com/airbnb/javascript#translation)
 
   このスタイルガイドは他の言語でも利用できます。
@@ -1372,7 +1482,9 @@ _訳注: 原文は「in the wild:感染者」となっている。_
  - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
  - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
  - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
- - 
+ - :cn: **中国語**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
+
+
 ## <a name='guide-guide'>JavaScriptスタイルガイドへの手引き</a> [原文](https://github.com/airbnb/javascript#guide-guide)
 
   - [こちらを参照](https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
