@@ -701,26 +701,30 @@
       return type;
     }
     ```
-  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. 
+    These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
 
-  - Use `// FIXME:` to annotate problems
+  - これらは、何らかのアクションを伴うという意味で通常のコメントとは異なります。アクションとは `FIXME -- 解決策が必要` もしくは `TODO -- 実装が必要` です。
+
+
+  - 問題に対する注釈として `// FIXME:` を使用してください。
 
     ```javascript
     function Calculator() {
 
-      // FIXME: shouldn't use a global here
+      // FIXME: グローバル変数を使用するべきではない。
       total = 0;
 
       return this;
     }
     ```
 
-  - Use `// TODO:` to annotate solutions to problems
+  - 問題の解決策に対する注釈として `// TODO:` を使用してください。
 
     ```javascript
     function Calculator() {
 
-      // TODO: total should be configurable by an options param
+      // TODO: total はオプションパラメータとして設定されるべき。
       this.total = 0;
       return this;
     }
