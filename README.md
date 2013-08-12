@@ -858,9 +858,12 @@
     };
     ```
 
-　- Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+　- 末尾の余計なカンマも **やめてください。** これはIE6/7とquirksmodeのIE9で問題を引き起こす可能性があります。
+  さらに、ES3のいくつかの実装において、余計なカンマがある場合、配列に長さを追加します。
+  これは、ES5の中で明らかにされました。([参考](http://es5.github.io/#D)):
 
-  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
+  > 第5版では、末尾の余計なカンマが存在するArrayInitialiser（配列初期化演算子）であっても、配列に長さを追加しないという事実を明確にしています。
+これは第3版から意味的な変更ではありませんが、いくつかの実装は以前よりこれを誤解していたかもしれません。
 
   ```javascript
     // bad
