@@ -477,7 +477,7 @@
   - 未割当ての変数は、そのスコープの先頭に巻き上げられます。
 
     ```javascript
-    // （notDefinedがグローバル変数に存在しないと過程した場合。）
+    // （notDefinedがグローバル変数に存在しないと仮定した場合。）
     // これはうまく動作しません。
     function example() {
       console.log(notDefined); // => throws a ReferenceError
