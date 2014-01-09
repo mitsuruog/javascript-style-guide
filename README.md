@@ -563,7 +563,8 @@
 ## <a name='conditionals'>条件式と等価式</a> [原文](https://github.com/airbnb/javascript#conditionals)
 
   - `==` や`!=`より `===` と `!==` を使用してください。 
-  - 条件式は `ToBoolean` メソッドにより厳密に比較されます。常にこのシンプルはルールに従ってください。
+  - 条件式は `ToBoolean` メソッドによる強制型変換で評価され、常にこれらのシンプルなルールに従います。
+
 
     + **オブジェクト** は **true** と評価されます。
     + **undefined** は **false** と評価されます。
@@ -940,7 +941,7 @@
     var totalScore = this.reviewScore + ' total score';
     ```
 
-  - 数値には`parseInt` を使用てください。常に型変換のための基数を引数に渡してください。
+  - 数値には`parseInt` を使用してください。常に型変換のための基数を引数に渡してください。
  
     ```javascript
     var inputValue = '4';
@@ -1264,7 +1265,7 @@
     });
     ```
 
-    こちら方が好まれます。:
+    こちらの方が好まれます。:
 
     ```js
     // good
