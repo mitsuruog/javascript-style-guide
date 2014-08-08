@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,14 +16,18 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Javacript-style-guide</h1>
-        <p>A mostly reasonable approach to JavaScript</p>
-        <p class="view"><a href="https://github.com/mitsuruog/javacript-style-guide">View the Project on GitHub <small>mitsuruog/javacript-style-guide</small></a></p>
+        <h1 class="header">Javacript-style-guide</h1>
+        <p class="header">A mostly reasonable approach to JavaScript</p>
+
         <ul>
-          <li><a href="https://github.com/mitsuruog/javacript-style-guide/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mitsuruog/javacript-style-guide/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mitsuruog/javacript-style-guide">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mitsuruog/javacript-style-guide/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mitsuruog/javacript-style-guide/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mitsuruog/javacript-style-guide">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mitsuruog">mitsuruog</a></p>
+
+
       </header>
       <section>
         <p><a href="https://github.com/airbnb/javascript">元文書:https://github.com/airbnb/javascript</a></p>
@@ -35,7 +38,7 @@
 <p><em>常に気をつけたい、JavaScriptへの正しい接し方</em></p>
 
 <h2>
-<a name="%E7%9B%AE%E6%AC%A1" class="anchor" href="#%E7%9B%AE%E6%AC%A1"><span class="octicon octicon-link"></span></a><a name="TOC"></a><a name="TOC">目次</a>
+<a name="%E7%9B%AE%E6%AC%A1" class="anchor" href="#%E7%9B%AE%E6%AC%A1"><span class="octicon octicon-link"></span></a><a name="TOC">目次</a>
 </h2>
 
 <ol>
@@ -60,7 +63,7 @@
 <li><a href="#events">イベント</a></li>
 <li><a href="#modules">モジュール</a></li>
 <li><a href="#jquery">jQuery</a></li>
-<li><a href="#es5">ES5 互換性</a></li>
+<li><a href="#es5">ECMAScript 5 互換性</a></li>
 <li><a href="#testing">テスト</a></li>
 <li><a href="#performance">パフォーマンスについての参考資料</a></li>
 <li><a href="#resources">情報源</a></li>
@@ -71,7 +74,8 @@
 <li><a href="#contributors">貢献者</a></li>
 <li><a href="#license">ライセンス</a></li>
 </ol><h2>
-<a name="%E5%9E%8B-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%9E%8B-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="types">型</a> <a href="https://github.com/airbnb/javascript#types">原文</a>
+<a name="%E5%9E%8B-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%9E%8B-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="types">型</a> <a href="https://github.com/airbnb/javascript#types">原文</a>
 </h2>
 
 <ul>
@@ -109,10 +113,11 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">bar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// =&gt; 9, 9</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="objects">オブジェクト</a> <a href="https://github.com/airbnb/javascript#objects">原文</a>
+<a name="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="objects">オブジェクト</a> <a href="https://github.com/airbnb/javascript#objects">原文</a>
 </h2>
 
 <ul>
@@ -162,10 +167,11 @@
 
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E9%85%8D%E5%88%97-%E5%8E%9F%E6%96%87" class="anchor" href="#%E9%85%8D%E5%88%97-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="arrays">配列</a> <a href="https://github.com/airbnb/javascript#arrays">原文</a>
+<a name="%E9%85%8D%E5%88%97-%E5%8E%9F%E6%96%87" class="anchor" href="#%E9%85%8D%E5%88%97-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="arrays">配列</a> <a href="https://github.com/airbnb/javascript#arrays">原文</a>
 </h2>
 
 <ul>
@@ -216,10 +222,11 @@
 <span class="p">}</span>
 </pre></div>
 </li>
-</ul><p><strong><a href="#TOC">[⬆]</a></strong></p>
+</ul><p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 
 <h2>
-<a name="%E6%96%87%E5%AD%97%E5%88%97-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%96%87%E5%AD%97%E5%88%97-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="strings">文字列</a> <a href="https://github.com/airbnb/javascript#strings">原文</a>
+<a name="%E6%96%87%E5%AD%97%E5%88%97-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%96%87%E5%AD%97%E5%88%97-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="strings">文字列</a> <a href="https://github.com/airbnb/javascript#strings">原文</a>
 </h2>
 
 <ul>
@@ -247,20 +254,15 @@
 <span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.'</span><span class="p">;</span>
 
 <span class="c1">// bad</span>
-<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that \</span>
-<span class="s1">was thrown because of Batman. \</span>
-<span class="s1">When you stop to think about \</span>
-<span class="s1">how Batman had anything to do \</span>
+<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that was thrown because \</span>
+<span class="s1">of Batman. When you stop to think about how Batman had anything to do \</span>
 <span class="s1">with this, you would get nowhere \</span>
 <span class="s1">fast.'</span><span class="p">;</span>
 
 <span class="c1">// good</span>
-<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that '</span> <span class="o">+</span>
-  <span class="s1">'was thrown because of Batman.'</span> <span class="o">+</span>
-  <span class="s1">'When you stop to think about '</span> <span class="o">+</span>
-  <span class="s1">'how Batman had anything to do '</span> <span class="o">+</span>
-  <span class="s1">'with this, you would get nowhere '</span> <span class="o">+</span>
-  <span class="s1">'fast.'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">'This is a super long error that was thrown because '</span> <span class="o">+</span>
+  <span class="s1">'of Batman. When you stop to think about how Batman had anything to do '</span> <span class="o">+</span>
+  <span class="s1">'with this, you would get nowhere fast.'</span><span class="p">;</span>
 </pre></div>
 </li>
 <li>
@@ -268,34 +270,31 @@
 
 <div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">items</span><span class="p">,</span>
     <span class="nx">messages</span><span class="p">,</span>
-    <span class="nx">length</span><span class="p">,</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="nx">length</span><span class="p">,</span>
+    <span class="nx">i</span><span class="p">;</span>
 
 <span class="nx">messages</span> <span class="o">=</span> <span class="p">[{</span>
-    <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
-    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked.'</span>
-<span class="p">},{</span>
-    <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
-    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked as well.'</span>
-<span class="p">},{</span>
-    <span class="nx">state</span><span class="o">:</span> <span class="s1">'error'</span><span class="p">,</span>
-    <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one did not work.'</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked.'</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="s1">'success'</span><span class="p">,</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one worked as well.'</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="s1">'error'</span><span class="p">,</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="s1">'This one did not work.'</span>
 <span class="p">}];</span>
 
 <span class="nx">length</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 
 <span class="c1">// bad</span>
 <span class="kd">function</span> <span class="nx">inbox</span><span class="p">(</span><span class="nx">messages</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">items</span> <span class="o">=</span> <span class="s1">'</span>
-<span class="s1">'</span><span class="p">;</span>
+  <span class="nx">items</span> <span class="o">=</span> <span class="s1">'&lt;ul&gt;'</span><span class="p">;</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">items</span> <span class="o">+=</span> <span class="s1">'</span>
-<span class="s1">'</span> <span class="o">+</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">message</span> <span class="o">+</span> <span class="s1">'</span>
-<span class="s1">'</span><span class="p">;</span>
+    <span class="nx">items</span> <span class="o">+=</span> <span class="s1">'&lt;li&gt;'</span> <span class="o">+</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">message</span> <span class="o">+</span> <span class="s1">'&lt;/li&gt;'</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="nx">items</span> <span class="o">+</span> <span class="s1">'</span>
-<span class="s1">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">items</span> <span class="o">+</span> <span class="s1">'&lt;/ul&gt;'</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// good</span>
@@ -306,17 +305,15 @@
     <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">messages</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="s1">'</span>
-<span class="s1">'</span> <span class="o">+</span> <span class="nx">items</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'</span>
-<span class="s1">'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'</span>
-<span class="s1">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="s1">'&lt;ul&gt;&lt;li&gt;'</span> <span class="o">+</span> <span class="nx">items</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">'&lt;/li&gt;&lt;li&gt;'</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'&lt;/li&gt;&lt;/ul&gt;'</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E9%96%A2%E6%95%B0-%E5%8E%9F%E6%96%87" class="anchor" href="#%E9%96%A2%E6%95%B0-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="functions">関数</a> <a href="https://github.com/airbnb/javascript#functions">原文</a>
+<a name="%E9%96%A2%E6%95%B0-%E5%8E%9F%E6%96%87" class="anchor" href="#%E9%96%A2%E6%95%B0-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="functions">関数</a> <a href="https://github.com/airbnb/javascript#functions">原文</a>
 </h2>
 
 <ul>
@@ -351,8 +348,9 @@
 <span class="p">}</span>
 
 <span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">test</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">currentUser</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">test</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">test</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Yup.'</span><span class="p">);</span>
   <span class="p">};</span>
 <span class="p">}</span>
@@ -372,10 +370,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="properties">プロパティ</a> <a href="https://github.com/airbnb/javascript#properties">原文</a>
+<a name="%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="properties">プロパティ</a> <a href="https://github.com/airbnb/javascript#properties">原文</a>
 </h2>
 
 <ul>
@@ -409,10 +408,11 @@
 <span class="kd">var</span> <span class="nx">isJedi</span> <span class="o">=</span> <span class="nx">getProp</span><span class="p">(</span><span class="s1">'jedi'</span><span class="p">);</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E5%A4%89%E6%95%B0-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%A4%89%E6%95%B0-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="variables">変数</a> <a href="https://github.com/airbnb/javascript#variables">原文</a>
+<a name="%E5%A4%89%E6%95%B0-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%A4%89%E6%95%B0-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="variables">変数</a> <a href="https://github.com/airbnb/javascript#variables">原文</a>
 </h2>
 
 <ul>
@@ -520,10 +520,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="hoisting">巻き上げ</a> <a href="https://github.com/airbnb/javascript#hoisting">原文</a>
+<a name="%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="hoisting">巻き上げ</a> <a href="https://github.com/airbnb/javascript#hoisting">原文</a>
 </h2>
 
 <ul>
@@ -581,15 +582,14 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Flying'</span><span class="p">);</span>
   <span class="p">};</span>
 
-  <span class="c1">// 関数名と変数名が同じ場合も同じことが起きます。</span>
-  <span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">named</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
+<span class="c1">// 関数名と変数名が同じ場合も同じことが起きます。</span>
+<span class="kd">function</span> <span class="nx">example</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">named</span><span class="p">);</span> <span class="c1">// =&gt; undefined</span>
 
-    <span class="nx">named</span><span class="p">();</span> <span class="c1">// =&gt; TypeError named is not a function</span>
+  <span class="nx">named</span><span class="p">();</span> <span class="c1">// =&gt; TypeError named is not a function</span>
 
-    <span class="kd">var</span> <span class="nx">named</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">named</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'named'</span><span class="p">);</span>
-    <span class="p">};</span>
+  <span class="kd">var</span> <span class="nx">named</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">named</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'named'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -609,17 +609,18 @@
 <li>
 <p>さらに詳細な情報を求める場合は<a href="http://www.adequatelygood.com/">Ben Cherry</a>による<a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping &amp; Hoisting</a>を参照してください。</p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="conditionals">条件式と等価式</a> <a href="https://github.com/airbnb/javascript#conditionals">原文</a>
+<a name="%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8F-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="conditionals">条件式と等価式</a> <a href="https://github.com/airbnb/javascript#conditionals">原文</a>
 </h2>
 
 <ul>
 <li>
 <code>==</code> や<code>!=</code>より <code>===</code> と <code>!==</code> を使用してください。 </li>
 <li>
-<p>条件式は <code>ToBoolean</code> メソッドにより厳密に比較されます。常にこのシンプルはルールに従ってください。</p>
+<p>条件式は <code>ToBoolean</code> メソッドによる強制型変換で評価され、常にこれらのシンプルなルールに従います。</p>
 
 <ul>
 <li>
@@ -668,10 +669,11 @@
 <li>
 <p>さらに詳細な情報を求める場合はAngus Crollによる <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108">Truth Equality and JavaScript</a>を参照してください。</p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="blocks">ブロック</a> <a href="https://github.com/airbnb/javascript#blocks">原文</a>
+<a name="%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="blocks">ブロック</a> <a href="https://github.com/airbnb/javascript#blocks">原文</a>
 </h2>
 
 <ul>
@@ -699,10 +701,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="comments">コメント</a> <a href="https://github.com/airbnb/javascript#comments">原文</a>
+<a name="%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="comments">コメント</a> <a href="https://github.com/airbnb/javascript#comments">原文</a>
 </h2>
 
 <ul>
@@ -792,10 +795,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E7%A9%BA%E7%99%BD-%E5%8E%9F%E6%96%87" class="anchor" href="#%E7%A9%BA%E7%99%BD-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="whitespace">空白</a> <a href="https://github.com/airbnb/javascript#whitespace">原文</a>
+<a name="%E7%A9%BA%E7%99%BD-%E5%8E%9F%E6%96%87" class="anchor" href="#%E7%A9%BA%E7%99%BD-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="whitespace">空白</a> <a href="https://github.com/airbnb/javascript#whitespace">原文</a>
 </h2>
 
 <ul>
@@ -843,6 +847,16 @@
   <span class="nx">breed</span><span class="o">:</span> <span class="s1">'Bernese Mountain Dog'</span>
 <span class="p">});</span>
 </pre></div>
+
+<ul>
+<li>演算子の間はスペースを入れてください。</li>
+</ul>
+<div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
+<span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="nx">y</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="c1">// good</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">5</span><span class="p">;</span>
+</pre></div>
 </li>
 <li>
 <p>ファイルの最後は空行を1つ入れてください。</p>
@@ -850,14 +864,14 @@
 <div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...stuff...</span>
-<span class="p">})(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">})(</span><span class="k">this</span><span class="p">);</span><span class="err">↵</span>
+<span class="err">↵</span>
 </pre></div>
 
 <div class="highlight highlight-javascript"><pre><span class="c1">// good</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...stuff...</span>
-<span class="p">})(</span><span class="k">this</span><span class="p">);</span>
-
+<span class="p">})(</span><span class="k">this</span><span class="p">);</span><span class="err">↵</span>
 </pre></div>
 </li>
 <li>
@@ -868,33 +882,34 @@
 
 <span class="c1">// good</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'#items'</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.selected'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">highlight</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
-<span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">updateCount</span><span class="p">();</span>
+  <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.selected'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">highlight</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">updateCount</span><span class="p">();</span>
 
 <span class="c1">// bad</span>
 <span class="kd">var</span> <span class="nx">leds</span> <span class="o">=</span> <span class="nx">stage</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.led'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">).</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:svg'</span><span class="p">).</span><span class="kr">class</span><span class="p">(</span><span class="s1">'led'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:g'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:g'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
 
 <span class="c1">// good</span>
 <span class="kd">var</span> <span class="nx">leds</span> <span class="o">=</span> <span class="nx">stage</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.led'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:svg'</span><span class="p">)</span>
-  <span class="p">.</span><span class="kr">class</span><span class="p">(</span><span class="s1">'led'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:g'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:svg'</span><span class="p">)</span>
+    <span class="p">.</span><span class="kr">class</span><span class="p">(</span><span class="s1">'led'</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span>  <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg:g'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">','</span> <span class="o">+</span> <span class="p">(</span><span class="nx">radius</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tron</span><span class="p">.</span><span class="nx">led</span><span class="p">);</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%82%AB%E3%83%B3%E3%83%9E-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%AB%E3%83%B3%E3%83%9E-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="commas">カンマ</a> <a href="https://github.com/airbnb/javascript#commas">原文</a>
+<a name="%E3%82%AB%E3%83%B3%E3%83%9E-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%AB%E3%83%B3%E3%83%9E-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="commas">カンマ</a> <a href="https://github.com/airbnb/javascript#commas">原文</a>
 </h2>
 
 <ul>
@@ -960,10 +975,11 @@
     <span class="p">];</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 
 <h2>
-<a name="%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="semicolons">セミコロン</a> <a href="https://github.com/airbnb/javascript#semicolons">原文</a>
+<a name="%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="semicolons">セミコロン</a> <a href="https://github.com/airbnb/javascript#semicolons">原文</a>
 </h2>
 
 <ul>
@@ -982,17 +998,20 @@
   <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">})();</span>
 
-<span class="c1">// good</span>
+<span class="c1">// good(即時関数を伴う2つのファイルを連結した場合に、引数となる部分を保護します。)</span>
 <span class="p">;(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'Skywalker'</span><span class="p">;</span>
   <span class="k">return</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">})();</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><a href="http://stackoverflow.com/a/7365214/1712802">詳細</a></p>
+
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="type-coercion">型変換と強制</a> <a href="https://github.com/airbnb/javascript#type-coercion">原文</a>
+<a name="%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="type-coercion">型変換と強制</a> <a href="https://github.com/airbnb/javascript#type-coercion">原文</a>
 </h2>
 
 <ul>
@@ -1016,7 +1035,7 @@
 </pre></div>
 </li>
 <li>
-<p>数値には<code>parseInt</code> を使用てください。常に型変換のための基数を引数に渡してください。</p>
+<p>数値には<code>parseInt</code> を使用してください。常に型変換のための基数を引数に渡してください。</p>
 
 <div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">inputValue</span> <span class="o">=</span> <span class="s1">'4'</span><span class="p">;</span>
 
@@ -1040,16 +1059,25 @@
 </pre></div>
 </li>
 <li>
-<p>何らかの理由により <code>parseInt</code> がボトルネックとなっており、<a href="http://jsperf.com/coercion-vs-casting/3">パフォーマンス的な理由</a>でビッシフトを使用す必要がある場合、
+<p>何らかの理由により <code>parseInt</code> がボトルネックとなっており、<a href="http://jsperf.com/coercion-vs-casting/3">パフォーマンス的な理由</a>でビットシフトを使用す必要がある場合、
 やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。</p>
 
-<div class="highlight highlight-javascript"><pre><span class="c1">// good</span>
-<span class="cm">/**</span>
-<span class="cm"> * parseIntがボトルネックとなっていたため、</span>
-<span class="cm"> * ビットシフトで文字列を数値へ強制的に変換することで</span>
-<span class="cm"> * パフォーマンスを改善させます。</span>
-<span class="cm"> */</span>
-<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">inputValue</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight highlight-javascript"><pre>  <span class="c1">// good</span>
+  <span class="cm">/**</span>
+<span class="cm">   * parseIntがボトルネックとなっていたため、</span>
+<span class="cm">   * ビットシフトで文字列を数値へ強制的に変換することで</span>
+<span class="cm">   * パフォーマンスを改善させます。</span>
+<span class="cm">   */</span>
+  <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">inputValue</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</li>
+<li>
+<p><strong>注意:</strong> ビットシフトを使用する場合の注意事項。数値は<a href="http://es5.github.io/#x4.3.19">64ビット倍精度</a>として表現されていますが、ビットシフト演算した場合は常に32ビット単精度で返されます(<a href="http://es5.github.io/#x11.7">エビデンス</a>)。
+32ビット以上の数値をビットシフトする場合、予期せぬ振る舞いを起こす可能性があります(<a href="https://github.com/airbnb/javascript/issues/109">議論</a>)。符号付き32ビット整数の最大値は2,147,483,647です。</p>
+
+<div class="highlight highlight-javascript"><pre>  <span class="mi">2147483647</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">//=&gt; 2147483647</span>
+  <span class="mi">2147483648</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">//=&gt; -2147483648</span>
+  <span class="mi">2147483649</span> <span class="o">&gt;&gt;</span> <span class="mi">0</span> <span class="c1">//=&gt; -2147483647</span>
 </pre></div>
 </li>
 <li>
@@ -1067,10 +1095,11 @@
 <span class="kd">var</span> <span class="nx">hasAge</span> <span class="o">=</span> <span class="o">!!</span><span class="nx">age</span><span class="p">;</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="naming-conventions">命名規則</a> <a href="https://github.com/airbnb/javascript#naming-conventions">原文</a>
+<a name="%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="naming-conventions">命名規則</a> <a href="https://github.com/airbnb/javascript#naming-conventions">原文</a>
 </h2>
 
 <ul>
@@ -1094,15 +1123,14 @@
 <div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
 <span class="kd">var</span> <span class="nx">OBJEcttsssss</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="kd">var</span> <span class="nx">this_is_my_object</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="kd">var</span> <span class="k">this</span><span class="o">-</span><span class="nx">is</span><span class="o">-</span><span class="nx">my</span><span class="o">-</span><span class="nx">object</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{}</span>
 <span class="kd">var</span> <span class="nx">u</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">user</span><span class="p">({</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s1">'Bob Parr'</span>
 <span class="p">});</span>
 
 <span class="c1">// good</span>
 <span class="kd">var</span> <span class="nx">thisIsMyObject</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="kd">function</span> <span class="nx">thisIsMyFunction</span><span class="p">()</span> <span class="p">{};</span>
+<span class="kd">function</span> <span class="nx">thisIsMyFunction</span><span class="p">()</span> <span class="p">{}</span>
 <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">({</span>
   <span class="nx">name</span><span class="o">:</span> <span class="s1">'Bob Parr'</span>
 <span class="p">});</span>
@@ -1183,10 +1211,15 @@
 <span class="p">};</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<ul>
+<li>
+<strong>注意:</strong> IE8とそれ以下のものには、名前付き関数に関するいくつかの癖を持っています。さらに詳細な情報を求める場合は<a href="http://kangax.github.io/nfe/">http://kangax.github.io/nfe/</a>を参照してください。</li>
+</ul>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5accessors-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5accessors-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="accessors">アクセサ（Accessors）</a> <a href="https://github.com/airbnb/javascript#accessors">原文</a>
+<a name="%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5accessors-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5accessors-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="accessors">アクセサ（Accessors）</a> <a href="https://github.com/airbnb/javascript#accessors">原文</a>
 </h2>
 
 <ul>
@@ -1239,10 +1272,11 @@
 <span class="p">};</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="constructors">コンストラクタ</a> <a href="https://github.com/airbnb/javascript#constructors">原文</a>
+<a name="%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BF-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="constructors">コンストラクタ</a> <a href="https://github.com/airbnb/javascript#constructors">原文</a>
 </h2>
 
 <ul>
@@ -1325,7 +1359,7 @@
 <span class="p">};</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
 <a name="%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88" class="anchor" href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88"><span class="octicon octicon-link"></span></a><a name="events">イベント</a>
@@ -1346,7 +1380,7 @@
 <span class="p">});</span>
 </pre></div>
 
-<p>こちら方が好まれます。:</p>
+<p>こちらの方が好まれます。:</p>
 
 <div class="highlight highlight-js"><pre><span class="c1">// good</span>
 <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">'listingUpdated'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">listingId</span> <span class="o">:</span> <span class="nx">listing</span><span class="p">.</span><span class="nx">id</span> <span class="p">});</span>
@@ -1358,16 +1392,19 @@
 <span class="p">});</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="modules">モジュール</a> <a href="https://github.com/airbnb/javascript#modules">原文</a>
+<a name="%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="modules">モジュール</a> <a href="https://github.com/airbnb/javascript#modules">原文</a>
 </h2>
 
 <ul>
-<li>モジュールは <code>!</code> で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。</li>
+<li>モジュールは <code>!</code> で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。<a href="https://github.com/airbnb/javascript/issues/44#issuecomment-13063933">説明</a>
+</li>
 <li>ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。</li>
-<li>noConflict()という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。</li>
+<li>
+<code>noConflict()</code> という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。</li>
 <li>
 <p>常にモジュールの先頭で<code>'use strict';</code> を宣言してください。</p>
 
@@ -1391,10 +1428,11 @@
 <span class="p">}(</span><span class="k">this</span><span class="p">);</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="jquery-%E5%8E%9F%E6%96%87" class="anchor" href="#jquery-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="jquery">jQuery</a> <a href="https://github.com/airbnb/javascript#jquery">原文</a>
+<a name="jquery-%E5%8E%9F%E6%96%87" class="anchor" href="#jquery-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="jquery">jQuery</a> <a href="https://github.com/airbnb/javascript#jquery">原文</a>
 </h2>
 
 <ul>
@@ -1440,7 +1478,7 @@
 <p>jQueryオブジェクトの検索には、スコープ付きの <code>find</code> を使用してください。</p>
 
 <div class="highlight highlight-javascript"><pre><span class="c1">// bad</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">,</span> <span class="s1">'ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">,</span> <span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 
 <span class="c1">// bad</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
@@ -1451,27 +1489,26 @@
 <span class="c1">// good</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'.sidebar &gt; ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 
-<span class="c1">// good (slower)</span>
-<span class="nx">$sidebar</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">);</span>
-
-<span class="c1">// good (faster)</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">$sidebar</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">);</span>
+<span class="c1">// good</span>
+<span class="nx">$sidebar</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7-%E5%8E%9F%E6%96%87" class="anchor" href="#ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="es5">ECMAScript 5 互換性</a> <a href="https://github.com/airbnb/javascript#es5">原文</a>
+<a name="ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7-%E5%8E%9F%E6%96%87" class="anchor" href="#ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="es5">ECMAScript 5 互換性</a> <a href="https://github.com/airbnb/javascript#es5">原文</a>
 </h2>
 
 <ul>
 <li>
 <p><a href="https://twitter.com/kangax/">Kangax</a>の ES5 <a href="http://kangax.github.com/es5-compat-table/">互換表</a>を参照してください。</p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%83%86%E3%82%B9%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%86%E3%82%B9%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="testing">テスト</a> <a href="https://github.com/airbnb/javascript#testing">原文</a>
+<a name="%E3%83%86%E3%82%B9%E3%83%88-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%86%E3%82%B9%E3%83%88-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="testing">テスト</a> <a href="https://github.com/airbnb/javascript#testing">原文</a>
 </h2>
 
 <ul>
@@ -1483,10 +1520,11 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="performance">パフォーマンスについての参考資料</a> <a href="https://github.com/airbnb/javascript#performance">原文</a>
+<a name="%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="performance">パフォーマンスについての参考資料</a> <a href="https://github.com/airbnb/javascript#performance">原文</a>
 </h2>
 
 <ul>
@@ -1499,10 +1537,11 @@
 <li>
 <p>Loading...</p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E6%83%85%E5%A0%B1%E6%BA%90-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%83%85%E5%A0%B1%E6%BA%90-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="resources">情報源</a> <a href="https://github.com/airbnb/javascript#resources">原文</a>
+<a name="%E6%83%85%E5%A0%B1%E6%BA%90-%E5%8E%9F%E6%96%87" class="anchor" href="#%E6%83%85%E5%A0%B1%E6%BA%90-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="resources">情報源</a> <a href="https://github.com/airbnb/javascript#resources">原文</a>
 </h2>
 
 <p><strong>まず、これを読んでください。</strong></p>
@@ -1521,11 +1560,18 @@
 <li>
 <a href="https://gist.github.com/4135065">Naming this in nested functions</a> - Christian Johansen</li>
 <li><a href="https://github.com/airbnb/javascript/issues/52">Conditional Callbacks</a></li>
+<li><a href="http://sideeffect.kr/popularconvention/#javascript">Popular JavaScript Coding Conventions on Github</a></li>
 </ul><p><strong>参考文献</strong></p>
 
 <ul>
 <li>
 <a href="http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/">Understanding JavaScript Closures</a> - Angus Croll</li>
+<li>
+<a href="http://www.2ality.com/2013/06/basic-javascript.html">Basic JavaScript for the impatient programmer</a> - Dr. Axel Rauschmayer</li>
+<li>
+<a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a> - Zack Bloom &amp; Adam Schwartz</li>
+<li>
+<a href="https://github.com/lukehoban/es6features">ES6 Features</a> - Luke Hoban</li>
 </ul><p><strong>参考図書</strong></p>
 
 <ul>
@@ -1545,6 +1591,15 @@
 <a href="http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273">Pro JavaScript Techniques</a> - John Resig</li>
 <li>
 <a href="http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595">Smashing Node.js: JavaScript Everywhere</a> - Guillermo Rauch</li>
+<li>
+<a href="http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X">Secrets of the JavaScript Ninja</a> - John Resig and Bear Bibeault</li>
+<li>
+<a href="http://humanjavascript.com/">Human JavaScript</a> - Henrik Joreteg</li>
+<li>
+<a href="http://superherojs.com/">Superhero.js</a> - Kim Joar Bekkelund, Mads Mobæk, &amp; Olav Bjorkoy</li>
+<li><a href="http://jsbooks.revolunet.com/">JSBooks</a></li>
+<li>
+<a href="http://manning.com/vinegar/">Third Party JavaScript</a> - Ben Vinegar and Anton Kovalyov</li>
 </ul><p><strong>Blogs</strong></p>
 
 <ul>
@@ -1561,10 +1616,11 @@
 <li>
 <p><a href="http://net.tutsplus.com/?s=javascript">nettuts</a></p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 </li>
 </ul><h2>
-<a name="%E5%85%B1%E9%B3%B4%E8%80%85-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%85%B1%E9%B3%B4%E8%80%85-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="in-the-wild">共鳴者</a> <a href="https://github.com/airbnb/javascript#in-the-wild">原文</a>
+<a name="%E5%85%B1%E9%B3%B4%E8%80%85-%E5%8E%9F%E6%96%87" class="anchor" href="#%E5%85%B1%E9%B3%B4%E8%80%85-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="in-the-wild">共鳴者</a> <a href="https://github.com/airbnb/javascript#in-the-wild">原文</a>
 </h2>
 
 <p><em>訳注: 原文は「in the wild:感染者」となっている。</em></p>
@@ -1572,6 +1628,9 @@
 <p>これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。</p>
 
 <ul>
+<li>
+<strong>Aan Zee</strong>: <a href="https://github.com/AanZee/javascript">AanZee/javascript</a>
+</li>
 <li>
 <strong>Airbnb</strong>: <a href="https://github.com/airbnb/javascript">airbnb/javascript</a>
 </li>
@@ -1582,7 +1641,16 @@
 <strong>Compass Learning</strong>: <a href="https://github.com/compasslearning/javascript-style-guide">compasslearning/javascript-style-guide</a>
 </li>
 <li>
+<strong>DailyMotion</strong>: <a href="https://github.com/dailymotion/javascript">dailymotion/javascript</a>
+</li>
+<li>
+<strong>Digitpaint</strong> <a href="https://github.com/digitpaint/javascript">digitpaint/javascript</a>
+</li>
+<li>
 <strong>ExactTarget</strong>: <a href="https://github.com/ExactTarget/javascript">ExactTarget/javascript</a>
+</li>
+<li>
+<strong>Gawker Media</strong>: <a href="https://github.com/gawkermedia/javascript">gawkermedia/javascript</a>
 </li>
 <li>
 <strong>GeneralElectric</strong>: <a href="https://github.com/GeneralElectric/javascript">GeneralElectric/javascript</a>
@@ -1591,28 +1659,61 @@
 <strong>GoodData</strong>: <a href="https://github.com/gooddata/gdc-js-style">gooddata/gdc-js-style</a>
 </li>
 <li>
+<strong>Grooveshark</strong>: <a href="https://github.com/grooveshark/javascript">grooveshark/javascript</a>
+</li>
+<li>
 <strong>How About We</strong>: <a href="https://github.com/howaboutwe/javascript">howaboutwe/javascript</a>
+</li>
+<li>
+<strong>Intent Media</strong>: <a href="https://github.com/intentmedia/javascript">intentmedia/javascript</a>
+</li>
+<li>
+<strong>Mighty Spring</strong>: <a href="https://github.com/mightyspring/javascript">mightyspring/javascript</a>
 </li>
 <li>
 <strong>MinnPost</strong>: <a href="https://github.com/MinnPost/javascript">MinnPost/javascript</a>
 </li>
 <li>
 <strong>ModCloth</strong>: <a href="https://github.com/modcloth/javascript">modcloth/javascript</a>
-
-<ul>
+</li>
+<li>
+<strong>Money Advice Service</strong>: <a href="https://github.com/moneyadviceservice/javascript">moneyadviceservice/javascript</a>
+</li>
+<li>
+<strong>Muber</strong>: <a href="https://github.com/muber/javascript">muber/javascript</a>
+</li>
 <li>
 <strong>National Geographic</strong>: <a href="https://github.com/natgeo/javascript">natgeo/javascript</a>
 </li>
 <li>
 <strong>National Park Service</strong>: <a href="https://github.com/nationalparkservice/javascript">nationalparkservice/javascript</a>
 </li>
-</ul>
+<li>
+<strong>Orion Health</strong>: <a href="https://github.com/orionhealth/javascript">orionhealth/javascript</a>
+</li>
+<li>
+<strong>Peerby</strong>: <a href="https://github.com/Peerby/javascript">Peerby/javascript</a>
 </li>
 <li>
 <strong>Razorfish</strong>: <a href="https://github.com/razorfish/javascript-style-guide">razorfish/javascript-style-guide</a>
 </li>
 <li>
+<strong>reddit</strong>: <a href="https://github.com/reddit/styleguide/tree/master/javascript">reddit/styleguide/javascript</a>
+</li>
+<li>
+<strong>REI</strong>: <a href="https://github.com/reidev/js-style-guide">reidev/js-style-guide</a>
+</li>
+<li>
+<strong>Ripple</strong>: <a href="https://github.com/ripple/javascript-style-guide">ripple/javascript-style-guide</a>
+</li>
+<li>
+<strong>SeekingAlpha</strong>: <a href="https://github.com/seekingalpha/javascript-style-guide">seekingalpha/javascript-style-guide</a>
+</li>
+<li>
 <strong>Shutterfly</strong>: <a href="https://github.com/shutterfly/javascript">shutterfly/javascript</a>
+</li>
+<li>
+<strong>TheLadders</strong>: <a href="https://github.com/TheLadders/javascript">TheLadders/javascript</a><br>
 </li>
 <li>
 <strong>Userify</strong>: <a href="https://github.com/userify/javascript">userify/javascript</a>
@@ -1624,42 +1725,61 @@
 <strong>ZocDoc</strong>: <a href="https://github.com/ZocDoc/javascript">ZocDoc/javascript</a>
 </li>
 </ul><h2>
-<a name="%E7%BF%BB%E8%A8%B3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E7%BF%BB%E8%A8%B3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="translation">翻訳</a> <a href="https://github.com/airbnb/javascript#translation">原文</a>
+<a name="%E7%BF%BB%E8%A8%B3-%E5%8E%9F%E6%96%87" class="anchor" href="#%E7%BF%BB%E8%A8%B3-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="translation">翻訳</a> <a href="https://github.com/airbnb/javascript#translation">原文</a>
 </h2>
 
 <p>このスタイルガイドは他の言語でも利用できます。</p>
 
 <ul>
 <li>
-<img class="emoji" title=":de:" alt=":de:" src="https://github.global.ssl.fastly.net/images/icons/emoji/de.png" height="20" width="20" align="absmiddle"><strong>ドイツ語</strong>: <a href="https://github.com/timofurrer/javascript-style-guide">timofurrer/javascript-style-guide</a>
+<img class="emoji" title=":de:" alt=":de:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1e9-1f1ea.png" height="20" width="20" align="absmiddle"><strong>ドイツ語</strong>: <a href="https://github.com/timofurrer/javascript-style-guide">timofurrer/javascript-style-guide</a>
 </li>
 <li>
-<img class="emoji" title=":jp:" alt=":jp:" src="https://github.global.ssl.fastly.net/images/icons/emoji/jp.png" height="20" width="20" align="absmiddle"><strong>日本語</strong>: <a href="https://github.com/mitsuruog/javacript-style-guide">mitsuruog/javacript-style-guide</a>
+<img class="emoji" title=":jp:" alt=":jp:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1ef-1f1f5.png" height="20" width="20" align="absmiddle"><strong>日本語</strong>: <a href="https://github.com/mitsuruog/javacript-style-guide">mitsuruog/javacript-style-guide</a>
 </li>
 <li>:br: <strong>ポルトガル語</strong>: <a href="https://github.com/armoucar/javascript-style-guide">armoucar/javascript-style-guide</a>
 </li>
 <li>
-<img class="emoji" title=":cn:" alt=":cn:" src="https://github.global.ssl.fastly.net/images/icons/emoji/cn.png" height="20" width="20" align="absmiddle"><strong>中国語</strong>: <a href="https://github.com/adamlu/javascript-style-guide">adamlu/javascript-style-guide</a>
+<img class="emoji" title=":cn:" alt=":cn:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1e8-1f1f3.png" height="20" width="20" align="absmiddle"><strong>中国語</strong>: <a href="https://github.com/adamlu/javascript-style-guide">adamlu/javascript-style-guide</a>
+</li>
+<li>
+<img class="emoji" title=":es:" alt=":es:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1ea-1f1f8.png" height="20" width="20" align="absmiddle"><strong>スペイン語</strong>: <a href="https://github.com/paolocarrasco/javascript-style-guide">paolocarrasco/javascript-style-guide</a>
+</li>
+<li>
+<img class="emoji" title=":kr:" alt=":kr:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1f0-1f1f7.png" height="20" width="20" align="absmiddle"><strong>韓国語</strong>: <a href="https://github.com/tipjs/javascript-style-guide">tipjs/javascript-style-guide</a>
+</li>
+<li>
+<img class="emoji" title=":fr:" alt=":fr:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1eb-1f1f7.png" height="20" width="20" align="absmiddle"><strong>フランス語</strong>: <a href="https://github.com/nmussy/javascript-style-guide">nmussy/javascript-style-guide</a>
+</li>
+<li>
+<img class="emoji" title=":ru:" alt=":ru:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f1f7-1f1fa.png" height="20" width="20" align="absmiddle"><strong>ロシア語</strong>: <a href="https://github.com/uprock/javascript">uprock/javascript</a>
+</li>
+<li>:bg: <strong>ブルガリア語</strong>: <a href="https://github.com/borislavvv/javascript">borislavvv/javascript</a>
 </li>
 </ul><h2>
-<a name="javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D-%E5%8E%9F%E6%96%87" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="guide-guide">JavaScriptスタイルガイドへの手引き</a> <a href="https://github.com/airbnb/javascript#guide-guide">原文</a>
+<a name="javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D-%E5%8E%9F%E6%96%87" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="guide-guide">JavaScriptスタイルガイドへの手引き</a> <a href="https://github.com/airbnb/javascript#guide-guide">原文</a>
 </h2>
 
 <ul>
 <li><a href="https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D">こちらを参照</a></li>
 </ul><h2>
-<a name="%E8%B2%A2%E7%8C%AE%E8%80%85-%E5%8E%9F%E6%96%87" class="anchor" href="#%E8%B2%A2%E7%8C%AE%E8%80%85-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="contributors">貢献者</a> <a href="https://github.com/airbnb/javascript#contributors">原文</a>
+<a name="%E8%B2%A2%E7%8C%AE%E8%80%85-%E5%8E%9F%E6%96%87" class="anchor" href="#%E8%B2%A2%E7%8C%AE%E8%80%85-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="contributors">貢献者</a> <a href="https://github.com/airbnb/javascript#contributors">原文</a>
 </h2>
 
 <ul>
 <li><a href="https://github.com/airbnb/javascript/graphs/contributors">貢献者一覧</a></li>
 </ul><h2>
-<a name="%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a><a name="license">ライセンス</a> <a href="https://github.com/airbnb/javascript#license">原文</a>
+<a name="%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-%E5%8E%9F%E6%96%87" class="anchor" href="#%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-%E5%8E%9F%E6%96%87"><span class="octicon octicon-link"></span></a>
+<a name="license">ライセンス</a> <a href="https://github.com/airbnb/javascript#license">原文</a>
 </h2>
 
 <p>MITライセンス</p>
 
-<p>著作権(c)　2012 Airbnb</p>
+<p>著作権(c)　2014 Airbnb<br>
+翻訳　2014 mitusurog</p>
 
 <p>このソフトウェアおよび関連する文書ファイル（以下「本ソフトウェア」という。）の複製物を取得するあらゆる者に対し、
 以下の条件にしたがって本ソフトウェアを制限なしに扱うことを無償で許諾する。
@@ -1674,18 +1794,17 @@
 ソフトウェアまたはソフトウェアの使用もしくはその他の取り扱いから、またはそれらに関連して生じた、
 いかなるクレーム、損害賠償その他の責任を負わない。</p>
 
-<p><strong><a href="#TOC">[⬆]</a></strong></p>
+<p><strong><a href="#TOC">[⬆ ページのTopへ戻る]</a></strong></p>
 
 <h1>
 <a name="" class="anchor" href="#"><span class="octicon octicon-link"></span></a>};</h1>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/mitsuruog">mitsuruog</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
