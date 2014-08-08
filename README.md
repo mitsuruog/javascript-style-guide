@@ -4,7 +4,7 @@
 
 *常に気をつけたい、JavaScriptへの正しい接し方*
 
-## <a name='TOC'><a name='TOC'>目次</a>
+## <a name='TOC'>目次</a>
 
   1. [型](#types)
   1. [オブジェクト](#objects)
@@ -27,7 +27,7 @@
   1. [イベント](#events)
   1. [モジュール](#modules)
   1. [jQuery](#jquery)
-  1. [ES5 互換性](#es5)
+  1. [ECMAScript 5 互換性](#es5)
   1. [テスト](#testing)
   1. [パフォーマンスについての参考資料](#performance)
   1. [情報源](#resources)
@@ -70,7 +70,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='objects'>オブジェクト</a> [原文](https://github.com/airbnb/javascript#objects)
 
@@ -119,7 +119,7 @@
     };
 
     ```
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='arrays'>配列</a> [原文](https://github.com/airbnb/javascript#arrays)
 
@@ -171,7 +171,7 @@
     }
    ```
 
-**[[⬆]](#TOC)**
+**[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='strings'>文字列</a> [原文](https://github.com/airbnb/javascript#strings)
@@ -200,21 +200,15 @@
     var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
 
     // bad
-    var errorMessage = 'This is a super long error that \
-    was thrown because of Batman. \
-    When you stop to think about \
-    how Batman had anything to do \
+    var errorMessage = 'This is a super long error that was thrown because \
+    of Batman. When you stop to think about how Batman had anything to do \
     with this, you would get nowhere \
     fast.';
 
-
     // good
-    var errorMessage = 'This is a super long error that ' +
-      'was thrown because of Batman.' +
-      'When you stop to think about ' +
-      'how Batman had anything to do ' +
-      'with this, you would get nowhere ' +
-      'fast.';
+    var errorMessage = 'This is a super long error that was thrown because ' +
+      'of Batman. When you stop to think about how Batman had anything to do ' +
+      'with this, you would get nowhere fast.';
     ```
 
   - プログラムにて文字列を生成する必要がある場合は、（特にIEは）文字列連結の代わりにArray#joinを使用してください。参考（英語）→[jsPerf](http://jsperf.com/string-vs-array-concat/2).
@@ -222,34 +216,31 @@
     ```javascript
     var items,
         messages,
-        length, i;
+        length,
+        i;
 
     messages = [{
-        state: 'success',
-        message: 'This one worked.'
-    },{
-        state: 'success',
-        message: 'This one worked as well.'
-    },{
-        state: 'error',
-        message: 'This one did not work.'
+      state: 'success',
+      message: 'This one worked.'
+    }, {
+      state: 'success',
+      message: 'This one worked as well.'
+    }, {
+      state: 'error',
+      message: 'This one did not work.'
     }];
 
     length = messages.length;
 
     // bad
     function inbox(messages) {
-      items = '
-';
+      items = '<ul>';
 
       for (i = 0; i < length; i++) {
-        items += '
-' + messages[i].message + '
-';
+        items += '<li>' + messages[i].message + '</li>';
       }
 
-      return items + '
-';
+      return items + '</ul>';
     }
 
     // good
@@ -260,14 +251,11 @@
         items[i] = messages[i].message;
       }
 
-      return '
-' + items.join('
-') + '
-';
+      return '<ul><li>' + items.join('</li><li>') + '</li></ul>';
     }
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='functions'>関数</a> [原文](https://github.com/airbnb/javascript#functions)
@@ -303,8 +291,9 @@
     }
 
     // good
+    var test;
     if (currentUser) {
-      var test = function test() {
+      test = function test() {
         console.log('Yup.');
       };
     }
@@ -324,7 +313,7 @@
     }
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 
@@ -360,7 +349,7 @@
     var isJedi = getProp('jedi');
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='variables'>変数</a> [原文](https://github.com/airbnb/javascript#variables)
@@ -469,7 +458,7 @@
     }
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='hoisting'>巻き上げ</a> [原文](https://github.com/airbnb/javascript#hoisting)
@@ -529,15 +518,14 @@
       };
 
 
-      // 関数名と変数名が同じ場合も同じことが起きます。
-      function example() {
-        console.log(named); // => undefined
+    // 関数名と変数名が同じ場合も同じことが起きます。
+    function example() {
+      console.log(named); // => undefined
 
-        named(); // => TypeError named is not a function
+      named(); // => TypeError named is not a function
 
-        var named = function named() {
-          console.log('named');
-        };
+      var named = function named() {
+        console.log('named');
       }
     }
     ```
@@ -556,7 +544,7 @@
 
   - さらに詳細な情報を求める場合は[Ben Cherry](http://www.adequatelygood.com/)による[JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting)を参照してください。
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 
@@ -607,7 +595,7 @@
 
   - さらに詳細な情報を求める場合はAngus Crollによる [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108)を参照してください。
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='blocks'>ブロック</a> [原文](https://github.com/airbnb/javascript#blocks)
@@ -636,7 +624,7 @@
     }
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='comments'>コメント</a> [原文](https://github.com/airbnb/javascript#comments)
@@ -729,7 +717,7 @@
     }
   ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='whitespace'>空白</a> [原文](https://github.com/airbnb/javascript#whitespace)
@@ -777,21 +765,32 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
+
+    - 演算子の間はスペースを入れてください。
+
+    ```javascript
+    // bad
+    var x=y+5;
+
+    // good
+    var x = y + 5;
+    ```
+
   - ファイルの最後は空行を1つ入れてください。
 
     ```javascript
     // bad
     (function(global) {
       // ...stuff...
-    })(this);
+    })(this);↵
+    ↵
     ```
 
     ```javascript
     // good
     (function(global) {
       // ...stuff...
-    })(this);
-
+    })(this);↵
     ```
 
   - メソッドチェーンが長くなる場合は、適宜インデントしてください。
@@ -825,7 +824,7 @@
       .call(tron.led);
   ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='commas'>カンマ</a> [原文](https://github.com/airbnb/javascript#commas)
 
@@ -890,7 +889,7 @@
     ];
   ```
 
-  **[[⬆]](#TOC)**
+  **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='semicolons'>セミコロン</a> [原文](https://github.com/airbnb/javascript#semicolons)
@@ -910,14 +909,15 @@
       return name;
     })();
 
-    // good
+    // good(即時関数を伴う2つのファイルを連結した場合に、引数となる部分を保護します。)
     ;(function() {
       var name = 'Skywalker';
       return name;
     })();
     ```
+    [詳細](http://stackoverflow.com/a/7365214/1712802)
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='type-coercion'>型変換と強制</a> [原文](https://github.com/airbnb/javascript#type-coercion)
@@ -965,7 +965,7 @@
     var val = parseInt(inputValue, 10);
     ````
 
-  - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビッシフトを使用す必要がある場合、
+  - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビットシフトを使用す必要がある場合、
   やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。
 
     ```javascript
@@ -976,6 +976,15 @@
      * パフォーマンスを改善させます。
      */
     var val = inputValue >> 0;
+    ```
+
+  - **注意:** ビットシフトを使用する場合の注意事項。数値は[64ビット倍精度](http://es5.github.io/#x4.3.19)として表現されていますが、ビットシフト演算した場合は常に32ビット単精度で返されます([エビデンス](http://es5.github.io/#x11.7))。
+  32ビット以上の数値をビットシフトする場合、予期せぬ振る舞いを起こす可能性があります([議論](https://github.com/airbnb/javascript/issues/109))。符号付き32ビット整数の最大値は2,147,483,647です。
+
+    ```javascript
+    2147483647 >> 0 //=> 2147483647
+    2147483648 >> 0 //=> -2147483648
+    2147483649 >> 0 //=> -2147483647
     ```
 
   - 真偽値
@@ -993,7 +1002,7 @@
     var hasAge = !!age;
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='naming-conventions'>命名規則</a> [原文](https://github.com/airbnb/javascript#naming-conventions)
@@ -1018,15 +1027,14 @@
     // bad
     var OBJEcttsssss = {};
     var this_is_my_object = {};
-    var this-is-my-object = {};
-    function c() {};
+    function c() {}
     var u = new user({
       name: 'Bob Parr'
     });
 
     // good
     var thisIsMyObject = {};
-    function thisIsMyFunction() {};
+    function thisIsMyFunction() {}
     var user = new User({
       name: 'Bob Parr'
     });
@@ -1107,7 +1115,10 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+    - **注意:** IE8とそれ以下のものには、名前付き関数に関するいくつかの癖を持っています。さらに詳細な情報を求める場合は[http://kangax.github.io/nfe/](http://kangax.github.io/nfe/)を参照してください。
+
+ 
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='accessors'>アクセサ（Accessors）</a> [原文](https://github.com/airbnb/javascript#accessors)
@@ -1161,7 +1172,7 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='constructors'>コンストラクタ</a> [原文](https://github.com/airbnb/javascript#constructors)
@@ -1247,7 +1258,7 @@
     };
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='events'>イベント</a>
 
@@ -1278,13 +1289,13 @@
     });
     ```
 
-  **[[⬆]](#TOC)**
+  **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='modules'>モジュール</a> [原文](https://github.com/airbnb/javascript#modules)
 
-  - モジュールは `!` で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。
+  - モジュールは `!` で始めてください。これは、文末のセミコロンを付け忘れたモジュールを連結した場合、実行時にエラーが発生しないためです。[説明](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
   - ファイル名はキャメルケースを使用し、同じ名称のフォルダに格納してください。また、単独で公開する場合は、名前を一致させてください。
-  - noConflict()という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。
+  - `noConflict()` という名称で、(名前衝突して上書きされる前の)モジュールを返すメソッドを追加してください。
   - 常にモジュールの先頭で`'use strict';` を宣言してください。
 
     ```javascript
@@ -1308,7 +1319,7 @@
     }(this);
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='jquery'>jQuery</a> [原文](https://github.com/airbnb/javascript#jquery)
@@ -1356,7 +1367,7 @@
 
     ```javascript
     // bad
-    $('.sidebar', 'ul').hide();
+    $('ul', '.sidebar').hide();
 
     // bad
     $('.sidebar').find('ul').hide();
@@ -1367,21 +1378,18 @@
     // good
     $('.sidebar > ul').hide();
 
-    // good (slower)
-    $sidebar.find('ul');
-
-    // good (faster)
-    $($sidebar[0]).find('ul');
+    // good
+    $sidebar.find('ul').hide();
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='es5'>ECMAScript 5 互換性</a> [原文](https://github.com/airbnb/javascript#es5)
 
   - [Kangax](https://twitter.com/kangax/)の ES5 [互換表](http://kangax.github.com/es5-compat-table/)を参照してください。
 
-  **[[⬆]](#TOC)**
+  **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='testing'>テスト</a> [原文](https://github.com/airbnb/javascript#testing)
@@ -1394,7 +1402,7 @@
     }
     ```
 
-    **[[⬆]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='performance'>パフォーマンスについての参考資料</a> [原文](https://github.com/airbnb/javascript#performance)
@@ -1407,7 +1415,7 @@
   - [Long String Concatenation](http://jsperf.com/ya-string-concat)
   - Loading...
 
-  **[[⬆]](#TOC)**
+  **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='resources'>情報源</a> [原文](https://github.com/airbnb/javascript#resources)
@@ -1427,10 +1435,14 @@
 
   - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
+  - [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript)
 
 **参考文献**
 
   - [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
+  - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
+  - [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Zack Bloom & Adam Schwartz
+  - [ES6 Features](https://github.com/lukehoban/es6features) - Luke Hoban
 
 **参考図書**
 
@@ -1442,6 +1454,11 @@
   - [JavaScript Web Applications](http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
   - [Pro JavaScript Techniques](http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
   - [Smashing Node.js: JavaScript Everywhere](http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
+  - [Secrets of the JavaScript Ninja](http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
+  - [Human JavaScript](http://humanjavascript.com/) - Henrik Joreteg
+  - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
+  - [JSBooks](http://jsbooks.revolunet.com/)
+  - [Third Party JavaScript](http://manning.com/vinegar/) - Ben Vinegar and Anton Kovalyov
 
 **Blogs**
 
@@ -1457,7 +1474,7 @@
   - [Dustin Diaz](http://dustindiaz.com/)
   - [nettuts](http://net.tutsplus.com/?s=javascript)
 
-  **[[⬆]](#TOC)**
+  **[[⬆ ページのTopへ戻る]](#TOC)**
 
 ## <a name='in-the-wild'>共鳴者</a> [原文](https://github.com/airbnb/javascript#in-the-wild)
 
@@ -1465,19 +1482,35 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
   これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。
 
+  - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
   - **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
   - **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
+  - **DailyMotion**: [dailymotion/javascript](https://github.com/dailymotion/javascript)
+  - **Digitpaint** [digitpaint/javascript](https://github.com/digitpaint/javascript)
   - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
+  - **Gawker Media**: [gawkermedia/javascript](https://github.com/gawkermedia/javascript)
   - **GeneralElectric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
   - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
+  - **Grooveshark**: [grooveshark/javascript](https://github.com/grooveshark/javascript)
   - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript)
+  - **Intent Media**: [intentmedia/javascript](https://github.com/intentmedia/javascript)
+  - **Mighty Spring**: [mightyspring/javascript](https://github.com/mightyspring/javascript)
   - **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
   - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
-   - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
-   - **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
+  - **Money Advice Service**: [moneyadviceservice/javascript](https://github.com/moneyadviceservice/javascript)
+  - **Muber**: [muber/javascript](https://github.com/muber/javascript)
+  - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
+  - **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
+  - **Orion Health**: [orionhealth/javascript](https://github.com/orionhealth/javascript)
+  - **Peerby**: [Peerby/javascript](https://github.com/Peerby/javascript)
   - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
+  - **reddit**: [reddit/styleguide/javascript](https://github.com/reddit/styleguide/tree/master/javascript)
+  - **REI**: [reidev/js-style-guide](https://github.com/reidev/js-style-guide)
+  - **Ripple**: [ripple/javascript-style-guide](https://github.com/ripple/javascript-style-guide)
+  - **SeekingAlpha**: [seekingalpha/javascript-style-guide](https://github.com/seekingalpha/javascript-style-guide)
   - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
+  - **TheLadders**: [TheLadders/javascript](https://github.com/TheLadders/javascript)  
   - **Userify**: [userify/javascript](https://github.com/userify/javascript)
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
@@ -1486,11 +1519,15 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
   このスタイルガイドは他の言語でも利用できます。
  
- - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
- - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
- - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
- - :cn: **中国語**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
-
+  - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
+  - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
+  - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
+  - :cn: **中国語**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
+  - :es: **スペイン語**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
+  - :kr: **韓国語**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
+  - :fr: **フランス語**: [nmussy/javascript-style-guide](https://github.com/nmussy/javascript-style-guide)
+  - :ru: **ロシア語**: [uprock/javascript](https://github.com/uprock/javascript)
+  - :bg: **ブルガリア語**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
 
 ## <a name='guide-guide'>JavaScriptスタイルガイドへの手引き</a> [原文](https://github.com/airbnb/javascript#guide-guide)
 
@@ -1504,7 +1541,8 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
 MITライセンス
  
-著作権(c)　2012 Airbnb
+著作権(c)　2014 Airbnb  
+翻訳　2014 mitusurog
 
 このソフトウェアおよび関連する文書ファイル（以下「本ソフトウェア」という。）の複製物を取得するあらゆる者に対し、
 以下の条件にしたがって本ソフトウェアを制限なしに扱うことを無償で許諾する。
@@ -1519,6 +1557,6 @@ MITライセンス
 ソフトウェアまたはソフトウェアの使用もしくはその他の取り扱いから、またはそれらに関連して生じた、
 いかなるクレーム、損害賠償その他の責任を負わない。
 
-**[[⬆]](#TOC)**
+**[[⬆ ページのTopへ戻る]](#TOC)**
 
 # };
