@@ -32,7 +32,7 @@
   1. [パフォーマンスについての参考資料](#performance)
   1. [情報源](#resources)
   1. [共鳴者](#in-the-wild)
-  1. [翻訳](#translation) 
+  1. [翻訳](#translation)
   1. [JavaScriptスタイルガイドへの手引き](#guide-guide)
   1. [貢献者](#contributors)
   1. [ライセンス](#license)
@@ -99,7 +99,7 @@
       hidden: true
     };
     ````
-    
+
   - 予約語の代わりに分かりやすい同義語を使用してください。
 
     ```javascript
@@ -134,7 +134,7 @@
     ```
 
   - 長さが不明な場合はArray#pushを使用してください。
-  
+
     ```javascript
     var someStack = [];
 
@@ -163,7 +163,7 @@
     ```
 
   - Allay-LikeなオブジェクトをArrayに変換する場合は、Array#sliceを使用してください。
-  
+
     ```javascript
     function trigger() {
       var args = Array.prototype.slice.call(arguments);
@@ -396,7 +396,7 @@
     var items = getItems(),
         goSportsTeam = true,
         dragonball,
-        i, 
+        i,
         length;
     ```
 
@@ -550,7 +550,7 @@
 
 ## <a name='conditionals'>条件式と等価式</a> [原文](https://github.com/airbnb/javascript#conditionals)
 
-  - `==` や`!=`より `===` と `!==` を使用してください。 
+  - `==` や`!=`より `===` と `!==` を使用してください。
   - 条件式は `ToBoolean` メソッドによる強制型変換で評価され、常にこれらのシンプルなルールに従います。
 
 
@@ -949,7 +949,7 @@
     ```
 
   - 数値には`parseInt` を使用してください。常に型変換のための基数を引数に渡してください。
- 
+
     ```javascript
     var inputValue = '4';
 
@@ -1075,7 +1075,7 @@
     // bad
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
-    
+
     // good
     this._firstName = 'Panda';
     ```
@@ -1124,7 +1124,7 @@
 
     - **注意:** IE8とそれ以下のものには、名前付き関数に関するいくつかの癖を持っています。さらに詳細な情報を求める場合は[http://kangax.github.io/nfe/](http://kangax.github.io/nfe/)を参照してください。
 
- 
+
     **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
@@ -1154,7 +1154,7 @@
     if (!dragon.age()) {
       return false;
     }
-  
+
     // good
     if (!dragon.hasAge()) {
       return false;
@@ -1525,7 +1525,7 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 ## <a name='translation'>翻訳</a> [原文](https://github.com/airbnb/javascript#translation)
 
   このスタイルガイドは他の言語でも利用できます。
- 
+
   - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
   - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
@@ -1547,7 +1547,7 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 ## <a name='license'>ライセンス</a> [原文](https://github.com/airbnb/javascript#license)
 
 MITライセンス
- 
+
 著作権(c)　2014 Airbnb  
 翻訳　2014 mitsuruog
 
