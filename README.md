@@ -776,7 +776,14 @@
     var x = y + 5;
     ```
 
-  - ファイルの最後は空行を1つ入れてください。
+  - ファイルの最後は改行文字を1つ入れてください。
+
+  ```javascript
+    // bad
+    (function(global) {
+      // ...stuff...
+    })(this);
+    ```
 
     ```javascript
     // bad
