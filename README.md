@@ -766,7 +766,31 @@
     });
     ```
 
-    - 演算子の間はスペースを入れてください。
+  - 制御構文（if文やwhile文など）の丸括弧（()）の前にはスペースを1つ入れてください。関数宣言や関数呼び出し時の引数リストの前にはスペースは入れないでください。
+
+    ```javascript
+    // bad
+    if(isJedi) {
+      fight ();
+    }
+
+    // good
+    if (isJedi) {
+      fight();
+    }
+
+    // bad
+    function fight () {
+      console.log ('Swooosh!');
+    }
+
+    // good
+    function fight() {
+      console.log('Swooosh!');
+    }
+    ```
+
+  - 演算子の間はスペースを入れてください。
 
     ```javascript
     // bad
