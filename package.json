@@ -1,0 +1,27 @@
+{
+  "name": "javacript-style-guide",
+  "version": "1.0.0",
+  "description": "*A mostly reasonable approach to JavaScript*",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-markdown": "^1.2.0",
+    "gulp-util": "^3.0.7",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.1.5"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitsuruog/javacript-style-guide.git"
+  },
+  "author": "mitsuruog <mitsuru.ogawa.jp@gmail.com> (http://blog.mitsuruog.info/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mitsuruog/javacript-style-guide/issues"
+  },
+  "homepage": "https://github.com/mitsuruog/javacript-style-guide#readme"
+}
