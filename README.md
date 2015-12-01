@@ -1,59 +1,56 @@
-# Airbnb JavaScript Style Guide() {
+# Airbnb JavaScript スタイルガイド() {
 
-*A mostly reasonable approach to JavaScript*
+*常に気をつけたい、JavaScriptへの正しい接し方*
 
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-Other Style Guides
+他のスタイルガイドたち
  - [ES5](es5/)
  - [React](react/)
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
 
-## Table of Contents
+## 目次
 
-  1. [Types](#types)
-  1. [References](#references)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Destructuring](#destructuring)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
-  1. [Constructors](#constructors)
-  1. [Modules](#modules)
-  1. [Iterators and Generators](#iterators-and-generators)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Hoisting](#hoisting)
-  1. [Comparison Operators & Equality](#comparison-operators--equality)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Events](#events)
-  1. [jQuery](#jquery)
-  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
-  1. [ECMAScript 6 Styles](#ecmascript-6-styles)
-  1. [Testing](#testing)
-  1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
-  1. [Contributors](#contributors)
-  1. [License](#license)
+  1. [型(Types)](#types)
+  1. [参照(References)](#references)
+  1. [オブジェクト(Objects)](#objects)
+  1. [配列(Arrays)](#arrays)
+  1. [構造化代入(Destructuring)](#destructuring)
+  1. [文字列(Strings)](#strings)
+  1. [関数(Functions)](#functions)
+  1. [アロー関数(Arrow Functions)](#arrow-functions)
+  1. [コンストラクタ(Constructors)](#constructors)
+  1. [モジュール(Modules)](#modules)
+  1. [イテレータとジェネレータ(Iterators and Generators)](#iterators-and-generators)
+  1. [プロパティ(Properties)](#properties)
+  1. [変数(Variables)](#variables)
+  1. [巻き上げ(Hoisting)](#hoisting)
+  1. [条件式と等価式(Comparison Operators & Equality)](#comparison-operators--equality)
+  1. [ブロック(Blocks)](#blocks)
+  1. [コメント(Comments)](#comments)
+  1. [空白(Whitespace)](#whitespace)
+  1. [カンマ(Commas)](#commas)
+  1. [セミコロン(Semicolons)](#semicolons)
+  1. [型変換と強制(Type Casting & Coercion)](#type-casting--coercion)
+  1. [命名規則(Naming Conventions)](#naming-conventions)
+  1. [アクセッサ(Accessors)](#accessors)
+  1. [イベント(Events)](#events)
+  1. [jQuery(jQuery)](#jquery)
+  1. [ECMAScript 5 互換性(ECMAScript 5 Compatibility)](#ecmascript-5-compatibility)
+  1. [ECMAScript 6 スタイル(ECMAScript 6 Styles)](#ecmascript-6-styles)
+  1. [テスト(Testing)](#testing)
+  1. [パフォーマンス(Performance)](#performance)
+  1. [参考文献(Resources)](#resources)
+  1. [共鳴者(In the Wild)](#in-the-wild)
+  1. [翻訳(Translation)](#translation)
+  1. [JavaScriptスタイルガイドへの手引き(The JavaScript Style Guide Guide)](#the-javascript-style-guide-guide)
+  1. [Javascriptスタイルガイドについてのchat(Chat With Us About JavaScript)](#chat-with-us-about-javascript)
+  1. [貢献者(Contributors)](#contributors)
+  1. [ライセンス(License)](#license)
 
-## Types
+## 型(Types)
 
   - [1.1](#1.1) <a name='1.1'></a> **Primitives**: When you access a primitive type you work directly on its value.
-
+  - [1.1](#1.1) <a name='1.1'></a> **プリミティブ型**: プリミティブ型は、その値を直接操作します。
     + `string`
     + `number`
     + `boolean`
@@ -69,6 +66,7 @@ Other Style Guides
     console.log(foo, bar); // => 1, 9
     ```
   - [1.2](#1.2) <a name='1.2'></a> **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#1.2) <a name='1.2'></a> **参照型**: 参照型は、参照を通して値を操作します。
 
     + `object`
     + `array`
@@ -83,13 +81,15 @@ Other Style Guides
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## References
+## 参照(References) -> 変数？？
 
   - [2.1](#2.1) <a name='2.1'></a> Use `const` for all of your references; avoid using `var`.
+  - [2.1](#2.1) <a name='2.1'></a> すべての参照は `const` を使用し、`var` を使用しないでください。
 
   > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+  > なぜ? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
 
     ```javascript
     // bad
@@ -102,6 +102,7 @@ Other Style Guides
     ```
 
   - [2.2](#2.2) <a name='2.2'></a> If you must reassign references, use `let` instead of `var`.
+  - [2.2](#2.2) <a name='2.2'></a> 参照を再割当てする場合は `var` の代わりに `let` を利用してください。
 
   > Why? `let` is block-scoped rather than function-scoped like `var`.
 
@@ -120,9 +121,11 @@ Other Style Guides
     ```
 
   - [2.3](#2.3) <a name='2.3'></a> Note that both `let` and `const` are block-scoped.
+  - [2.3](#2.3) <a name='2.3'></a> `let` と `const` は共にブロックスコープであることに注意すること。
 
     ```javascript
     // const and let only exist in the blocks they are defined in.
+    // const と let はそれらが宣言されたブロックの中でのみ存在します。
     {
       let a = 1;
       const b = 1;
@@ -131,11 +134,12 @@ Other Style Guides
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Objects
+## オブジェクト(Objects)
 
   - [3.1](#3.1) <a name='3.1'></a> Use the literal syntax for object creation.
+  - [3.1](#3.1) <a name='3.1'></a> オブジェクトを作成する際は、リテラル構文を使用してください。
 
     ```javascript
     // bad
@@ -146,6 +150,8 @@ Other Style Guides
     ```
 
   - [3.2](#3.2) <a name='3.2'></a> If your code will be executed in browsers in script context, don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61). It’s OK to use them in ES6 modules and server-side code.
+  - [3.2](#3.2) <a name='3.2'></a> コードが、ブラウザ上のスクリプトとして実行される場合、[予約語](http://es5.github.io/#x7.6.1)をキーとして利用しないでください。これはIE8では動作しません。[More info](https://github.com/airbnb/javascript/issues/61)
+  しかし、ES6モジュール内やサーバサイドでは利用可能です。
 
     ```javascript
     // bad
@@ -162,6 +168,7 @@ Other Style Guides
     ```
 
   - [3.3](#3.3) <a name='3.3'></a> Use readable synonyms in place of reserved words.
+  - [3.3](#3.3) <a name='3.3'></a> 予約語の代わりに分かりやすい同義語を使用してください。
 
     ```javascript
     // bad
@@ -277,11 +284,12 @@ Other Style Guides
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Arrays
+## 配列(Arrays)
 
   - [4.1](#4.1) <a name='4.1'></a> Use the literal syntax for array creation.
+  - [4.1](#4.1) <a name='4.1'></a> 配列を作成する際は、リテラル構文を使用してください。
 
     ```javascript
     // bad
@@ -292,6 +300,7 @@ Other Style Guides
     ```
 
   - [4.2](#4.2) <a name='4.2'></a> Use Array#push instead of direct assignment to add items to an array.
+  - [4.2](#4.2) <a name='4.2'></a> 直接配列に項目を代入せず、Array#pushを利用してください。
 
     ```javascript
     const someStack = [];
@@ -305,6 +314,8 @@ Other Style Guides
 
   <a name="es6-array-spreads"></a>
   - [4.3](#4.3) <a name='4.3'></a> Use array spreads `...` to copy arrays.
+  <a name="es6-array-spreads"></a>
+  - [4.3](#4.3) <a name='4.3'></a> 配列をコピーする場合は、配列の拡張演算子 `...` を利用してください。
 
     ```javascript
     // bad
@@ -319,20 +330,25 @@ Other Style Guides
     // good
     const itemsCopy = [...items];
     ```
+
   - [4.4](#4.4) <a name='4.4'></a> To convert an array-like object to an array, use Array#from.
+  - [4.4](#4.4) <a name='4.4'></a> array-likeなオブジェクトを配列に変換する場合は、Array#fromを利用してください。
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
     const nodes = Array.from(foo);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Destructuring
+## 構造化代入(Destructuring)
 
   - [5.1](#5.1) <a name='5.1'></a> Use object destructuring when accessing and using multiple properties of an object.
+  - [5.1](#5.1) <a name='5.1'></a> 複数のプロパティからなるオブジェクトにアクセスする際は、オブジェクト構造化代入を利用してください。
 
   > Why? Destructuring saves you from creating temporary references for those properties.
+
+  > なぜ? 構造化代入を利用することで、それらのプロパティのための中間的な参照を減らすことができます。
 
     ```javascript
     // bad
@@ -356,6 +372,7 @@ Other Style Guides
     ```
 
   - [5.2](#5.2) <a name='5.2'></a> Use array destructuring.
+  - [5.2](#5.2) <a name='5.2'></a> 配列の構造化代入を利用してください。
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -369,8 +386,11 @@ Other Style Guides
     ```
 
   - [5.3](#5.3) <a name='5.3'></a> Use object destructuring for multiple return values, not array destructuring.
+  - [5.3](#5.3) <a name='5.3'></a> 複数の値を返却する場合は、配列の構造化代入ではなく、オブジェクトの構造化代入を利用してください。
 
   > Why? You can add new properties over time or change the order of things without breaking call sites.
+
+  > なぜ? こうすることで、後で新しいプロパティを追加したり、呼び出し元に影響することなく順序を変更することができます。
 
     ```javascript
     // bad
@@ -393,11 +413,12 @@ Other Style Guides
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Strings
+## 文字列(Strings)
 
   - [6.1](#6.1) <a name='6.1'></a> Use single quotes `''` for strings.
+  - [6.1](#6.1) <a name='6.1'></a> 文字列にはシングルクオート `''` を使用してください。
 
     ```javascript
     // bad
@@ -408,7 +429,9 @@ Other Style Guides
     ```
 
   - [6.2](#6.2) <a name='6.2'></a> Strings longer than 100 characters should be written across multiple lines using string concatenation.
+  - [6.2](#6.2) <a name='6.2'></a> 100文字以上の文字列は、文字列連結を使用して複数行にまたがって記述する必要があります。
   - [6.3](#6.3) <a name='6.3'></a> Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
+  - [6.3](#6.3) <a name='6.3'></a> 注意: 文字連結を多用した場合、パフォーマンスに影響を与えることがあります。 [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
     // bad
@@ -428,8 +451,11 @@ Other Style Guides
 
   <a name="es6-template-literals"></a>
   - [6.4](#6.4) <a name='6.4'></a> When programmatically building up strings, use template strings instead of concatenation.
+  - [6.4](#6.4) <a name='6.4'></a> プログラムで文字列を生成する場合は、文字列連結ではなく、template stringsを利用してください。
 
   > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+
+  > なぜ? Template strings は文字列補完機能・複数行文字列機能を持つ簡潔な構文で、可読性が良いからです。
 
     ```javascript
     // bad
@@ -448,11 +474,12 @@ Other Style Guides
     }
     ```
   - [6.5](#6.5) <a name='6.5'></a> Never use `eval()` on a string, it opens too many vulnerabilities.
+  - [6.5](#6.5) <a name='6.5'></a> 絶対に `eval()` を利用しないでください。これは、いままで数多くの脆弱性を作って来たからです。
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
-## Functions
+## 関数(Functions)
 
   - [7.1](#7.1) <a name='7.1'></a> Use function declarations instead of function expressions.
 
@@ -598,7 +625,7 @@ Other Style Guides
   var subtract = Function('a', 'b', 'return a - b');
   ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 ## Arrow Functions
 
@@ -676,7 +703,7 @@ Other Style Guides
     [1, 2, 3].reduce((y, x) => x + y);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Constructors
@@ -788,7 +815,7 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Modules
@@ -838,7 +865,7 @@ Other Style Guides
     export default es6;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 ## Iterators and Generators
 
@@ -871,7 +898,7 @@ Other Style Guides
 
   > Why? They don't transpile well to ES5.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Properties
@@ -906,7 +933,7 @@ Other Style Guides
     const isJedi = getProp('jedi');
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Variables
@@ -1015,7 +1042,7 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Hoisting
@@ -1111,7 +1138,7 @@ Other Style Guides
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Comparison Operators & Equality
@@ -1159,7 +1186,7 @@ Other Style Guides
 
   - [15.4](#15.4) <a name='15.4'></a> For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Blocks
@@ -1211,7 +1238,7 @@ Other Style Guides
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Comments
@@ -1314,7 +1341,7 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Whitespace
@@ -1597,7 +1624,7 @@ Other Style Guides
     const foo = { clark: 'kent' };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 ## Commas
 
@@ -1678,7 +1705,7 @@ Other Style Guides
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Semicolons
@@ -1707,7 +1734,7 @@ Other Style Guides
 
     [Read more](http://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Type Casting & Coercion
@@ -1784,7 +1811,7 @@ Other Style Guides
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Naming Conventions
@@ -1918,7 +1945,7 @@ Other Style Guides
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Accessors
@@ -1973,7 +2000,7 @@ Other Style Guides
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Events
@@ -2004,7 +2031,7 @@ Other Style Guides
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## jQuery
@@ -2069,14 +2096,14 @@ Other Style Guides
     $sidebar.find('ul').hide();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## ECMAScript 5 Compatibility
 
   - [26.1](#26.1) <a name='26.1'></a> Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.io/es5-compat-table/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 ## ECMAScript 6 Styles
 
@@ -2096,11 +2123,12 @@ Other Style Guides
 1. [Iterators and Generators](#iterators-and-generators)
 1. [Modules](#modules)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Testing
+## テスト(Testing)
 
   - [28.1](#28.1) <a name="28.1"></a> **Yup.**
+  - [28.1](#28.1) <a name="28.1"></a> **もちろん :+1:**
 
     ```javascript
     function () {
@@ -2116,7 +2144,7 @@ Other Style Guides
    - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
    - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
 ## Performance
@@ -2130,10 +2158,10 @@ Other Style Guides
   - [Long String Concatenation](http://jsperf.com/ya-string-concat)
   - Loading...
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 
-## Resources
+## 参考文献(Resources)
 
 **Learning ES6**
 
@@ -2212,11 +2240,13 @@ Other Style Guides
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## In the Wild
+## 共鳴者(In the Wild)
 
   This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
+
+  これはこのスタイルガイドを使用している組織の一覧表です。このリストに追加して欲しい場合は、pull requestかissueを挙げてください。
 
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Adult Swim**: [adult-swim/javascript](https://github.com/adult-swim/javascript)
@@ -2274,11 +2304,13 @@ Other Style Guides
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Translation
+## 翻訳(Translation)
 
   This style guide is also available in other languages:
+
+  このスタイルガイドは他の言語でも利用できます。
 
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
@@ -2295,15 +2327,15 @@ Other Style Guides
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
   - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
 
-## The JavaScript Style Guide Guide
+## JavaScriptスタイルガイドへの手引き(The JavaScript Style Guide Guide)
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## Chat With Us About JavaScript
+## Javascriptスタイルガイドについてのchat(Chat With Us About JavaScript)
 
   - Find us on [gitter](https://gitter.im/airbnb/javascript).
 
-## Contributors
+## 貢献者(Contributors)
 
   - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
 
@@ -2333,7 +2365,26 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#table-of-contents)**
+
+MITライセンス
+
+著作権(c) 2014 Airbnb  
+翻訳 2015 mitsuruog
+
+このソフトウェアおよび関連する文書ファイル（以下「本ソフトウェア」という。）の複製物を取得するあらゆる者に対し、
+以下の条件にしたがって本ソフトウェアを制限なしに扱うことを無償で許諾する。
+そこには、本ソフトウェアの複製を使用し、複製し、改変し、結合し、公表し、頒布し、サブライセンスし、
+および/または販売する権利、また、本ソフトウェアを与えられた者に上記のようにすることを許諾する権利を含むがそれらに限られない。
+
+上記の著作権表示および本許諾表示は「本ソフトウェア」のすべての複製物または重要部分の中に含めなければならない。
+
+「本ソフトウェア」は「現状のまま」で提供され、明示または黙示を問わず、
+商品性、特定目的への適合性および非侵害を含むがそれに限られない、あらゆる種類の保証も伴わないものとする。
+著作者または著作権者は、契約、不法行為またはその他の行為であるかにかかわらず、
+ソフトウェアまたはソフトウェアの使用もしくはその他の取り扱いから、またはそれらに関連して生じた、
+いかなるクレーム、損害賠償その他の責任を負わない。
+
+**[⬆ ページのTopへ戻る](#table-of-contents)**
 
 ## Amendments
 
