@@ -83,12 +83,13 @@
 
 **[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## 参照(References) -> 変数？？
+## 参照(References)
 
   - [2.1](#2.1) <a name='2.1'></a> Use `const` for all of your references; avoid using `var`.
   - [2.1](#2.1) <a name='2.1'></a> すべての参照は `const` を使用し、`var` を使用しないでください。
 
   > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+
   > なぜ? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
 
     ```javascript
@@ -105,6 +106,8 @@
   - [2.2](#2.2) <a name='2.2'></a> 参照を再割当てする場合は `var` の代わりに `let` を利用してください。
 
   > Why? `let` is block-scoped rather than function-scoped like `var`.
+
+  > なぜ? 関数スコープの `var` よりむしろ、ブロックスコープの `let`
 
     ```javascript
     // bad
@@ -189,8 +192,11 @@
 
   <a name="es6-computed-properties"></a>
   - [3.4](#3.4) <a name='3.4'></a> Use computed property names when creating objects with dynamic property names.
+  - [3.4](#3.4) <a name='3.4'></a> 動的にプロパティ名を持つオブジェクトを作成する場合、計算されたプロパティ名(computed property names)を利用してください。
 
   > Why? They allow you to define all the properties of an object in one place.
+
+  > なぜ? こうすることで、オブジェクトのプロパティを1箇所で定義することができます。
 
     ```javascript
 
@@ -215,6 +221,7 @@
 
   <a name="es6-object-shorthand"></a>
   - [3.5](#3.5) <a name='3.5'></a> Use object method shorthand.
+  - [3.5](#3.5) <a name='3.5'></a> メソッドの短縮構文を利用してください。
 
     ```javascript
     // bad
@@ -238,8 +245,11 @@
 
   <a name="es6-object-concise"></a>
   - [3.6](#3.6) <a name='3.6'></a> Use property value shorthand.
+  - [3.6](#3.6) <a name='3.6'></a> プロパティの短縮構文を利用してください。
 
   > Why? It is shorter to write and descriptive.
+
+  > Why? 記述や説明が簡潔になるからです。
 
     ```javascript
     const lukeSkywalker = 'Luke Skywalker';
@@ -256,8 +266,11 @@
     ```
 
   - [3.7](#3.7) <a name='3.7'></a> Group your shorthand properties at the beginning of your object declaration.
+  - [3.7](#3.7) <a name='3.7'></a> プロパティの短縮構文はオブジェクト宣言の先頭にまとめてください。
 
   > Why? It's easier to tell which properties are using the shorthand.
+
+  > なぜ? どのプロパティが短縮構文を利用しているか分かりやすいからです。
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
@@ -396,19 +409,23 @@
     // bad
     function processInput(input) {
       // then a miracle occurs
+      // その後、奇跡が起こります。
       return [left, right, top, bottom];
     }
 
     // the caller needs to think about the order of return data
+    // 呼び出し者で返却されるデータの順番を考慮する必要があります。
     const [left, __, top] = processInput(input);
 
     // good
     function processInput(input) {
       // then a miracle occurs
+      // その後、奇跡が起こります。
       return { left, right, top, bottom };
     }
 
     // the caller selects only the data they need
+    // 呼び出し元は必要なデータのみ選択すればいい。
     const { left, right } = processInput(input);
     ```
 
@@ -482,8 +499,11 @@
 ## 関数(Functions)
 
   - [7.1](#7.1) <a name='7.1'></a> Use function declarations instead of function expressions.
+  - [7.1](#7.1) <a name='7.1'></a> 関数式より関数宣言を利用してください。
 
   > Why? Function declarations are named, so they're easier to identify in call stacks. Also, the whole body of a function declaration is hoisted, whereas only the reference of a function expression is hoisted. This rule makes it possible to always use [Arrow Functions](#arrow-functions) in place of function expressions.
+
+  > なぜ? Function declarations are named, so they're easier to identify in call stacks. Also, the whole body of a function declaration is hoisted, whereas only the reference of a function expression is hoisted. This rule makes it possible to always use [Arrow Functions](#arrow-functions) in place of function expressions.
 
     ```javascript
     // bad
@@ -676,10 +696,15 @@
     ```
 
   - [8.2](#8.2) <a name='8.2'></a> If the function body consists of a single expression, feel free to omit the braces and use the implicit return. Otherwise use a `return` statement.
+  - [8.2](#8.2) <a name='8.2'></a> 関数の本体が1つの式で構成されている場合は、中括弧({})を省略し、暗黙のreturnを利用することができます。それ以外は `return` 文を利用してください。
 
   > Why? Syntactic sugar. It reads well when multiple functions are chained together.
 
+  > なぜ? 糖衣構文(読みやすさのために導入される構文)だからです。複数の関数が連結される場合に読みやすくなります。
+
   > Why not? If you plan on returning an object.
+
+  > 使うべきではない? オブジェクトを返す場合は。
 
     ```javascript
     // good
@@ -699,8 +724,11 @@
     ```
 
   - [8.3](#8.3) <a name='8.3'></a> In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+  - [8.3](#8.3) <a name='8.3'></a> 式の全長が複数行にまたがる場合は、可読性をより良くするため丸括弧()で囲ってください。
 
   > Why? It shows clearly where the function starts and ends.
+
+  > なぜ? 関数の開始と終了部分が分かりやすく見えるためです。
 
     ```js
     // bad
@@ -718,8 +746,11 @@
 
 
   - [8.4](#8.4) <a name='8.4'></a> If your function only takes a single argument, feel free to omit the parentheses.
+  - [8.4](#8.4) <a name='8.4'></a> 関数の引数が1つの場合、丸括弧()を省略することができます。
 
   > Why? Less visual clutter.
+
+  > なぜ? あまり見難くないからです。
 
     ```js
     // good
@@ -855,7 +886,7 @@
 ## モジュール(Modules)
 
   - [10.1](#10.1) <a name='10.1'></a> Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
-  - [10.1](#10.1) <a name='10.1'></a> Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
+  - [10.1](#10.1) <a name='10.1'></a> 非標準のモジュールシステムではなく、常に (`import`/`export`) を利用してください。こうすることで好みのモジュールシステムへいつでもトランスパイルすることでできます。
 
   > Why? Modules are the future, let's start using the future now.
 
@@ -910,11 +941,14 @@
 
 **[⬆ ページのTopへ戻る](#table-of-contents)**
 
-## Iterators and Generators
+## イテレータとジェネレータ(Iterators and Generators)
 
   - [11.1](#11.1) <a name='11.1'></a> Don't use iterators. Prefer JavaScript's higher-order functions like `map()` and `reduce()` instead of loops like `for-of`.
+  - [11.1](#11.1) <a name='11.1'></a> iteratorsを利用しないでください。`for-of` ループの代わりに `map()` や `reduce()` のようなJavascriptの高級関数(higher-order functions)を利用してください。
 
   > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side-effects.
+
+  > なぜ? これはimmutable(不変)ルールを適用します。値を返ような関数の中身の処理を気にするより副作用について推測するほうが簡単です。
 
     ```javascript
     const numbers = [1, 2, 3, 4, 5];
@@ -938,8 +972,11 @@
     ```
 
   - [11.2](#11.2) <a name='11.2'></a> Don't use generators for now.
+  - [11.2](#11.2) <a name='11.2'></a> 現時点ではgeneratorsは利用しないでください。
 
   > Why? They don't transpile well to ES5.
+
+  > なぜ? ES5にうまくトランスパイルできないから。
 
 **[⬆ ページのTopへ戻る](#table-of-contents)**
 
@@ -1020,8 +1057,11 @@
     ```
 
   - [13.3](#13.3) <a name='13.3'></a> Group all your `const`s and then group all your `let`s.
+  - [13.3](#13.3) <a name='13.3'></a> まず `const` をグループ化して、その後 `let` をグループ化してください。
 
   > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+  > なぜ? 以前に割り当てた変数に応じて、後で新しい変数を追加する場合に有用だからです。
 
     ```javascript
     // bad
@@ -1045,8 +1085,11 @@
     ```
 
   - [13.4](#13.4) <a name='13.4'></a> Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#13.4) <a name='13.4'></a> 変数を割り当てる際は、必要かつ合理的な場所で行ってください。
 
   > Why? `let` and `const` are block scoped and not function scoped.
+
+  > なぜ? `let` と `const` はブロックスコープだからです。関数スコープではありません。
 
     ```javascript
     // good
@@ -1539,6 +1582,7 @@
 
   - [18.6](#18.6) <a name='18.6'></a> Use indentation when making long method chains. Use a leading dot, which
     emphasizes that the line is a method call, not a new statement.
+    - [18.6](#18.6) <a name='18.6'></a> 長くメソッドを連結する場合はインデントを利用してください。行がメソッド呼び出しではなく、新しい文であることを強調するために先頭にドット(.)を配置してください。
 
     ```javascript
     // bad
@@ -1578,6 +1622,7 @@
     ```
 
   - [18.7](#18.7) <a name='18.7'></a> Leave a blank line after blocks and before the next statement.
+  - [18.7](#18.7) <a name='18.7'></a> 文の前とブロックの後には改行を残してください。
 
     ```javascript
     // bad
@@ -1635,6 +1680,7 @@
     ```
 
   - [18.8](#18.8) <a name='18.8'></a> Do not pad your blocks with blank lines.
+  - [18.8](#18.8) <a name='18.8'></a> ブロックに空行を挟み込まないでください。
 
     ```javascript
     // bad
@@ -1667,6 +1713,7 @@
     ```
 
   - [18.9](#18.9) <a name='18.9'></a> Do not add spaces inside parentheses.
+  - [18.9](#18.9) <a name='18.9'></a> 丸括弧()の内側にスペースを追加しないでください。
 
     ```javascript
     // bad
@@ -1691,6 +1738,7 @@
     ```
 
   - [18.10](#18.10) <a name='18.10'></a> Do not add spaces inside brackets.
+  - [18.10](#18.10) <a name='18.10'></a> 角括弧([])の内側にスペースを追加しないでください。
 
     ```javascript
     // bad
@@ -1703,6 +1751,7 @@
     ```
 
   - [18.11](#18.11) <a name='18.11'></a> Add spaces inside curly braces.
+  - [18.11](#18.11) <a name='18.11'></a> 中括弧({})の内側にスペースを追加しないでください。
 
     ```javascript
     // bad
@@ -1755,6 +1804,8 @@
   - [19.2](#19.2) <a name='19.2'></a> 末尾のカンマ **いいね:)**
 
   > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](es5/README.md#commas) in legacy browsers.
+
+  > なぜ? これはクリーンなgitの差分につながります。また、Babelの様なトランスパイラはトランスパイルする際に末尾の余計なカンマを除去します。これは、レガシーブラウザでの[余計なカンマ問題](es5/README.md#commas)を心配する必要がないことを意味します。
 
     ```javascript
     // bad - git diff without trailing comma
@@ -2014,6 +2065,7 @@
     ```
 
   - [22.6](#22.6) <a name='22.6'></a> If your file exports a single class, your filename should be exactly the name of the class.
+  - [22.6](#22.6) <a name='22.6'></a> ファイルを1つのクラスとしてexportする場合、ファイル名はクラス名と完全に一致させなければなりません。
 
     ```javascript
     // file contents
@@ -2034,6 +2086,7 @@
     ```
 
   - [22.7](#22.7) <a name='22.7'></a> Use camelCase when you export-default a function. Your filename should be identical to your function's name.
+  - [22.7](#22.7) <a name='22.7'></a> Default exportが関数の場合、キャメルケース（小文字から始まる）を利用してください。ファイル名は関数名と同じにしなければなりません。
 
     ```javascript
     function makeStyleGuide() {
@@ -2043,6 +2096,7 @@
     ```
 
   - [22.8](#22.8) <a name='22.8'></a> Use PascalCase when you export a singleton / function library / bare object.
+  - [22.8](#22.8) <a name='22.8'></a> シングルトン / function library / 単なるオブジェクトをexportする場合、パスカルケース（大文字から始まる）を利用してください。
 
     ```javascript
     const AirbnbStyleGuide = {
