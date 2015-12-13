@@ -5,7 +5,7 @@
 *常に気をつけたい、JavaScriptへの正しい接し方*
 
 他のスタイルガイドたち
- - [ES5](es5/)
+ - [ES5](https://github.com/mitsuruog/javacript-style-guide/blob/master/es5/README.md)
  - [React](https://github.com/airbnb/javascript/tree/master/react)
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
