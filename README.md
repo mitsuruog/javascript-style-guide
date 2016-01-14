@@ -678,7 +678,7 @@
 
   > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
 
-  > なぜ? アロー関数は関数が実行されるコンテキストの `this` を束縛します。これは通常期待通りの動作をし、より簡潔な構文です。
+  > なぜ? アロー関数はそのコンテキストの `this` で実行するバージョンの関数を作成します。これは通常期待通りの動作をし、より簡潔な構文だからです。
 
   > Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.
 
