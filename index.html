@@ -22,7 +22,7 @@
       <p><a href="https://github.com/airbnb/javascript">元文書:https://github.com/airbnb/javascript</a></p>
 
 <h1>
-<a id="airbnb-javascript-スタイルガイド-" class="anchor" href="#airbnb-javascript-%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Airbnb JavaScript スタイルガイド() {</h1>
+<a id="airbnb-javascript-スタイルガイド-" class="anchor" href="#airbnb-javascript-%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Airbnb JavaScript スタイルガイド() {</h1>
 
 <p><em>常に気をつけたい、JavaScriptへの正しい接し方</em></p>
 
@@ -36,7 +36,7 @@
 </ul>
 
 <h2>
-<a id="目次" class="anchor" href="#%E7%9B%AE%E6%AC%A1" aria-hidden="true"><span class="octicon octicon-link"></span></a>目次</h2>
+<a id="目次" class="anchor" href="#%E7%9B%AE%E6%AC%A1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>目次</h2>
 
 <ol>
 <li><a href="#%E5%9E%8Btypes">型(Types)</a></li>
@@ -78,7 +78,7 @@
 </ol>
 
 <h2>
-<a id="型types" class="anchor" href="#%E5%9E%8Btypes" aria-hidden="true"><span class="octicon octicon-link"></span></a>型(Types)</h2>
+<a id="型types" class="anchor" href="#%E5%9E%8Btypes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>型(Types)</h2>
 
 <ul>
 <li>
@@ -124,7 +124,7 @@ bar[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="参照references" class="anchor" href="#%E5%8F%82%E7%85%A7references" aria-hidden="true"><span class="octicon octicon-link"></span></a>参照(References)</h2>
+<a id="参照references" class="anchor" href="#%E5%8F%82%E7%85%A7references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>参照(References)</h2>
 
 <ul>
 <li>
@@ -186,7 +186,7 @@ bar[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="オブジェクトobjects" class="anchor" href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>オブジェクト(Objects)</h2>
+<a id="オブジェクトobjects" class="anchor" href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88objects" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>オブジェクト(Objects)</h2>
 
 <ul>
 <li>
@@ -355,7 +355,7 @@ bar[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="配列arrays" class="anchor" href="#%E9%85%8D%E5%88%97arrays" aria-hidden="true"><span class="octicon octicon-link"></span></a>配列(Arrays)</h2>
+<a id="配列arrays" class="anchor" href="#%E9%85%8D%E5%88%97arrays" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>配列(Arrays)</h2>
 
 <ul>
 <li>
@@ -400,21 +400,21 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 }
 
 <span class="pl-c">// good</span>
-<span class="pl-k">const</span> <span class="pl-c1">itemsCopy</span> <span class="pl-k">=</span> [...<span class="pl-smi">items</span>];</pre></div>
+<span class="pl-k">const</span> <span class="pl-c1">itemsCopy</span> <span class="pl-k">=</span> [<span class="pl-k">...</span>items];</pre></div>
 </li>
 <li><p><a href="#4.4">4.4</a> <a name="4.4"></a> To convert an array-like object to an array, use Array#from.</p></li>
 <li>
 <p><a href="#4.4">4.4</a> <a name="4.4"></a> array-likeなオブジェクトを配列に変換する場合は、Array#fromを利用してください。</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">foo</span> <span class="pl-k">=</span> <span class="pl-smi">document</span>.<span class="pl-en">querySelectorAll</span>(<span class="pl-s"><span class="pl-pds">'</span>.foo<span class="pl-pds">'</span></span>);
-<span class="pl-k">const</span> <span class="pl-c1">nodes</span> <span class="pl-k">=</span> <span class="pl-smi">Array</span>.<span class="pl-en">from</span>(foo);</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">foo</span> <span class="pl-k">=</span> <span class="pl-c1">document</span>.<span class="pl-en">querySelectorAll</span>(<span class="pl-s"><span class="pl-pds">'</span>.foo<span class="pl-pds">'</span></span>);
+<span class="pl-k">const</span> <span class="pl-c1">nodes</span> <span class="pl-k">=</span> <span class="pl-c1">Array</span>.<span class="pl-en">from</span>(foo);</pre></div>
 </li>
 </ul>
 
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="構造化代入destructuring" class="anchor" href="#%E6%A7%8B%E9%80%A0%E5%8C%96%E4%BB%A3%E5%85%A5destructuring" aria-hidden="true"><span class="octicon octicon-link"></span></a>構造化代入(Destructuring)</h2>
+<a id="構造化代入destructuring" class="anchor" href="#%E6%A7%8B%E9%80%A0%E5%8C%96%E4%BB%A3%E5%85%A5destructuring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>構造化代入(Destructuring)</h2>
 
 <ul>
 <li>
@@ -443,7 +443,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
   }
 
   <span class="pl-c">// best</span>
-  <span class="pl-k">function</span> <span class="pl-en">getFullName</span>({ <span class="pl-smi">firstName</span>, <span class="pl-smi">lastName</span> }) {
+  <span class="pl-k">function</span> <span class="pl-en">getFullName</span>({ firstName, lastName }) {
     <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">`</span><span class="pl-s1"><span class="pl-pse">${</span>firstName<span class="pl-pse">}</span></span> <span class="pl-s1"><span class="pl-pse">${</span>lastName<span class="pl-pse">}</span></span><span class="pl-pds">`</span></span>;
   }</pre></div>
 </li>
@@ -497,7 +497,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="文字列strings" class="anchor" href="#%E6%96%87%E5%AD%97%E5%88%97strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>文字列(Strings)</h2>
+<a id="文字列strings" class="anchor" href="#%E6%96%87%E5%AD%97%E5%88%97strings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>文字列(Strings)</h2>
 
 <ul>
 <li>
@@ -568,7 +568,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="関数functions" class="anchor" href="#%E9%96%A2%E6%95%B0functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>関数(Functions)</h2>
+<a id="関数functions" class="anchor" href="#%E9%96%A2%E6%95%B0functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>関数(Functions)</h2>
 
 <ul>
 <li>
@@ -651,12 +651,12 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// bad</span>
   <span class="pl-k">function</span> <span class="pl-en">concatenateAll</span>() {
-    <span class="pl-k">const</span> <span class="pl-c1">args</span> <span class="pl-k">=</span> <span class="pl-smi">Array</span>.<span class="pl-c1">prototype</span>.<span class="pl-smi">slice</span>.<span class="pl-c1">call</span>(arguments);
+    <span class="pl-k">const</span> <span class="pl-c1">args</span> <span class="pl-k">=</span> <span class="pl-c1">Array</span>.<span class="pl-c1">prototype</span>.<span class="pl-smi">slice</span>.<span class="pl-c1">call</span>(arguments);
     <span class="pl-k">return</span> <span class="pl-smi">args</span>.<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
   }
 
   <span class="pl-c">// good</span>
-  <span class="pl-k">function</span> <span class="pl-en">concatenateAll</span>(...<span class="pl-smi">args</span>) {
+  <span class="pl-k">function</span> <span class="pl-en">concatenateAll</span>(<span class="pl-k">...</span><span class="pl-v">args</span>) {
     <span class="pl-k">return</span> <span class="pl-smi">args</span>.<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
   }</pre></div>
 
@@ -705,7 +705,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 
 <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> b <span class="pl-k">=</span> <span class="pl-c1">1</span>;
 <span class="pl-c">// bad</span>
-<span class="pl-k">function</span> <span class="pl-en">count</span>(<span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-smi">b</span>++) {
+<span class="pl-k">function</span> <span class="pl-en">count</span>(<span class="pl-smi">a</span> <span class="pl-k">=</span> <span class="pl-smi">b</span><span class="pl-k">++</span>) {
   <span class="pl-en">console</span>.<span class="pl-c1">log</span>(a);
 }
 <span class="pl-en">count</span>();  <span class="pl-c">// 1</span>
@@ -752,7 +752,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="アロー関数arrow-functions" class="anchor" href="#%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0arrow-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>アロー関数(Arrow Functions)</h2>
+<a id="アロー関数arrow-functions" class="anchor" href="#%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0arrow-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>アロー関数(Arrow Functions)</h2>
 
 <ul>
 <li>
@@ -763,7 +763,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <blockquote>
 <p>Why? It creates a version of the function that executes in the context of <code>this</code>, which is usually what you want, and is a more concise syntax.</p>
 
-<p>なぜ? アロー関数は関数が実行されるコンテキストの <code>this</code> を束縛します。これは通常期待通りの動作をし、より簡潔な構文です。</p>
+<p>なぜ? アロー関数はそのコンテキストの <code>this</code> で実行するバージョンの関数を作成します。これは通常期待通りの動作をし、より簡潔な構文だからです。</p>
 
 <p>Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.</p>
 
@@ -797,16 +797,16 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 </blockquote>
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// good</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(number <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">`</span>A string containing the <span class="pl-s1"><span class="pl-pse">${</span>number<span class="pl-pse">}</span></span>.<span class="pl-pds">`</span></span>);
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">number</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">`</span>A string containing the <span class="pl-s1"><span class="pl-pse">${</span>number<span class="pl-pse">}</span></span>.<span class="pl-pds">`</span></span>);
 
   <span class="pl-c">// bad</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(number <span class="pl-k">=&gt;</span> {
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">number</span> <span class="pl-k">=&gt;</span> {
     <span class="pl-k">const</span> <span class="pl-c1">nextNumber</span> <span class="pl-k">=</span> number <span class="pl-k">+</span> <span class="pl-c1">1</span>;
     <span class="pl-s"><span class="pl-pds">`</span>A string containing the <span class="pl-s1"><span class="pl-pse">${</span>nextNumber<span class="pl-pse">}</span></span>.<span class="pl-pds">`</span></span>;
   });
 
   <span class="pl-c">// good</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(number <span class="pl-k">=&gt;</span> {
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">number</span> <span class="pl-k">=&gt;</span> {
     <span class="pl-k">const</span> <span class="pl-c1">nextNumber</span> <span class="pl-k">=</span> number <span class="pl-k">+</span> <span class="pl-c1">1</span>;
     <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">`</span>A string containing the <span class="pl-s1"><span class="pl-pse">${</span>nextNumber<span class="pl-pse">}</span></span>.<span class="pl-pds">`</span></span>;
   });</pre></div>
@@ -822,13 +822,13 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 </blockquote>
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// bad</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(number <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>As time went by, the string containing the <span class="pl-pds">'</span></span> <span class="pl-k">+</span>
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">number</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>As time went by, the string containing the <span class="pl-pds">'</span></span> <span class="pl-k">+</span>
     <span class="pl-s"><span class="pl-pds">`</span><span class="pl-s1"><span class="pl-pse">${</span>number<span class="pl-pse">}</span></span> became much longer. So we needed to break it over multiple <span class="pl-pds">`</span></span> <span class="pl-k">+</span>
     <span class="pl-s"><span class="pl-pds">'</span>lines.<span class="pl-pds">'</span></span>
   );
 
   <span class="pl-c">// good</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(number <span class="pl-k">=&gt;</span> (
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">number</span> <span class="pl-k">=&gt;</span> (
     <span class="pl-s"><span class="pl-pds">`</span>As time went by, the string containing the <span class="pl-s1"><span class="pl-pse">${</span>number<span class="pl-pse">}</span></span> became much <span class="pl-pds">`</span></span> <span class="pl-k">+</span>
     <span class="pl-s"><span class="pl-pds">'</span>longer. So we needed to break it over multiple lines.<span class="pl-pds">'</span></span>
   ));</pre></div>
@@ -844,7 +844,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 </blockquote>
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// good</span>
-  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(x <span class="pl-k">=&gt;</span> x <span class="pl-k">*</span> x);
+  [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">map</span>(<span class="pl-smi">x</span> <span class="pl-k">=&gt;</span> x <span class="pl-k">*</span> x);
 
   <span class="pl-c">// good</span>
   [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">reduce</span>((<span class="pl-smi">y</span>, <span class="pl-smi">x</span>) <span class="pl-k">=&gt;</span> x <span class="pl-k">+</span> y);</pre></div>
@@ -854,7 +854,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="コンストラクタconstructors" class="anchor" href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BFconstructors" aria-hidden="true"><span class="octicon octicon-link"></span></a>コンストラクタ(Constructors)</h2>
+<a id="コンストラクタconstructors" class="anchor" href="#%E3%82%B3%E3%83%B3%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%82%BFconstructors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>コンストラクタ(Constructors)</h2>
 
 <ul>
 <li>
@@ -870,9 +870,9 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// bad</span>
   <span class="pl-k">function</span> <span class="pl-en">Queue</span>(<span class="pl-smi">contents</span> <span class="pl-k">=</span> []) {
-    <span class="pl-v">this</span>.<span class="pl-smi">_queue</span> <span class="pl-k">=</span> [...<span class="pl-smi">contents</span>];
+    <span class="pl-v">this</span>.<span class="pl-smi">_queue</span> <span class="pl-k">=</span> [<span class="pl-k">...</span>contents];
   }
-  <span class="pl-c1">Queue</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">pop</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+  <span class="pl-smi">Queue</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">pop</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
     <span class="pl-k">const</span> <span class="pl-c1">value</span> <span class="pl-k">=</span> <span class="pl-v">this</span>.<span class="pl-smi">_queue</span>[<span class="pl-c1">0</span>];
     <span class="pl-v">this</span>.<span class="pl-smi">_queue</span>.<span class="pl-c1">splice</span>(<span class="pl-c1">0</span>, <span class="pl-c1">1</span>);
     <span class="pl-k">return</span> value;
@@ -881,7 +881,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
   <span class="pl-c">// good</span>
   <span class="pl-k">class</span> <span class="pl-en">Queue</span> {
     <span class="pl-en">constructor</span>(<span class="pl-smi">contents</span> <span class="pl-k">=</span> []) {
-      <span class="pl-v">this</span>.<span class="pl-smi">_queue</span> <span class="pl-k">=</span> [...<span class="pl-smi">contents</span>];
+      <span class="pl-v">this</span>.<span class="pl-smi">_queue</span> <span class="pl-k">=</span> [<span class="pl-k">...</span>contents];
     }
     <span class="pl-en">pop</span>() {
       <span class="pl-k">const</span> <span class="pl-c1">value</span> <span class="pl-k">=</span> <span class="pl-v">this</span>.<span class="pl-smi">_queue</span>[<span class="pl-c1">0</span>];
@@ -906,7 +906,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
     <span class="pl-smi">Queue</span>.<span class="pl-c1">apply</span>(<span class="pl-v">this</span>, contents);
   }
   <span class="pl-en">inherits</span>(PeekableQueue, Queue);
-  <span class="pl-c1">PeekableQueue</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">peek</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+  <span class="pl-smi">PeekableQueue</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">peek</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
     <span class="pl-k">return</span> <span class="pl-v">this</span>.<span class="pl-smi">_queue</span>[<span class="pl-c1">0</span>];
   }
 
@@ -922,12 +922,12 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><a href="#9.3">9.3</a> <a name="9.3"></a> メソッドの戻り値で <code>this</code> を返すことで、メソッドチェーンをすることができます。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
-<span class="pl-c1">Jedi</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">jump</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
+<span class="pl-smi">Jedi</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">jump</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {
   <span class="pl-v">this</span>.<span class="pl-smi">jumping</span> <span class="pl-k">=</span> <span class="pl-c1">true</span>;
   <span class="pl-k">return</span> <span class="pl-c1">true</span>;
 };
 
-<span class="pl-c1">Jedi</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">setHeight</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">height</span>) {
+<span class="pl-smi">Jedi</span>.<span class="pl-c1">prototype</span>.<span class="pl-en">setHeight</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">height</span>) {
   <span class="pl-v">this</span>.<span class="pl-c1">height</span> <span class="pl-k">=</span> height;
 };
 
@@ -976,7 +976,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="モジュールmodules" class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABmodules" aria-hidden="true"><span class="octicon octicon-link"></span></a>モジュール(Modules)</h2>
+<a id="モジュールmodules" class="anchor" href="#%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%ABmodules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>モジュール(Modules)</h2>
 
 <ul>
 <li>
@@ -992,7 +992,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// bad</span>
   <span class="pl-k">const</span> <span class="pl-c1">AirbnbStyleGuide</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./AirbnbStyleGuide<span class="pl-pds">'</span></span>);
-  <span class="pl-smi">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> <span class="pl-smi">AirbnbStyleGuide</span>.<span class="pl-smi">es6</span>;
+  <span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> <span class="pl-smi">AirbnbStyleGuide</span>.<span class="pl-smi">es6</span>;
 
   <span class="pl-c">// ok</span>
   <span class="pl-k">import</span> <span class="pl-smi">AirbnbStyleGuide</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./AirbnbStyleGuide<span class="pl-pds">'</span></span>;
@@ -1042,7 +1042,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="イテレータとジェネレータiterators-and-generators" class="anchor" href="#%E3%82%A4%E3%83%86%E3%83%AC%E3%83%BC%E3%82%BF%E3%81%A8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BFiterators-and-generators" aria-hidden="true"><span class="octicon octicon-link"></span></a>イテレータとジェネレータ(Iterators and Generators)</h2>
+<a id="イテレータとジェネレータiterators-and-generators" class="anchor" href="#%E3%82%A4%E3%83%86%E3%83%AC%E3%83%BC%E3%82%BF%E3%81%A8%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BFiterators-and-generators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>イテレータとジェネレータ(Iterators and Generators)</h2>
 
 <ul>
 <li>
@@ -1090,7 +1090,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="プロパティproperties" class="anchor" href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3properties" aria-hidden="true"><span class="octicon octicon-link"></span></a>プロパティ(Properties)</h2>
+<a id="プロパティproperties" class="anchor" href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>プロパティ(Properties)</h2>
 
 <ul>
 <li>
@@ -1129,7 +1129,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="変数variables" class="anchor" href="#%E5%A4%89%E6%95%B0variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>変数(Variables)</h2>
+<a id="変数variables" class="anchor" href="#%E5%A4%89%E6%95%B0variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>変数(Variables)</h2>
 
 <ul>
 <li>
@@ -1210,7 +1210,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// good</span>
   <span class="pl-k">function</span>() {
-    <span class="pl-c1">test</span>();
+    <span class="pl-en">test</span>();
     <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>doing stuff..<span class="pl-pds">'</span></span>);
 
     <span class="pl-c">//..other stuff..</span>
@@ -1254,7 +1254,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="巻き上げhoisting" class="anchor" href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92hoisting" aria-hidden="true"><span class="octicon octicon-link"></span></a>巻き上げ(Hoisting)</h2>
+<a id="巻き上げhoisting" class="anchor" href="#%E5%B7%BB%E3%81%8D%E4%B8%8A%E3%81%92hoisting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>巻き上げ(Hoisting)</h2>
 
 <ul>
 <li>
@@ -1363,7 +1363,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="条件式と等価式comparison-operators--equality" class="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8Fcomparison-operators--equality" aria-hidden="true"><span class="octicon octicon-link"></span></a>条件式と等価式(Comparison Operators &amp; Equality)</h2>
+<a id="条件式と等価式comparison-operators--equality" class="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%BC%8F%E3%81%A8%E7%AD%89%E4%BE%A1%E5%BC%8Fcomparison-operators--equality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>条件式と等価式(Comparison Operators &amp; Equality)</h2>
 
 <ul>
 <li>
@@ -1449,7 +1449,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="ブロックblocks" class="anchor" href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AFblocks" aria-hidden="true"><span class="octicon octicon-link"></span></a>ブロック(Blocks)</h2>
+<a id="ブロックblocks" class="anchor" href="#%E3%83%96%E3%83%AD%E3%83%83%E3%82%AFblocks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ブロック(Blocks)</h2>
 
 <ul>
 <li>
@@ -1504,7 +1504,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="コメントcomments" class="anchor" href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>コメント(Comments)</h2>
+<a id="コメントcomments" class="anchor" href="#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88comments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>コメント(Comments)</h2>
 
 <ul>
 <li>
@@ -1530,8 +1530,8 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <span class="pl-c"> * make() returns a new element</span>
 <span class="pl-c"> * based on the passed in tag name</span>
 <span class="pl-c"> *</span>
-<span class="pl-c"> * <span class="pl-k">@param</span> {String} tag</span>
-<span class="pl-c"> * <span class="pl-k">@return</span> {Element} element</span>
+<span class="pl-c"> * <span class="pl-k">@param</span> <span class="pl-en">{String}</span> <span class="pl-smi">tag</span></span>
+<span class="pl-c"> * <span class="pl-k">@return</span> <span class="pl-en">{Element}</span> <span class="pl-smi">element</span></span>
 <span class="pl-c"> */</span>
 <span class="pl-k">function</span> <span class="pl-en">make</span>(<span class="pl-smi">tag</span>) {
 
@@ -1613,7 +1613,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="空白whitespace" class="anchor" href="#%E7%A9%BA%E7%99%BDwhitespace" aria-hidden="true"><span class="octicon octicon-link"></span></a>空白(Whitespace)</h2>
+<a id="空白whitespace" class="anchor" href="#%E7%A9%BA%E7%99%BDwhitespace" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>空白(Whitespace)</h2>
 
 <ul>
 <li>
@@ -1678,7 +1678,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 
 <span class="pl-c">// bad</span>
 <span class="pl-k">function</span> <span class="pl-en">fight</span> () {
-  <span class="pl-en">console</span>.<span class="pl-en">log</span> (<span class="pl-s"><span class="pl-pds">'</span>Swooosh!<span class="pl-pds">'</span></span>);
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span> (<span class="pl-s"><span class="pl-pds">'</span>Swooosh!<span class="pl-pds">'</span></span>);
 }
 
 <span class="pl-c">// good</span>
@@ -1701,18 +1701,18 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <p><a href="#18.5">18.5</a> <a name="18.5"></a> ファイルの最後は改行文字を1つ入れてください。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
-(<span class="pl-k">function</span>(<span class="pl-smi">global</span>) {
+(<span class="pl-k">function</span>(<span class="pl-c1">global</span>) {
   <span class="pl-c">// ...stuff...</span>
 })(<span class="pl-v">this</span>);</pre></div>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
-(<span class="pl-k">function</span>(<span class="pl-smi">global</span>) {
+(<span class="pl-k">function</span>(<span class="pl-c1">global</span>) {
   <span class="pl-c">// ...stuff...</span>
 })(<span class="pl-v">this</span>);↵
 ↵</pre></div>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// good</span>
-(<span class="pl-k">function</span>(<span class="pl-smi">global</span>) {
+(<span class="pl-k">function</span>(<span class="pl-c1">global</span>) {
   <span class="pl-c">// ...stuff...</span>
 })(<span class="pl-v">this</span>);↵</pre></div>
 </li>
@@ -1726,10 +1726,10 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 
 <span class="pl-c">// bad</span>
 <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#items<span class="pl-pds">'</span></span>).
-  <span class="pl-c1">find</span>(<span class="pl-s"><span class="pl-pds">'</span>.selected<span class="pl-pds">'</span></span>).
+  <span class="pl-en">find</span>(<span class="pl-s"><span class="pl-pds">'</span>.selected<span class="pl-pds">'</span></span>).
     <span class="pl-en">highlight</span>().
     <span class="pl-en">end</span>().
-  <span class="pl-c1">find</span>(<span class="pl-s"><span class="pl-pds">'</span>.open<span class="pl-pds">'</span></span>).
+  <span class="pl-en">find</span>(<span class="pl-s"><span class="pl-pds">'</span>.open<span class="pl-pds">'</span></span>).
     <span class="pl-en">updateCount</span>();
 
 <span class="pl-c">// good</span>
@@ -1883,7 +1883,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 </li>
 <li><p><a href="#18.11">18.11</a> <a name="18.11"></a> Add spaces inside curly braces.</p></li>
 <li>
-<p><a href="#18.11">18.11</a> <a name="18.11"></a> 中括弧({})の内側にスペースを追加しないでください。</p>
+<p><a href="#18.11">18.11</a> <a name="18.11"></a> 中括弧({})の内側にスペースを追加してください。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
 <span class="pl-k">const</span> <span class="pl-c1">foo</span> <span class="pl-k">=</span> {clark<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>kent<span class="pl-pds">'</span></span>};
@@ -1896,7 +1896,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="カンマcommas" class="anchor" href="#%E3%82%AB%E3%83%B3%E3%83%9Ecommas" aria-hidden="true"><span class="octicon octicon-link"></span></a>カンマ(Commas)</h2>
+<a id="カンマcommas" class="anchor" href="#%E3%82%AB%E3%83%B3%E3%83%9Ecommas" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>カンマ(Commas)</h2>
 
 <ul>
 <li>
@@ -1987,7 +1987,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="セミコロンsemicolons" class="anchor" href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3semicolons" aria-hidden="true"><span class="octicon octicon-link"></span></a>セミコロン(Semicolons)</h2>
+<a id="セミコロンsemicolons" class="anchor" href="#%E3%82%BB%E3%83%9F%E3%82%B3%E3%83%AD%E3%83%B3semicolons" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>セミコロン(Semicolons)</h2>
 
 <ul>
 <li>
@@ -2022,7 +2022,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="型変換と強制type-casting--coercion" class="anchor" href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6type-casting--coercion" aria-hidden="true"><span class="octicon octicon-link"></span></a>型変換と強制(Type Casting &amp; Coercion)</h2>
+<a id="型変換と強制type-casting--coercion" class="anchor" href="#%E5%9E%8B%E5%A4%89%E6%8F%9B%E3%81%A8%E5%BC%B7%E5%88%B6type-casting--coercion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>型変換と強制(Type Casting &amp; Coercion)</h2>
 
 <ul>
 <li>
@@ -2109,7 +2109,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="命名規則naming-conventions" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87naming-conventions" aria-hidden="true"><span class="octicon octicon-link"></span></a>命名規則(Naming Conventions)</h2>
+<a id="命名規則naming-conventions" class="anchor" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87naming-conventions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>命名規則(Naming Conventions)</h2>
 
 <ul>
 <li>
@@ -2247,7 +2247,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="アクセッサaccessors" class="anchor" href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%83%E3%82%B5accessors" aria-hidden="true"><span class="octicon octicon-link"></span></a>アクセッサ(Accessors)</h2>
+<a id="アクセッサaccessors" class="anchor" href="#%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%83%E3%82%B5accessors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>アクセッサ(Accessors)</h2>
 
 <ul>
 <li>
@@ -2307,7 +2307,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="イベントevents" class="anchor" href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88events" aria-hidden="true"><span class="octicon octicon-link"></span></a>イベント(Events)</h2>
+<a id="イベントevents" class="anchor" href="#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88events" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>イベント(Events)</h2>
 
 <ul>
 <li>
@@ -2319,7 +2319,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
 <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>listingUpdated<span class="pl-pds">'</span></span>, <span class="pl-smi">listing</span>.<span class="pl-c1">id</span>);
 
-...
+<span class="pl-k">...</span>
 
 <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>listingUpdated<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">e</span>, <span class="pl-smi">listingId</span>) {
   <span class="pl-c">// do something with listingId</span>
@@ -2331,7 +2331,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// good</span>
 <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">trigger</span>(<span class="pl-s"><span class="pl-pds">'</span>listingUpdated<span class="pl-pds">'</span></span>, { listingId<span class="pl-k">:</span> <span class="pl-smi">listing</span>.<span class="pl-c1">id</span> });
 
-...
+<span class="pl-k">...</span>
 
 <span class="pl-en">$</span>(<span class="pl-v">this</span>).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>listingUpdated<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">e</span>, <span class="pl-smi">data</span>) {
   <span class="pl-c">// do something with data.listingId</span>
@@ -2342,7 +2342,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 </ul>
 
 <h2>
-<a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>jQuery</h2>
+<a id="jquery" class="anchor" href="#jquery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery</h2>
 
 <ul>
 <li>
@@ -2412,7 +2412,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="ecmascript-5-互換性ecmascript-5-compatibility" class="anchor" href="#ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7ecmascript-5-compatibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>ECMAScript 5 互換性(ECMAScript 5 Compatibility)</h2>
+<a id="ecmascript-5-互換性ecmascript-5-compatibility" class="anchor" href="#ecmascript-5-%E4%BA%92%E6%8F%9B%E6%80%A7ecmascript-5-compatibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ECMAScript 5 互換性(ECMAScript 5 Compatibility)</h2>
 
 <ul>
 <li>
@@ -2424,7 +2424,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="ecmascript-6-styles" class="anchor" href="#ecmascript-6-styles" aria-hidden="true"><span class="octicon octicon-link"></span></a>ECMAScript 6 Styles</h2>
+<a id="ecmascript-6-styles" class="anchor" href="#ecmascript-6-styles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ECMAScript 6 Styles</h2>
 
 <ul>
 <li>
@@ -2452,7 +2452,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="テストtesting" class="anchor" href="#%E3%83%86%E3%82%B9%E3%83%88testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>テスト(Testing)</h2>
+<a id="テストtesting" class="anchor" href="#%E3%83%86%E3%82%B9%E3%83%88testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>テスト(Testing)</h2>
 
 <ul>
 <li>
@@ -2494,7 +2494,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="パフォーマンスperformance" class="anchor" href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9performance" aria-hidden="true"><span class="octicon octicon-link"></span></a>パフォーマンス(Performance)</h2>
+<a id="パフォーマンスperformance" class="anchor" href="#%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9performance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>パフォーマンス(Performance)</h2>
 
 <ul>
 <li><a href="http://www.kellegous.com/j/2013/01/26/layout-performance/">On Layout &amp; Web Performance</a></li>
@@ -2510,7 +2510,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="参考文献resources" class="anchor" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AEresources" aria-hidden="true"><span class="octicon octicon-link"></span></a>参考文献(Resources)</h2>
+<a id="参考文献resources" class="anchor" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AEresources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>参考文献(Resources)</h2>
 
 <p><strong>Learning ES6</strong></p>
 
@@ -2644,7 +2644,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="共鳴者in-the-wild" class="anchor" href="#%E5%85%B1%E9%B3%B4%E8%80%85in-the-wild" aria-hidden="true"><span class="octicon octicon-link"></span></a>共鳴者(In the Wild)</h2>
+<a id="共鳴者in-the-wild" class="anchor" href="#%E5%85%B1%E9%B3%B4%E8%80%85in-the-wild" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>共鳴者(In the Wild)</h2>
 
 <p>This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.</p>
 
@@ -2821,7 +2821,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="翻訳translation" class="anchor" href="#%E7%BF%BB%E8%A8%B3translation" aria-hidden="true"><span class="octicon octicon-link"></span></a>翻訳(Translation)</h2>
+<a id="翻訳translation" class="anchor" href="#%E7%BF%BB%E8%A8%B3translation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>翻訳(Translation)</h2>
 
 <p>This style guide is also available in other languages:</p>
 
@@ -2873,28 +2873,28 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 </ul>
 
 <h2>
-<a id="javascriptスタイルガイドへの手引きthe-javascript-style-guide-guide" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8Dthe-javascript-style-guide-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScriptスタイルガイドへの手引き(The JavaScript Style Guide Guide)</h2>
+<a id="javascriptスタイルガイドへの手引きthe-javascript-style-guide-guide" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8Dthe-javascript-style-guide-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScriptスタイルガイドへの手引き(The JavaScript Style Guide Guide)</h2>
 
 <ul>
 <li><a href="https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide">Reference</a></li>
 </ul>
 
 <h2>
-<a id="javascriptスタイルガイドについてのchatchat-with-us-about-javascript" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AEchatchat-with-us-about-javascript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascriptスタイルガイドについてのchat(Chat With Us About JavaScript)</h2>
+<a id="javascriptスタイルガイドについてのchatchat-with-us-about-javascript" class="anchor" href="#javascript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AEchatchat-with-us-about-javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Javascriptスタイルガイドについてのchat(Chat With Us About JavaScript)</h2>
 
 <ul>
 <li>Find us on <a href="https://gitter.im/airbnb/javascript">gitter</a>.</li>
 </ul>
 
 <h2>
-<a id="貢献者contributors" class="anchor" href="#%E8%B2%A2%E7%8C%AE%E8%80%85contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>貢献者(Contributors)</h2>
+<a id="貢献者contributors" class="anchor" href="#%E8%B2%A2%E7%8C%AE%E8%80%85contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>貢献者(Contributors)</h2>
 
 <ul>
 <li><a href="https://github.com/airbnb/javascript/graphs/contributors">View Contributors</a></li>
 </ul>
 
 <h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>(The MIT License)</p>
 
@@ -2940,7 +2940,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <p><strong><a href="#%E7%9B%AE%E6%AC%A1">⬆ ページのTopへ戻る</a></strong></p>
 
 <h2>
-<a id="補足amendments" class="anchor" href="#%E8%A3%9C%E8%B6%B3amendments" aria-hidden="true"><span class="octicon octicon-link"></span></a>補足(Amendments)</h2>
+<a id="補足amendments" class="anchor" href="#%E8%A3%9C%E8%B6%B3amendments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>補足(Amendments)</h2>
 
 <p>We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.</p>
 
@@ -2948,7 +2948,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 こうすることで、マージの煩わしさに気を取られることなく、あなたのスタイルガイドを定期的に更新することができます。</p>
 
 <h1>
-<a id="" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a>};</h1>
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>};</h1>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/mitsuruog/javacript-style-guide">Javacript-style-guide</a> is maintained by <a href="https://github.com/mitsuruog">mitsuruog</a>.</span>
