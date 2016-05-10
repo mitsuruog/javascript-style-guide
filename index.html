@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Javacript-style-guide by mitsuruog</title>
+    <title>Javascript-style-guide by mitsuruog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,11 +11,11 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Javacript-style-guide</h1>
-      <h2 class="project-tagline">A mostly reasonable approach to JavaScript</h2>
-      <a href="https://github.com/mitsuruog/javacript-style-guide" class="btn">View on GitHub</a>
-      <a href="https://github.com/mitsuruog/javacript-style-guide/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/mitsuruog/javacript-style-guide/tarball/master" class="btn">Download .tar.gz</a>
+      <h1 class="project-name">Javascript-style-guide</h1>
+      <h2 class="project-tagline">常に気をつけたい、JavaScriptへの正しい接し方</h2>
+      <a href="https://github.com/mitsuruog/javascript-style-guide" class="btn">View on GitHub</a>
+      <a href="https://github.com/mitsuruog/javascript-style-guide/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mitsuruog/javascript-style-guide/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
@@ -29,7 +29,7 @@
 <p>他のスタイルガイドたち</p>
 
 <ul>
-<li><a href="https://github.com/mitsuruog/javacript-style-guide/blob/master/es5/README.md">ES5</a></li>
+<li><a href="https://github.com/mitsuruog/javascript-style-guide/blob/master/es5/README.md">ES5</a></li>
 <li><a href="https://github.com/airbnb/javascript/tree/master/react">React</a></li>
 <li><a href="https://github.com/airbnb/css">CSS &amp; Sass</a></li>
 <li><a href="https://github.com/airbnb/ruby">Ruby</a></li>
@@ -627,7 +627,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 <p><a href="#7.5">7.5</a> <a name="7.5"></a> パラメータに <code>arguments</code> を指定しないでください。これは、関数スコープに渡される <code>arguments</code> オブジェクトの参照を上書きしてしまうためです。</p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-c">// bad</span>
-<span class="pl-k">function</span> <span class="pl-en">nope</span>(<span class="pl-smi">name</span>, <span class="pl-smi">options</span>, <span class="pl-smi">arguments</span>) {
+<span class="pl-k">function</span> <span class="pl-en">nope</span>(<span class="pl-smi">name</span>, <span class="pl-smi">options</span>, <span class="pl-v">arguments</span>) {
   <span class="pl-c">// ...stuff...</span>
 }
 
@@ -651,7 +651,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
 
 <div class="highlight highlight-source-js"><pre>  <span class="pl-c">// bad</span>
   <span class="pl-k">function</span> <span class="pl-en">concatenateAll</span>() {
-    <span class="pl-k">const</span> <span class="pl-c1">args</span> <span class="pl-k">=</span> <span class="pl-c1">Array</span>.<span class="pl-c1">prototype</span>.<span class="pl-smi">slice</span>.<span class="pl-c1">call</span>(arguments);
+    <span class="pl-k">const</span> <span class="pl-c1">args</span> <span class="pl-k">=</span> <span class="pl-c1">Array</span>.<span class="pl-c1">prototype</span>.<span class="pl-smi">slice</span>.<span class="pl-c1">call</span>(<span class="pl-v">arguments</span>);
     <span class="pl-k">return</span> <span class="pl-smi">args</span>.<span class="pl-c1">join</span>(<span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
   }
 
@@ -911,7 +911,7 @@ someStack[<span class="pl-smi">someStack</span>.<span class="pl-c1">length</span
   }
 
   <span class="pl-c">// good</span>
-  <span class="pl-k">class</span> <span class="pl-en">PeekableQueue</span> <span class="pl-k">extends</span> <span class="pl-en">Queue</span> {
+  <span class="pl-k">class</span> <span class="pl-en">PeekableQueue</span> <span class="pl-k">extends</span> <span class="pl-e">Queue</span> {
     <span class="pl-en">peek</span>() {
       <span class="pl-k">return</span> <span class="pl-v">this</span>.<span class="pl-smi">_queue</span>[<span class="pl-c1">0</span>];
     }
@@ -1584,7 +1584,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <li>
 <p><a href="#17.4">17.4</a> <a name="17.4"></a> 問題に対する注釈として <code>// FIXME:</code> を使用してください。</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">class</span> <span class="pl-en">Calculator</span> <span class="pl-k">extends</span> <span class="pl-en">Abacus</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">class</span> <span class="pl-en">Calculator</span> <span class="pl-k">extends</span> <span class="pl-e">Abacus</span> {
   <span class="pl-en">constructor</span>() {
     <span class="pl-v">super</span>();
 
@@ -1598,7 +1598,7 @@ superPower <span class="pl-k">=</span> <span class="pl-k">new</span> <span class
 <li>
 <p><a href="#17.5">17.5</a> <a name="17.5"></a> 問題の解決策に対する注釈として <code>// TODO:</code> を使用してください。</p>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">class</span> <span class="pl-en">Calculator</span> <span class="pl-k">extends</span> <span class="pl-en">Abacus</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">class</span> <span class="pl-en">Calculator</span> <span class="pl-k">extends</span> <span class="pl-e">Abacus</span> {
   <span class="pl-en">constructor</span>() {
     <span class="pl-v">super</span>();
 
@@ -2853,7 +2853,7 @@ emphasizes that the line is a method call, not a new statement.</p></li>
 <img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png" alt="it"> <strong>Italian</strong>: <a href="https://github.com/sinkswim/javascript-style-guide">sinkswim/javascript-style-guide</a>
 </li>
 <li>
-<img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png" alt="jp"> <strong>Japanese</strong>: <a href="https://github.com/mitsuruog/javacript-style-guide">mitsuruog/javacript-style-guide</a>
+<img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png" alt="jp"> <strong>Japanese</strong>: <a href="https://github.com/mitsuruog/javascript-style-guide">mitsuruog/javascript-style-guide</a>
 </li>
 <li>
 <img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png" alt="kr"> <strong>Korean</strong>: <a href="https://github.com/tipjs/javascript-style-guide">tipjs/javascript-style-guide</a>
@@ -2951,7 +2951,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>};</h1>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/mitsuruog/javacript-style-guide">Javacript-style-guide</a> is maintained by <a href="https://github.com/mitsuruog">mitsuruog</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/mitsuruog/javascript-style-guide">Javascript-style-guide</a> is maintained by <a href="https://github.com/mitsuruog">mitsuruog</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
