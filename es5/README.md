@@ -1551,7 +1551,7 @@ _訳注: 原文は「in the wild:感染者」となっている。_
   このスタイルガイドは他の言語でも利用できます。
 
   - :de: **ドイツ語**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
-  - :jp: **日本語**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
+  - :jp: **日本語**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide)
   - :br: **ポルトガル語**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - :cn: **中国語**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
   - :es: **スペイン語**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
@@ -1562,7 +1562,7 @@ _訳注: 原文は「in the wild:感染者」となっている。_
 
 ## <a name='guide-guide'>JavaScriptスタイルガイドへの手引き</a> [原文](https://github.com/airbnb/javascript#guide-guide)
 
-  - [こちらを参照](https://github.com/mitsuruog/javacript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
+  - [こちらを参照](https://github.com/mitsuruog/javascript-style-guide/wiki/JavaScript%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%AC%E3%82%A4%E3%83%89%E3%81%B8%E3%81%AE%E6%89%8B%E5%BC%95%E3%81%8D)
 
 ## <a name='contributors'>貢献者</a> [原文](https://github.com/airbnb/javascript#contributors)
 
