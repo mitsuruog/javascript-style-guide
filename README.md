@@ -6,7 +6,7 @@
 
 他のスタイルガイドたち
  - [ES5](https://github.com/mitsuruog/javascript-style-guide/blob/master/es5/README.md)
- - [React](https://github.com/airbnb/javascript/tree/master/react)
+ - [React](https://github.com/mitsuruog/javascript-style-guide/blob/master/react/README.md)
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
 
