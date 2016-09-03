@@ -104,7 +104,7 @@
 
   - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
 
->  - **コンポーネント名**: ファイル名をコンポーネント名として利用すること。例えば、 `ReservationCard.jsx` の参照名は `ReservationCard` とするべき。しかし、コンポーネントがあるルート・ディレクトリの `index.jsx` は、ディレクトリ名をコンポネント名として利用してください。
+>  - **コンポーネント名**: ファイル名をコンポーネント名として利用すること。例えば、 `ReservationCard.jsx` の参照名は `ReservationCard` とするべき。しかし、コンポーネントがあるルート・ディレクトリの `index.jsx` は、ディレクトリ名をコンポーネント名として利用してください。
 
   ```jsx
   // bad
@@ -170,7 +170,7 @@
 
   - Follow these alignment styles for JSX syntax. eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
->  - JSX構文の引数はこれらのスタイルに従うこと。eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+>  - JSX構文の位置揃えはこれらのスタイルに従うこと。eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
 
   ```jsx  
   // bad
@@ -345,7 +345,7 @@
  
   > Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.
 
->  > なぜ？スクリーンリーダーやキーボードを利用する人々の中で、キーボードショートカットとキーボードコマンドの不整合を起すことは、アクセシビリティを複雑なものにしていまいます。
+>  > なぜ？スクリーンリーダーやキーボードを利用する人々の中で、キーボードショートカットとキーボードコマンドの不整合を起すことは、アクセシビリティを複雑なものにしてしまいます。
   
 ```jsx
 // bad
