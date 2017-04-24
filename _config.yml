@@ -1,0 +1,8 @@
+title: Javascript-style-guide
+description: 常に気をつけたい、JavaScriptへの正しい接し方
+google_analytics: UA-43140384-1
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
