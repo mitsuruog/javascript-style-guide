@@ -1900,7 +1900,7 @@
     ```
 
   - [21.3](#21.3) <a name='21.3'></a> Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings.
-  - [21.3](#21.3) <a name='21.3'></a> 数値の場合: `Number` へ型変換する場合は `parseInt`  を使用し、常に型変換のための基数を引数に渡してください。
+  - [21.3](#21.3) <a name='21.3'></a> 数値の場合: 型変換には `Number` を使用してください。 `parseInt` を使用する場合、常に型変換のための基数を引数に渡してください。
 
     ```javascript
     const inputValue = '4';
