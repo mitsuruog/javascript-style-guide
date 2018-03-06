@@ -268,12 +268,12 @@
 
   - Use inline styles for styles that have a high cardinality (e.g. uses the value of a prop) and not for styles that have a low cardinality.
 
-  > -
+  > - ユニーク性が高い(propsの値を利用するなど)スタイルにはインラインスタイルを利用して、そうではない場合には利用しないこと。
 
 
   > Why? Generating themed stylesheets can be expensive, so they are best for discrete sets of styles.
 
-  > > なぜ？テーマ用のスタイルシートを作成することは作成コストが高くなるため、これらは細かくスタイルを設定ためのベストな方法です。
+  > > なぜ？テーマ用のスタイルシートを作成することは作成コストが高くなるため、ユニーク性の高いスタイルのセットにこそ利用するのが最適です。
 
     ```jsx
     // bad
