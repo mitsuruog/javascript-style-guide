@@ -94,15 +94,15 @@
 
   > なぜ? 参照を再割り当でできないことで、バグに繋がりやすく理解しがたいコードになることを防ぎます。
 
-    ```javascript
-    // bad
-    var a = 1;
-    var b = 2;
+  ```javascript
+  // bad
+  var a = 1;
+  var b = 2;
 
-    // good
-    const a = 1;
-    const b = 2;
-    ```
+  // good
+  const a = 1;
+  const b = 2;
+  ```
 
   - [2.2](#2.2) <a name='2.2'></a> If you must reassign references, use `let` instead of `var`.
   - [2.2](#2.2) <a name='2.2'></a> 参照を再割当てする場合は `var` の代わりに `let` を利用してください。
@@ -111,19 +111,19 @@
 
   > なぜ? 関数スコープの `var` よりむしろ、ブロックスコープの `let`
 
-    ```javascript
-    // bad
-    var count = 1;
-    if (true) {
-      count += 1;
-    }
+  ```javascript
+  // bad
+  var count = 1;
+  if (true) {
+    count += 1;
+  }
 
-    // good, use the let.
-    let count = 1;
-    if (true) {
-      count += 1;
-    }
-    ```
+  // good, use the let.
+  let count = 1;
+  if (true) {
+    count += 1;
+  }
+  ```
 
   - [2.3](#2.3) <a name='2.3'></a> Note that both `let` and `const` are block-scoped.
   - [2.3](#2.3) <a name='2.3'></a> `let` と `const` は共にブロックスコープであることに注意すること。
@@ -200,25 +200,25 @@
 
   > なぜ? こうすることで、オブジェクトのプロパティを1箇所で定義することができます。
 
-    ```javascript
-    function getKey(k) {
-      return a `key named ${k}`;
-    }
+  ```javascript
+  function getKey(k) {
+    return a `key named ${k}`;
+  }
 
-    // bad
-    const obj = {
-      id: 5,
-      name: 'San Francisco',
-    };
-    obj[getKey('enabled')] = true;
+  // bad
+  const obj = {
+    id: 5,
+    name: 'San Francisco',
+  };
+  obj[getKey('enabled')] = true;
 
-    // good
-    const obj = {
-      id: 5,
-      name: 'San Francisco',
-      ［getKey('enabled')]: true
-    };
-    ```
+  // good
+  const obj = {
+    id: 5,
+    name: 'San Francisco',
+    ［getKey('enabled')]: true
+  };
+  ```
 
   <a name="es6-object-shorthand"></a>
   - [3.5](#3.5) <a name='3.5'></a> Use object method shorthand.
@@ -252,19 +252,19 @@
 
   > Why? 記述や説明が簡潔になるからです。
 
-    ```javascript
-    const lukeSkywalker = 'Luke Skywalker';
+  ```javascript
+  const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
-    const obj = {
-      lukeSkywalker: lukeSkywalker,
-    };
+  // bad
+  const obj = {
+    lukeSkywalker: lukeSkywalker,
+  };
 
-    // good
-    const obj = {
-      lukeSkywalker,
-    };
-    ```
+  // good
+  const obj = {
+    lukeSkywalker,
+  };
+  ```
 
   - [3.7](#3.7) <a name='3.7'></a> Group your shorthand properties at the beginning of your object declaration.
   - [3.7](#3.7) <a name='3.7'></a> プロパティの短縮構文はオブジェクト宣言の先頭にまとめてください。
@@ -273,30 +273,30 @@
 
   > なぜ? どのプロパティが短縮構文を利用しているか分かりやすいからです。
 
-    ```javascript
-    const anakinSkywalker = 'Anakin Skywalker';
-    const lukeSkywalker = 'Luke Skywalker';
+  ```javascript
+  const anakinSkywalker = 'Anakin Skywalker';
+  const lukeSkywalker = 'Luke Skywalker';
 
-    // bad
-    const obj = {
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      lukeSkywalker,
-      episodeThree: 3,
-      mayTheFourth: 4,
-      anakinSkywalker,
-    };
+  // bad
+  const obj = {
+    episodeOne: 1,
+    twoJediWalkIntoACantina: 2,
+    lukeSkywalker,
+    episodeThree: 3,
+    mayTheFourth: 4,
+    anakinSkywalker,
+  };
 
-    // good
-    const obj = {
-      lukeSkywalker,
-      anakinSkywalker,
-      episodeOne: 1,
-      twoJediWalkIntoACantina: 2,
-      episodeThree: 3,
-      mayTheFourth: 4,
-    };
-    ```
+  // good
+  const obj = {
+    lukeSkywalker,
+    anakinSkywalker,
+    episodeOne: 1,
+    twoJediWalkIntoACantina: 2,
+    episodeThree: 3,
+    mayTheFourth: 4,
+  };
+  ```
 
 **[⬆ ページのTopへ戻る](#目次)**
 
@@ -364,26 +364,26 @@
 
   > なぜ? 構造化代入を利用することで、それらのプロパティのための中間的な参照を減らすことができます。
 
-    ```javascript
-    // bad
-    function getFullName(user) {
-      const firstName = user.firstName;
-      const lastName = user.lastName;
+  ```javascript
+  // bad
+  function getFullName(user) {
+    const firstName = user.firstName;
+    const lastName = user.lastName;
 
-      return `${firstName} ${lastName}`;
-    }
+    return `${firstName} ${lastName}`;
+  }
 
-    // good
-    function getFullName(obj) {
-      const { firstName, lastName } = obj;
-      return `${firstName} ${lastName}`;
-    }
+  // good
+  function getFullName(obj) {
+    const { firstName, lastName } = obj;
+    return `${firstName} ${lastName}`;
+  }
 
-    // best
-    function getFullName({ firstName, lastName }) {
-      return `${firstName} ${lastName}`;
-    }
-    ```
+  // best
+  function getFullName({ firstName, lastName }) {
+    return `${firstName} ${lastName}`;
+  }
+  ```
 
   - [5.2](#5.2) <a name='5.2'></a> Use array destructuring.
   - [5.2](#5.2) <a name='5.2'></a> 配列の構造化代入を利用してください。
@@ -406,29 +406,29 @@
 
   > なぜ? こうすることで、後で新しいプロパティを追加したり、呼び出し元に影響することなく順序を変更することができます。
 
-    ```javascript
-    // bad
-    function processInput(input) {
-      // then a miracle occurs
-      // その後、奇跡が起こります。
-      return [left, right, top, bottom];
-    }
+  ```javascript
+  // bad
+  function processInput(input) {
+    // then a miracle occurs
+    // その後、奇跡が起こります。
+    return [left, right, top, bottom];
+  }
 
-    // the caller needs to think about the order of return data
-    // 呼び出し者で返却されるデータの順番を考慮する必要があります。
-    const [left, __, top] = processInput(input);
+  // the caller needs to think about the order of return data
+  // 呼び出し者で返却されるデータの順番を考慮する必要があります。
+  const [left, __, top] = processInput(input);
 
-    // good
-    function processInput(input) {
-      // then a miracle occurs
-      // その後、奇跡が起こります。
-      return { left, right, top, bottom };
-    }
+  // good
+  function processInput(input) {
+    // then a miracle occurs
+    // その後、奇跡が起こります。
+    return { left, right, top, bottom };
+  }
 
-    // the caller selects only the data they need
-    // 呼び出し元は必要なデータのみ選択すればいい。
-    const { left, right } = processInput(input);
-    ```
+  // the caller selects only the data they need
+  // 呼び出し元は必要なデータのみ選択すればいい。
+  const { left, right } = processInput(input);
+  ```
 
 
 **[⬆ ページのTopへ戻る](#目次)**
@@ -476,22 +476,22 @@
 
   > なぜ? Template strings は文字列補完機能・複数行文字列機能を持つ簡潔な構文で、可読性が良いからです。
 
-    ```javascript
-    // bad
-    function sayHi(name) {
-      return 'How are you, ' + name + '?';
-    }
+  ```javascript
+  // bad
+  function sayHi(name) {
+    return 'How are you, ' + name + '?';
+  }
 
-    // bad
-    function sayHi(name) {
-      return ['How are you, ', name, '?'].join();
-    }
+  // bad
+  function sayHi(name) {
+    return ['How are you, ', name, '?'].join();
+  }
 
-    // good
-    function sayHi(name) {
-      return `How are you, ${name}?`;
-    }
-    ```
+  // good
+  function sayHi(name) {
+    return `How are you, ${name}?`;
+  }
+  ```
   - [6.5](#6.5) <a name='6.5'></a> Never use `eval()` on a string, it opens too many vulnerabilities.
   - [6.5](#6.5) <a name='6.5'></a> 絶対に `eval()` を利用しないでください。これは、いままで数多くの脆弱性を作って来たからです。
 
@@ -508,15 +508,15 @@
   > なぜ? 名前が付けられた関数宣言はコールスタックで簡単に見分けることができます。さらに関数宣言は関数の本体が巻き上げられます。それに対し、関数式は参照だけが巻き上げられます。
   このルールにより、関数式の部分を常に[アロー関数](#アロー関数arrow-functions)で置き換えて利用することができます。
 
-    ```javascript
-    // bad
-    const foo = function () {
-    };
+  ```javascript
+  // bad
+  const foo = function () {
+  };
 
-    // good
-    function foo() {
-    }
-    ```
+  // good
+  function foo() {
+  }
+  ```
 
   - [7.2](#7.2) <a name='7.2'></a> Function expressions:
   - [7.2](#7.2) <a name='7.2'></a> 関数式
@@ -575,18 +575,18 @@
 
   > なぜ? `...` を利用することで、いつくかのパラメータを利用したいことを明らかにすることができます。加えてrestパラメータは `arguments` の様なArray-likeなオブジェクトではなく正真正銘のArrayです。
 
-    ```javascript
-    // bad
-    function concatenateAll() {
-      const args = Array.prototype.slice.call(arguments);
-      return args.join('');
-    }
+  ```javascript
+  // bad
+  function concatenateAll() {
+    const args = Array.prototype.slice.call(arguments);
+    return args.join('');
+  }
 
-    // good
-    function concatenateAll(...args) {
-      return args.join('');
-    }
-    ```
+  // good
+  function concatenateAll(...args) {
+    return args.join('');
+  }
+  ```
 
   <a name="es6-default-parameters"></a>
   - [7.7](#7.7) <a name='7.7'></a> Use default parameter syntax rather than mutating function arguments.
@@ -684,19 +684,19 @@
 
   > 利用するべきではない？ 複雑な関数でロジックを定義した関数の外側に移動したいケース。
 
-    ```javascript
-    // bad
-    [1, 2, 3].map(function (x) {
-      const y = x + 1;
-      return x * y;
-    });
+  ```javascript
+  // bad
+  [1, 2, 3].map(function (x) {
+    const y = x + 1;
+    return x * y;
+  });
 
-    // good
-    [1, 2, 3].map((x) => {
-      const y = x + 1;
-      return x * y;
-    });
-    ```
+  // good
+  [1, 2, 3].map((x) => {
+    const y = x + 1;
+    return x * y;
+  });
+  ```
 
   - [8.2](#8.2) <a name='8.2'></a> If the function body consists of a single expression, feel free to omit the braces and use the implicit return. Otherwise use a `return` statement.
   - [8.2](#8.2) <a name='8.2'></a> 関数の本体が1つの式で構成されている場合は、中括弧({})を省略し、暗黙のreturnを利用することができます。それ以外は `return` 文を利用してください。
@@ -709,22 +709,22 @@
 
   > 使うべきではない? オブジェクトを返すケース。
 
-    ```javascript
-    // good
-    [1, 2, 3].map(number => `A string containing the ${number}.`);
+  ```javascript
+  // good
+  [1, 2, 3].map(number => `A string containing the ${number}.`);
 
-    // bad
-    [1, 2, 3].map(number => {
-      const nextNumber = number + 1;
-      `A string containing the ${nextNumber}.`;
-    });
+  // bad
+  [1, 2, 3].map(number => {
+    const nextNumber = number + 1;
+    `A string containing the ${nextNumber}.`;
+  });
 
-    // good
-    [1, 2, 3].map(number => {
-      const nextNumber = number + 1;
-      return `A string containing the ${nextNumber}.`;
-    });
-    ```
+  // good
+  [1, 2, 3].map(number => {
+    const nextNumber = number + 1;
+    return `A string containing the ${nextNumber}.`;
+  });
+  ```
 
   - [8.3](#8.3) <a name='8.3'></a> In case the expression spans over multiple lines, wrap it in parentheses for better readability.
   - [8.3](#8.3) <a name='8.3'></a> 式の全長が複数行にまたがる場合は、可読性をより良くするため丸括弧()で囲ってください。
@@ -733,19 +733,19 @@
 
   > なぜ? 関数の開始と終了部分が分かりやすく見えるためです。
 
-    ```js
-    // bad
-    [1, 2, 3].map(number => 'As time went by, the string containing the ' +
-      `${number} became much longer. So we needed to break it over multiple ` +
-      'lines.'
-    );
+  ```js
+  // bad
+  [1, 2, 3].map(number => 'As time went by, the string containing the ' +
+    `${number} became much longer. So we needed to break it over multiple ` +
+    'lines.'
+  );
 
-    // good
-    [1, 2, 3].map(number => (
-      `As time went by, the string containing the ${number} became much ` +
-      'longer. So we needed to break it over multiple lines.'
-    ));
-    ```
+  // good
+  [1, 2, 3].map(number => (
+    `As time went by, the string containing the ${number} became much ` +
+    'longer. So we needed to break it over multiple lines.'
+  ));
+  ```
 
   - [8.4](#8.4) <a name='8.4'></a> If your function only takes a single argument, feel free to omit the parentheses.
   - [8.4](#8.4) <a name='8.4'></a> 関数の引数が1つの場合、丸括弧()を省略することができます。
@@ -754,13 +754,13 @@
 
   > なぜ? あまり見難くないからです。
 
-    ```javascript
-    // good
-    [1, 2, 3].map(x => x * x);
+  ```javascript
+  // good
+  [1, 2, 3].map(x => x * x);
 
-    // good
-    [1, 2, 3].reduce((y, x) => x + y);
-    ```
+  // good
+  [1, 2, 3].reduce((y, x) => x + y);
+  ```
 
 **[⬆ ページのTopへ戻る](#目次)**
 
@@ -774,29 +774,29 @@
 
   > なぜ? `class` 構文は簡潔で意図がわかりやすいからです。
 
-    ```javascript
-    // bad
-    function Queue(contents = []) {
+  ```javascript
+  // bad
+  function Queue(contents = []) {
+    this._queue = [...contents];
+  }
+  Queue.prototype.pop = function() {
+    const value = this._queue[0];
+    this._queue.splice(0, 1);
+    return value;
+  }
+
+  // good
+  class Queue {
+    constructor(contents = []) {
       this._queue = [...contents];
     }
-    Queue.prototype.pop = function() {
+    pop() {
       const value = this._queue[0];
       this._queue.splice(0, 1);
       return value;
     }
-
-    // good
-    class Queue {
-      constructor(contents = []) {
-        this._queue = [...contents];
-      }
-      pop() {
-        const value = this._queue[0];
-        this._queue.splice(0, 1);
-        return value;
-      }
-    }
-    ```
+  }
+  ```
 
   - [9.2](#9.2) <a name='9.2'></a> Use `extends` for inheritance.
   - [9.2](#9.2) <a name='9.2'></a> 継承は `extends` を利用してください。
@@ -805,24 +805,24 @@
 
   > なぜ? プロトタイプ継承するためにビルトインされた方法で、`instanceof` を破壊することがないためです。
 
-    ```javascript
-    // bad
-    const inherits = require('inherits');
-    function PeekableQueue(contents) {
-      Queue.apply(this, contents);
-    }
-    inherits(PeekableQueue, Queue);
-    PeekableQueue.prototype.peek = function() {
+  ```javascript
+  // bad
+  const inherits = require('inherits');
+  function PeekableQueue(contents) {
+    Queue.apply(this, contents);
+  }
+  inherits(PeekableQueue, Queue);
+  PeekableQueue.prototype.peek = function() {
+    return this._queue[0];
+  }
+
+  // good
+  class PeekableQueue extends Queue {
+    peek() {
       return this._queue[0];
     }
-
-    // good
-    class PeekableQueue extends Queue {
-      peek() {
-        return this._queue[0];
-      }
-    }
-    ```
+  }
+  ```
 
   - [9.3](#9.3) <a name='9.3'></a> Methods can return `this` to help with method chaining.
   - [9.3](#9.3) <a name='9.3'></a> メソッドの戻り値で `this` を返すことで、メソッドチェーンをすることができます。
@@ -893,19 +893,19 @@
 
   > Why? モジュールは将来性があります。未来を先取りして使いましょう。
 
-    ```javascript
-    // bad
-    const AirbnbStyleGuide = require('./AirbnbStyleGuide');
-    module.exports = AirbnbStyleGuide.es6;
+  ```javascript
+  // bad
+  const AirbnbStyleGuide = require('./AirbnbStyleGuide');
+  module.exports = AirbnbStyleGuide.es6;
 
-    // ok
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
-    export default AirbnbStyleGuide.es6;
+  // ok
+  import AirbnbStyleGuide from './AirbnbStyleGuide';
+  export default AirbnbStyleGuide.es6;
 
-    // best
-    import { es6 } from './AirbnbStyleGuide';
-    export default es6;
-    ```
+  // best
+  import { es6 } from './AirbnbStyleGuide';
+  export default es6;
+  ```
 
   - [10.2](#10.2) <a name='10.2'></a> Do not use wildcard imports.
   - [10.2](#10.2) <a name='10.2'></a> ワイルドカードインポートは利用しないでください。
@@ -914,13 +914,13 @@
 
   > なぜ? single default exportであることに注意する必要があるからです。
 
-    ```javascript
-    // bad
-    import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+  ```javascript
+  // bad
+  import * as AirbnbStyleGuide from './AirbnbStyleGuide';
 
-    // good
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
-    ```
+  // good
+  import AirbnbStyleGuide from './AirbnbStyleGuide';
+  ```
 
   - [10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.
   - [10.3](#10.3) <a name='10.3'></a> import文から直接exportするのはやめてください。
@@ -929,16 +929,16 @@
 
   > なぜ? ワンライナーは簡潔ではありますが、importとexportの方法を明確に1つとすることで一貫性を保つことができます。
 
-    ```javascript
-    // bad
-    // filename es6.js
-    export { es6 as default } from './airbnbStyleGuide';
+  ```javascript
+  // bad
+  // filename es6.js
+  export { es6 as default } from './airbnbStyleGuide';
 
-    // good
-    // filename es6.js
-    import { es6 } from './AirbnbStyleGuide';
-    export default es6;
-    ```
+  // good
+  // filename es6.js
+  import { es6 } from './AirbnbStyleGuide';
+  export default es6;
+  ```
 
 **[⬆ ページのTopへ戻る](#目次)**
 
@@ -951,26 +951,26 @@
 
   > なぜ? これはimmutable(不変)ルールを適用します。値を返ような関数の中身の処理を気にするより副作用について推測するほうが簡単です。
 
-    ```javascript
-    const numbers = [1, 2, 3, 4, 5];
+  ```javascript
+  const numbers = [1, 2, 3, 4, 5];
 
-    // bad
-    let sum = 0;
-    for (let num of numbers) {
-      sum += num;
-    }
+  // bad
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
 
-    sum === 15;
+  sum === 15;
 
-    // good
-    let sum = 0;
-    numbers.forEach((num) => sum += num);
-    sum === 15;
+  // good
+  let sum = 0;
+  numbers.forEach((num) => sum += num);
+  sum === 15;
 
-    // best (use the functional force)
-    const sum = numbers.reduce((total, num) => total + num, 0);
-    sum === 15;
-    ```
+  // best (use the functional force)
+  const sum = numbers.reduce((total, num) => total + num, 0);
+  sum === 15;
+  ```
 
   - [11.2](#11.2) <a name='11.2'></a> Don't use generators for now.
   - [11.2](#11.2) <a name='11.2'></a> 現時点ではgeneratorsは利用しないでください。
@@ -1064,26 +1064,26 @@
 
   > なぜ? 以前に割り当てた変数に応じて、後で新しい変数を追加する場合に有用だからです。
 
-    ```javascript
-    // bad
-    let i, len, dragonball,
-        items = getItems(),
-        goSportsTeam = true;
+  ```javascript
+  // bad
+  let i, len, dragonball,
+      items = getItems(),
+      goSportsTeam = true;
 
-    // bad
-    let i;
-    const items = getItems();
-    let dragonball;
-    const goSportsTeam = true;
-    let len;
+  // bad
+  let i;
+  const items = getItems();
+  let dragonball;
+  const goSportsTeam = true;
+  let len;
 
-    // good
-    const goSportsTeam = true;
-    const items = getItems();
-    let dragonball;
-    let i;
-    let length;
-    ```
+  // good
+  const goSportsTeam = true;
+  const items = getItems();
+  let dragonball;
+  let i;
+  let length;
+  ```
 
   - [13.4](#13.4) <a name='13.4'></a> Assign variables where you need them, but place them in a reasonable place.
   - [13.4](#13.4) <a name='13.4'></a> 変数を割り当てる際は、必要かつ合理的な場所で行ってください。
@@ -1092,48 +1092,48 @@
 
   > なぜ? `let` と `const` はブロックスコープだからです。関数スコープではありません。
 
-    ```javascript
-    // good
-    function() {
-      test();
-      console.log('doing stuff..');
+  ```javascript
+  // good
+  function() {
+    test();
+    console.log('doing stuff..');
 
-      //..other stuff..
+    //..other stuff..
 
-      const name = getName();
+    const name = getName();
 
-      if (name === 'test') {
-        return false;
-      }
-
-      return name;
+    if (name === 'test') {
+      return false;
     }
 
-    // bad - unnecessary function call
-    function(hasName) {
-      const name = getName();
+    return name;
+  }
 
-      if (!hasName) {
-        return false;
-      }
+  // bad - unnecessary function call
+  function(hasName) {
+    const name = getName();
 
-      this.setFirstName(name);
-
-      return true;
+    if (!hasName) {
+      return false;
     }
 
-    // good
-    function(hasName) {
-      if (!hasName) {
-        return false;
-      }
+    this.setFirstName(name);
 
-      const name = getName();
-      this.setFirstName(name);
+    return true;
+  }
 
-      return true;
+  // good
+  function(hasName) {
+    if (!hasName) {
+      return false;
     }
-    ```
+
+    const name = getName();
+    this.setFirstName(name);
+
+    return true;
+  }
+  ```
 
 **[⬆ ページのTopへ戻る](#目次)**
 
@@ -1808,44 +1808,44 @@
 
   > なぜ? これはクリーンなgitの差分につながります。また、Babelの様なトランスパイラはトランスパイルする際に末尾の余計なカンマを除去します。これは、レガシーブラウザでの[余計なカンマ問題](es5/README.md#commas)を心配する必要がないことを意味します。
 
-    ```javascript
-    // bad - git diff without trailing comma
-    const hero = {
-         firstName: 'Florence',
-    -    lastName: 'Nightingale'
-    +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb graph', 'modern nursing']
-    };
+  ```javascript
+  // bad - git diff without trailing comma
+  const hero = {
+       firstName: 'Florence',
+  -    lastName: 'Nightingale'
+  +    lastName: 'Nightingale',
+  +    inventorOf: ['coxcomb graph', 'modern nursing']
+  };
 
-    // good - git diff with trailing comma
-    const hero = {
-         firstName: 'Florence',
-         lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing'],
-    };
+  // good - git diff with trailing comma
+  const hero = {
+       firstName: 'Florence',
+       lastName: 'Nightingale',
+  +    inventorOf: ['coxcomb chart', 'modern nursing'],
+  };
 
-    // bad
-    const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
-    };
+  // bad
+  const hero = {
+    firstName: 'Dana',
+    lastName: 'Scully'
+  };
 
-    const heroes = [
-      'Batman',
-      'Superman'
-    ];
+  const heroes = [
+    'Batman',
+    'Superman'
+  ];
 
-    // good
-    const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully',
-    };
+  // good
+  const hero = {
+    firstName: 'Dana',
+    lastName: 'Scully',
+  };
 
-    const heroes = [
-      'Batman',
-      'Superman',
-    ];
-    ```
+  const heroes = [
+    'Batman',
+    'Superman',
+  ];
+  ```
 
 **[⬆ ページのTopへ戻る](#目次)**
 
