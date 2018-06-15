@@ -169,9 +169,9 @@
       var args = Array.prototype.slice.call(arguments);
       ...
     }
-   ```
+    ```
 
-**[[⬆ ページのTopへ戻る]](#TOC)**
+    **[[⬆ ページのTopへ戻る]](#TOC)**
 
 
 ## <a name='strings'>文字列</a> [原文](https://github.com/airbnb/javascript#strings)
@@ -715,7 +715,7 @@
       this.total = 0;
       return this;
     }
-  ```
+    ```
 
     **[[⬆ ページのTopへ戻る]](#TOC)**
 
@@ -802,7 +802,7 @@
 
   - ファイルの最後は改行文字を1つ入れてください。
 
-  ```javascript
+    ```javascript
     // bad
     (function(global) {
       // ...stuff...
@@ -994,7 +994,7 @@
 
     // good
     var val = parseInt(inputValue, 10);
-    ````
+    ```
 
   - 何らかの理由により `parseInt` がボトルネックとなっており、[パフォーマンス的な理由](http://jsperf.com/coercion-vs-casting/3)でビットシフトを使用す必要がある場合、
   やろうとしている事について、why（なぜ）とwhat（何を）の説明をコメントとして残してください。
