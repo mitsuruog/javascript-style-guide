@@ -1,0 +1,27 @@
+{
+  "name": "javascript-style-guide",
+  "version": "1.0.0",
+  "description": "A mostly reasonable approach to JavaScript(日本語).",
+  "main": "README.md",
+  "engines": {
+    "node": "^8.9.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.13.0"
+  },
+  "scripts": {
+    "test": "npx markdownlint **/*.md --ignore es5/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitsuruog/javascript-style-guide.git"
+  },
+  "author": "Mitsuru Ogawa <mitsuru.ogawa.jp@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mitsuruog/javascript-style-guide/issues"
+  },
+  "homepage": "https://github.com/mitsuruog/javascript-style-guide#readme"
+}
