@@ -12,7 +12,7 @@ This style guide is mostly based on the standards that are currently prevalent i
 
   1. [Basic Rules(基本ルール)](#basic-rules基本ルール)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
-  1. [Mixins](#mixins)  
+  1. [Mixins](#mixins)
   1. [Naming(命名)](#naming命名)
   1. [Declaration(宣言)](#declaration宣言)
   1. [Alignment(位置揃え)](#alignment位置揃え)
@@ -32,11 +32,13 @@ This style guide is mostly based on the standards that are currently prevalent i
   - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
 - Always use JSX syntax.
 - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+- [`react/forbid-prod-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md) will allow `arrays` and `objects` only if it is explicitly noted what `array` and `object` contains, using `arrayOf`, `objectOf`, or `shape`.
 
 - Reactコンポーネントは1ファイル1つとすること。
   - しかし、 複数の[ステートレスや単純なコンポーネント](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)は1つのファイルにまとめることを認める。eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
 - 常にJSX構文を使用すること。
 - JSXを使用していないファイルからのアプリケーション初期化でない限り、`React.createElement`を利用しないこと。
+- [`react/forbid-prod-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md) は`arrayOf`、`objectOf`、`shape`を利用して`array`や`object`に何が含まれているが明示的に定義した場合のみ、`arrays`と`objects`の利用を許可します。
 
 ## Class vs `React.createClass` vs stateless
 
@@ -62,7 +64,7 @@ class Listing extends React.Component {
 }
 ```
 
-And if you don't have state or refs, prefer normal functions (not arrow functions) over classes:
+And if you don’t have state or refs, prefer normal functions (not arrow functions) over classes:
 
 そして、状態や`refs`を保持しない場合、クラスより通常の関数(アロー関数ではない)の利用を推奨します。
 
@@ -97,11 +99,11 @@ function Listing({ hello }) {
 
 ## Naming(命名)
 
-- **Extensions**: Use `.jsx` extension for React components.
+- **Extensions**: Use `.jsx` extension for React components. eslint: [`react/jsx-filename-extension`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
 - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
 - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
-- **拡張子**: Reactコンポーネントの拡張子には`.jsx`を利用すること。
+- **拡張子**: Reactコンポーネントの拡張子には`.jsx`を利用すること。eslint: [`react/jsx-filename-extension`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
 - **ファイル名**: ファイル名にはパスカル記法を利用すること. 例) `ReservationCard.jsx`.
 - **参照名**: Reactコンポーネントにはパスカル記法を利用し、それらのインスタンスにはキャメル記法を利用すること。eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
@@ -134,11 +136,11 @@ import Footer from './Footer/index';
 import Footer from './Footer';
 ```
 
-- **Higher-order Component Naming**: Use a composite of the higher-order component's name and the passed-in component's name as the `displayName` on the generated component. For example, the higher-order component `withFoo()`, when passed a component `Bar` should produce a component with a `displayName` of `withFoo(Bar)`.
+- **Higher-order Component Naming**: Use a composite of the higher-order component’s name and the passed-in component’s name as the `displayName` on the generated component. For example, the higher-order component `withFoo()`, when passed a component `Bar` should produce a component with a `displayName` of `withFoo(Bar)`.
 
-> Why? A component's `displayName` may be used by developer tools or in error messages, and having a value that clearly expresses this relationship helps people understand what is happening.
+> Why? A component’s `displayName` may be used by developer tools or in error messages, and having a value that clearly expresses this relationship helps people understand what is happening.
 
-- **高次コンポーネント名**: 生成されたコンポーネントには、`displayName` に渡されたコンポーネント名と高次コンポーネント名を複合した名称を利用すること。例えば、高次コンポーネント `withFoo()` に対し、`Bar`コンポーネントを渡す場合は、 生成されるコンポーネントの `displayName` は `withFoo(Bar)` となるべきです。
+- **Higher-orderコンポーネント(以下、HOC)名**: 生成されたコンポーネントには、`displayName` に渡されたコンポーネント名とHOC名を複合した名称を利用すること。例えば、HOC `withFoo()` に対し、`Bar`コンポーネントを渡す場合は、 生成されるコンポーネントの `displayName` は `withFoo(Bar)` となるべきです。
 
 > なぜ？コンポーネントの `displayName` は開発者ツールやエラーメッセージの中で利用され、その関連を明確に表現する値を持つことは、何が起こっているかを理解するための助けになるでしょう。
 
@@ -208,7 +210,7 @@ export default class ReservationCard extends React.Component {
 
 - JSX構文の位置揃えはこれらのスタイルに従うこと。eslint: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md) [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
 
-```jsx  
+```jsx
 // bad
 <Foo superLongParam="bar"
      anotherSuperLongParam="baz" />
@@ -228,7 +230,27 @@ export default class ReservationCard extends React.Component {
   anotherSuperLongParam="baz"
 >
   <Quux />
-</Foo>  
+</Foo>
+
+
+// bad
+{showButton &&
+  <Button />
+}
+
+// bad
+{
+  showButton &&
+    <Button />
+}
+
+// good
+{showButton && (
+  <Button />
+)}
+
+// good
+{showButton && <Button />}
 ```
 
 ## Quotes(引用符)
@@ -361,9 +383,9 @@ export default class ReservationCard extends React.Component {
 <img src="hello.jpg" alt="Me waving hello" />
 ```
 
-- Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+- Use only valid, non-abstract [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro). eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
-- [ARIA roles](https://www.w3.org/TR/wai-aria/roles#role_definitions)の中で有効かつ、抽象的でないものを利用すること。eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+- [ARIA roles](https://www.w3.org/TR/wai-aria/#usage_intro)の中で有効かつ、抽象的でないものを利用すること。eslint: [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
 
 ```jsx
 // bad - not an ARIA role
@@ -392,9 +414,17 @@ export default class ReservationCard extends React.Component {
 <div />
 ```
 
-- Avoid using an array index as `key` prop, prefer a unique ID. ([why?](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+- Avoid using an array index as `key` prop, prefer a stable ID. eslint: [`react/no-array-index-key`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md)
 
-- `key` 属性のようなものには配列の添字の利用を避け、一意なIDを利用すること。([なぜ？](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318))
+> Why? Not using a stable ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) because it can negatively impact performance and cause issues with component state.
+
+- `key` 属性のようなものには配列の添字の利用を避け、一意なIDを利用すること。eslint: [`react/no-array-index-key`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md)
+
+> なぜ? Not using a stable ID [is an anti-pattern](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) パフォーマンスに悪影響を及ぼし、コンポーネントの状態に問題を引き起こす可能性があるためです。
+
+We don’t recommend using indexes for keys if the order of items may change.
+
+インデックスをkeyに使うことを推奨しません。要素の順番が変わるかもしれないからです。
 
 ```jsx
 // bad
@@ -450,12 +480,11 @@ SFC.defaultProps = {
 
 - Use spread props sparingly.
 
-> Why? Otherwise you're more likely to pass unnecessary props down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
+> > Why? Otherwise you’re more likely to pass unnecessary props down to components. And for React v15.6.1 and older, you could [pass invalid HTML attributes to the DOM](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html).
 
 - propsのspread構文は控えめに使うこと。
 
 > なぜ？さもないと、あなたはかなりの確率で不要なpropsをコンポーネントに渡すことになります。React v15.6.1 とそれより古い場合、[不正なHTMLアトリビュートをDOMに渡すことができます。](https://reactjs.org/blog/2017/09/08/dom-attributes-in-react-16.html)
-
 
 Exceptions:
 
@@ -480,7 +509,7 @@ function HOC(WrappedComponent) {
 }
 ```
 
-- Spreading objects with known, explicit props. This can be particularly useful when testing React components with Mocha's beforeEach construct.
+- Spreading objects with known, explicit props. This can be particularly useful when testing React components with Mocha’s beforeEach construct.
 
 - 既知の明確なオブジェクトをspreadする場合。これは、MochaのbeforeEachでReactコンポーネントをテストする時など一部で有効です。
 
@@ -504,16 +533,16 @@ Filter out unnecessary props when possible. Also, use [prop-types-exact](https:/
 可能であれば不要なpropsを取り除くこと。 そして、[prop-types-exact](https://www.npmjs.com/package/prop-types-exact)を使って不具合を防止すること。
 
 ```jsx
-//good
-render() {
-  const { irrelevantProp, ...relevantProps  } = this.props;
-  return <WrappedComponent {...relevantProps} />
-}
-
-//bad
+// bad
 render() {
   const { irrelevantProp, ...relevantProps  } = this.props;
   return <WrappedComponent {...this.props} />
+}
+
+// good
+render() {
+  const { irrelevantProp, ...relevantProps  } = this.props;
+  return <WrappedComponent {...relevantProps} />
 }
 ```
 
@@ -821,11 +850,14 @@ export default Link;
 
 - Do not use `isMounted`. eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-> Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+  > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+
+  [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
 - `isMounted` を利用しないこと。eslint: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
 
-> なぜ？[`isMounted` はアンチパターン][anti-pattern]。これはES6クラス構文を利用したときに利用できず、公式に非推奨となっています。
+  > なぜ？[`isMounted` はアンチパターン][anti-pattern]。これはES6クラス構文を利用したときに利用できず、公式に非推奨となっています。
+
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
 ## Translation(翻訳)
@@ -835,7 +867,6 @@ This JSX/React style guide is also available in other languages:
 このJSX/Reactスタイルガイドは他の言語でも利用可能です。:
 
 - ![cn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png) **Chinese (Simplified)**: [JasonBoy/javascript](https://github.com/JasonBoy/javascript/tree/master/react)
-[pietraszekl/javascript](https://github.com/pietraszekl/javascript/tree/master/react)
 - ![tw](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png) **Chinese (Traditional)**: [jigsawye/javascript](https://github.com/jigsawye/javascript/tree/master/react)
 - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Español**: [agrcrobles/javascript](https://github.com/agrcrobles/javascript/tree/master/react)
 - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide/tree/master/react)
@@ -846,5 +877,6 @@ This JSX/React style guide is also available in other languages:
 - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide/tree/master/react)
 - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [alioguzhan/react-style-guide](https://github.com/alioguzhan/react-style-guide)
 - ![ua](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png) **Ukrainian**: [ivanzusko/javascript](https://github.com/ivanzusko/javascript/tree/master/react)
+- ![vn](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png) **Vietnam**: [uetcodecamp/jsx-style-guide](https://github.com/UETCodeCamp/jsx-style-guide)
 
 **[⬆ back to top](#table-of-contents)**
