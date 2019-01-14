@@ -8,6 +8,8 @@
 
 > **注意**: このガイドはあなたが[Babel](https://babeljs.io)を使っていることを前提としており、[babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb)かそれと同等のものを使うこが必須です。 また、[airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims)またはそれと同等のシム/ポリフィルをアプリにインストールする必要があります。
 
+[![CircleCI](https://circleci.com/gh/mitsuruog/javascript-style-guide/tree/master.svg?style=svg)](https://circleci.com/gh/mitsuruog/javascript-style-guide/tree/master)
+
 This guide is available in other languages too. See [Translation](#translation)
 
 このガイドは他の言語でも利用可能です。[Translation](#translation)を参照してください。
