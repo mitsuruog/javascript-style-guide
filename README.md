@@ -799,9 +799,9 @@ Other Style Guides
   - [7.6](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
   - [7.6](#es6-rest) `arguments` を利用しない。代わりにrest syntax `...` を使用すること。eslint: [`prefer-rest-params`]
 
-  > Why? `...` is explicit about which arguments you want pulled. Plus rest arguments are a real Array and not Array-like like `arguments`.
+    > Why? `...` is explicit about which arguments you want pulled. Plus rest arguments are a real Array and not Array-like like `arguments`.
 
-  > なぜ? `...` を利用することで、いつくかのパラメータを利用したいことを明らかにすることができます。加えてrestパラメータは `arguments` の様なArray-likeなオブジェクトではなく正真正銘のArrayです。
+    > なぜ? `...` を利用することで、いつくかのパラメータを利用したいことを明らかにすることができます。加えてrestパラメータは `arguments` の様なArray-likeなオブジェクトではなく正真正銘のArrayです。
 
     ```javascript
     // bad
@@ -924,6 +924,7 @@ Other Style Guides
   - [7.12](#functions--mutate-params) パラメータを直接操作しないこと。eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+
     > なぜ? パラメータに渡されたオブジェクトを操作することは、呼び出し元にて望まれない値の副作用を及ぼす可能性があります。
 
     ```javascript
@@ -943,6 +944,7 @@ Other Style Guides
   - [7.13](#functions--reassign-params) パラメータを再割り当てしない。eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8.
+
     > なぜ? 特に `arguments`オブジェクトにアクセスするとき、パラメータを再割り当てすると予期しない動作をする可能性があります。 特にV8では最適化の問題も発生する可能性があります。
 
     ```javascript
@@ -1589,8 +1591,6 @@ Other Style Guides
   <a name="iterators--nope"></a><a name="11.1"></a>
   - [11.1](#iterators--nope) Don’t use iterators. Prefer JavaScript’s higher-order functions instead of loops like `for-in` or `for-of`. eslint: [`no-iterator`](https://eslint.org/docs/rules/no-iterator.html) [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
   - [11.1](#iterators--nope) イテレータを使わない。`for-in`や`for-of`のようなループの代わりにJavaScriptの高階関数(higher-order functions)を使用すること。
-
-  > なぜ? これはimmutable(不変)ルールを適用します。値を返ような関数の中身の処理を気にするより副作用について推測するほうが簡単です。
 
     > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side effects.
 
@@ -3166,6 +3166,7 @@ Other Style Guides
   - [20.2](#commas--dangling) 末尾のカンマ **いいね:)**。eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
 
     > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+
     > なぜ? これはよりきれいなgit diffにつながります。また、Babelのようなトランスパイラーは、トランスコードされたコード内の追加の末尾のコンマを削除します。つまり、古いブラウザの[末尾のコンマの問題](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas)を心配する必要はありません。
 
     ```diff
@@ -3268,6 +3269,7 @@ Other Style Guides
   - [21.1](#semicolons--required) **もちろん**。eslint: [`semi`](https://eslint.org/docs/rules/semi.html)
 
     > Why? When JavaScript encounters a line break without a semicolon, it uses a set of rules called [Automatic Semicolon Insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) to determine whether or not it should regard that line break as the end of a statement, and (as the name implies) place a semicolon into your code before the line break if it thinks so. ASI contains a few eccentric behaviors, though, and your code will break if JavaScript misinterprets your line break. These rules will become more complicated as new features become a part of JavaScript. Explicitly terminating your statements and configuring your linter to catch missing semicolons will help prevent you from encountering issues.
+
     > なぜ? JavaScriptはセミコロンなしで改行を検出すると、[自動セミコロン挿入(Automatic Semicolon Insertion)](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion)と呼ばれる一連の規則を使用して、その改行をステートメントの終わりと見なし、（名前が示すとおり）改行の前にセミコロンを入れなければその行が壊れると考えた場所に、セミコロンを配置するかどうかを決定します。ただし、ASIにはいくつかの風変わりな動作が含まれており、JavaScriptが改行を誤って解釈した場合、コードは壊れます。新機能がJavaScriptの一部になるにつれて、これらのルールはより複雑になります。ステートメントを明示的に終了し、不足しているセミコロンを検知するようにリンターを構成すると、問題に遭遇するのを防ぐのに役立ちます。
 
     ```javascript
@@ -3476,6 +3478,7 @@ Other Style Guides
   - [23.4](#naming--leading-underscore) 末尾または先頭のアンダースコアを避ける。eslint: [`no-underscore-dangle`](https://eslint.org/docs/rules/no-underscore-dangle.html)
 
     > Why? JavaScript does not have the concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean “private”, in fact, these properties are fully public, and as such, are part of your public API contract. This convention might lead developers to wrongly think that a change won’t count as breaking, or that tests aren’t needed. tl;dr: if you want something to be “private”, it must not be observably present.
+
     > なぜ? JavaScriptは、プロパティやメソッドについてのプライバシーの概念を持っていません。先頭のアンダースコアは「非公開」を意味する一般的な規則ですが、実際にはこれらのプロパティは完全に公開されているため公開APIの一部です。この規約により、開発者は変更が壊れているとは見なされない、またはテストが必要ではないと誤って考える可能性があります。tl;dr: あなたが何かを「非公開」にしたいのであれば、それは明らかに存在してはいけません。
 
     ```javascript
@@ -3629,6 +3632,7 @@ Other Style Guides
     > Why? This is an additional tool to assist in situations where the programmer would be unsure if a variable might ever change. UPPERCASE_VARIABLES are letting the programmer know that they can trust the variable (and its properties) not to change.
     - What about all `const` variables? - This is unnecessary, so uppercasing should not be used for constants within a file. It should be used for exported constants however.
     - What about exported objects? - Uppercase at the top level of export  (e.g. `EXPORTED_OBJECT.key`) and maintain that all nested properties do not change.
+
     > なぜ? これは、変数が変更される可能性があるかどうかをプログラマが確信が持てないような状況で役立つ追加ツールです。UPPERCASE_VARIABLESは、変数（およびそのプロパティ）が変更されないように信頼できることをプログラマに知らせています。
     - すべての`const`変数はどうですか？ - これは不要です。ファイル内の定数には大文字を使用しないでください。ただしエクスポートされた定数には使用する必要があります。
     - エクスポートされたオブジェクトはどうですか？ - エクスポートの最上位レベルでは大文字（例えば `EXPORTED_OBJECT.key`）で、ネストされたすべてのプロパティが変更されないようにします。
@@ -3880,6 +3884,7 @@ Other Style Guides
   - [28.2](#tc39-proposals) ステージ3に達していない[TC39提案](https://github.com/tc39/proposals)を使用しない。
 
     > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
+
     > なぜ? [それらは最終決定されていません](https://tc39.github.io/process-document/)。そしてそれらは変更されるか、または完全に撤回される可能性があります。JavaScriptを使用したいのですが、提案はまだJavaScriptではありません。
 
 **[⬆ back to top](#table-of-contents)**
@@ -3899,6 +3904,7 @@ Other Style Guides
 
     > Why? The global `isNaN` coerces non-numbers to numbers, returning true for anything that coerces to NaN.
     > If this behavior is desired, make it explicit.
+
     > なぜ? グローバルな`isNaN`は数字ではないものを数字に強制変換し、NaNに強制変換されたものすべてにtrueを返します。
     > この動作が望ましい場合は、それを明示にしてください。
 
