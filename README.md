@@ -22,7 +22,7 @@ Other Style Guides
   - [CSS & Sass](https://github.com/airbnb/css)
   - [Ruby](https://github.com/airbnb/ruby)
 
-## 目次
+## Table of Contents
 
   1. [Types](#types)
   1. [References](#references)
