@@ -436,7 +436,7 @@ Other Style Guides
 
   <a name="arrays--mapping"></a>
   - [4.6](#arrays--mapping) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) instead of spread `...` for mapping over iterables, because it avoids creating an intermediate array.
-  - [4.6](#arrays--mapping) 繰り返し可能なオブジェクト(iterables)へのマッピングにはスプレッド構文`...`の代わりに[`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)を使用すること。理由は中間配列の作成を防ぐためです。
+  - [4.6](#arrays--mapping) 繰り返し可能なオブジェクト(iterables)へのマッピングにはスプレッド構文`...`の代わりに[`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)を使用すること。理由は中間配列の作成を防ぐためです。
 
     ```javascript
     // bad
@@ -461,7 +461,7 @@ Other Style Guides
     [1, 2, 3].map(x => x + 1);
 
     // bad - no returned value means `acc` becomes undefined after the first iteration
-    // bad - 値を返さないために`acc`は最初の繰り返しのあとでundefinedになります。
+    // bad - 値を返さないために`acc`は最初の繰り返しのあとでundefinedになります。
     [[0, 1], [2, 3], [4, 5]].reduce((acc, item, index) => {
       const flatten = acc.concat(item);
       acc[index] = flatten;
@@ -2461,7 +2461,7 @@ Other Style Guides
   <a name="control-statements"></a>
   - [17.1](#control-statements) In case your control statement (`if`, `while` etc.) gets too long or exceeds the maximum line length, each (grouped) condition could be put into a new line. The logical operator should begin the line.
   <a name="control-statements"></a>
-  - [17.1](#control-statements) あなたの制御文（ `if`、`while`など）が長くなり過ぎたり、最大行長を超えたりした場合、それぞれの（グループ化された）条件は新しい行に入れること。そして論理演算子で行を始めること。
+  - [17.1](#control-statements) 制御文（`if`、`while`など）が長くなり過ぎたり、最大行長を超えたりした場合、それぞれの（グループ化された）条件は新しい行に入れること。そして論理演算子で行を始めること。
 
     > Why? Requiring operators at the beginning of the line keeps the operators aligned and follows a pattern similar to method chaining. This also improves readability by making it easier to visually follow complex logic.
 
@@ -2536,7 +2536,7 @@ Other Style Guides
 
   <a name="comments--multiline"></a><a name="17.1"></a>
   - [18.1](#comments--multiline) Use `/** ... */` for multi-line comments.
-  - [18.1](#comments--multiline) 複数行のコメントには`/ ** ... * /`を使用すること。説明を含め、すべてのパラメータのタイプと値を指定して、戻り値を返すこと。
+  - [18.1](#comments--multiline) 複数行のコメントには`/ ** ... * /`を使用すること。
 
     ```javascript
     // bad
@@ -2609,7 +2609,7 @@ Other Style Guides
 
   <a name="comments--spaces"></a>
   - [18.3](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
-  - [18.3](#comments--spaces) 読みやすくするために、すべてのコメントをスペースで始めてください。eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
+  - [18.3](#comments--spaces) 読みやすくするために、すべてのコメントをスペースで始めること。eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
     // bad
@@ -2708,7 +2708,7 @@ Other Style Guides
 
   <a name="whitespace--before-blocks"></a><a name="18.2"></a>
   - [19.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
-  - [19.2](#whitespace--before-blocks) 重要な中括弧（`{}`）の前にはスペースを1つ入れてください。eslint: [`space-before-blocks`]
+  - [19.2](#whitespace--before-blocks) 重要な中括弧（`{}`）の前にはスペースを1つ入れること。eslint: [`space-before-blocks`]
 
     ```javascript
     // bad
@@ -2762,7 +2762,7 @@ Other Style Guides
 
   <a name="whitespace--infix-ops"></a><a name="18.4"></a>
   - [19.4](#whitespace--infix-ops) Set off operators with spaces. eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html)
-  - [19.4](#whitespace--infix-ops) 演算子の間はスペースを入れてください。eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html)
+  - [19.4](#whitespace--infix-ops) 演算子の間はスペースを入れること。eslint: [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops.html)
 
     ```javascript
     // bad
@@ -2964,7 +2964,7 @@ Other Style Guides
 
   <a name="whitespace--in-brackets"></a><a name="18.10"></a>
   - [19.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
-  - [19.10](#whitespace--in-brackets) 角括弧(`[]`)の内側にスペースを追加しないでください。eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
+  - [19.10](#whitespace--in-brackets) 角括弧(`[]`)の内側にスペースを追加しない。eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
     // bad
