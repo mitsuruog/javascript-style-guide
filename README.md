@@ -6,7 +6,7 @@
 
 > **Note**: this guide assumes you are using [Babel](https://babeljs.io), and requires that you use [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) or the equivalent. It also assumes you are installing shims/polyfills in your app, with [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) or the equivalent.
 
-> **注意**: このガイドはあなたが[Babel](https://babeljs.io)を使っていることを前提としており、[babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb)かそれと同等のものを使うこが必須です。 また、[airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims)またはそれと同等のシム/ポリフィルをアプリにインストールする必要があります。
+> **注意**: このガイドはあなたが[Babel](https://babeljs.io)を使っていることを前提としており、[babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb)かそれと同等のものを使うことが必須です。また、[airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims)またはそれと同等のシム/ポリフィルをアプリにインストールする必要があります。
 
 [![CircleCI](https://circleci.com/gh/mitsuruog/javascript-style-guide/tree/master.svg?style=svg)](https://circleci.com/gh/mitsuruog/javascript-style-guide/tree/master)
 
