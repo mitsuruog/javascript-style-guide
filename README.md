@@ -293,7 +293,7 @@ Other Style Guides
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
   - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
-  - [3.6](#objects--quoted-props) 無効な識別子の場合のみプロパティを引用符で括っうこと。eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
+  - [3.6](#objects--quoted-props) 無効な識別子の場合のみプロパティを引用符で括ること。eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
 
     > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
 
@@ -317,7 +317,7 @@ Other Style Guides
 
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
-  - [3.7](#objects--prototype-builtins) `hasOwnProperty`、`propertyIsEnumerable`、`isPrototypeOf`のような`Object.prototype`の関数よ直接呼び出さない。eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
+  - [3.7](#objects--prototype-builtins) `hasOwnProperty`、`propertyIsEnumerable`、`isPrototypeOf`のような`Object.prototype`の関数を直接呼び出さない。eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
     > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
 
@@ -818,7 +818,7 @@ Other Style Guides
 
   <a name="es6-default-parameters"></a><a name="7.7"></a>
   - [7.7](#es6-default-parameters) Use default parameter syntax rather than mutating function arguments.
-  - [[7.7](#es6-default-parameters) 関数のパラメータを突然変異させるのではなく、デフォルトパラメータを使用すること。
+  - [7.7](#es6-default-parameters) 関数のパラメータを突然変異させるのではなく、デフォルトパラメータを使用すること。
 
     ```javascript
     // really bad
@@ -1420,22 +1420,7 @@ Other Style Guides
 
     // good
     import AirbnbStyleGuide from './AirbnbStyleGuide';
-    ```
-
-  - [10.2](#10.2) <a name='10.2'></a> Do not use wildcard imports.
-  - [10.2](#10.2) <a name='10.2'></a> ワイルドカードインポートは利用しないでください。
-
-    > Why? This makes sure you have a single default export.
-
-    > なぜ? single default exportであることに注意する必要があるからです。
-
-    ```javascript
-    // bad
-    import * as AirbnbStyleGuide from './AirbnbStyleGuide';
-
-    // good
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
-    ```
+    ``` 
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
   - [10.3](#modules--no-export-from-import) And do not export directly from an import.
@@ -1639,7 +1624,7 @@ Other Style Guides
 
   <a name="generators--nope"></a><a name="11.2"></a>
   - [11.2](#generators--nope) Don’t use generators for now.
-  - [11.2](#generators--nope) 今のこころgeneratorsは使用しない。
+  - [11.2](#generators--nope) 今のところgeneratorsは使用しない。
 
     > Why? They don’t transpile well to ES5.
 
@@ -3527,7 +3512,7 @@ Other Style Guides
 
   <a name="naming--filename-matches-export"></a><a name="22.6"></a>
   - [23.6](#naming--filename-matches-export) A base filename should exactly match the name of its default export.
-  - [23.6](#naming--filename-matches-export) ファイルを1つのクラスとしてexportする場合、ファイル名はクラス名と完全に一致さること。
+  - [23.6](#naming--filename-matches-export) ファイルを1つのクラスとしてexportする場合、ファイル名はクラス名と完全に一致させること。
 
     ```javascript
     // file 1 contents
@@ -3865,19 +3850,19 @@ Other Style Guides
   - [28.1](#es6-styles) これは、さまざまなES6+機能へのリンク集です。
 
 1. [Arrow Functions](#arrow-functions)
-1. [Classes](#classes--constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
-1. [Rest](#es6-rest)
-1. [Array Spreads](#es6-array-spreads)
-1. [Let and Const](#references)
-1. [Exponentiation Operator](#es2016-properties--exponentiation-operator)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+2. [Classes](#classes--constructors)
+3. [Object Shorthand](#es6-object-shorthand)
+4. [Object Concise](#es6-object-concise)
+5. [Object Computed Properties](#es6-computed-properties)
+6. [Template Strings](#es6-template-literals)
+7. [Destructuring](#destructuring)
+8. [Default Parameters](#es6-default-parameters)
+9. [Rest](#es6-rest)
+10. [Array Spreads](#es6-array-spreads)
+11. [Let and Const](#references)
+12. [Exponentiation Operator](#es2016-properties--exponentiation-operator)
+13. [Iterators and Generators](#iterators-and-generators)
+14. [Modules](#modules)
 
   <a name="tc39-proposals"></a>
   - [28.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
