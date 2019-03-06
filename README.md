@@ -173,7 +173,7 @@ Other Style Guides
 
   <a name="objects--no-new"></a><a name="3.1"></a>
   - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
-  - [3.1](#objects--no-new) オブジェクトを作成する際は、リテラル構文を使用すること。eslint: [`no-new-object`]
+  - [3.1](#objects--no-new) オブジェクトを作成する際は、リテラル構文を使用すること。eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // bad
@@ -214,7 +214,7 @@ Other Style Guides
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
   - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
-  - [3.3](#es6-object-shorthand) メソッドの短縮構文を使用すること。eslint: [`object-shorthand`]
+  - [3.3](#es6-object-shorthand) メソッドの短縮構文を使用すること。eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
     // bad
@@ -238,7 +238,7 @@ Other Style Guides
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
   - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
-  - [3.4](#es6-object-concise) プロパティの短縮構文を使用すること。eslint: [`object-shorthand`]
+  - [3.4](#es6-object-concise) プロパティの短縮構文を使用すること。eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     > Why? It is shorter to write and descriptive.
 
@@ -365,7 +365,7 @@ Other Style Guides
 
   <a name="arrays--literals"></a><a name="4.1"></a>
   - [4.1](#arrays--literals) Use the literal syntax for array creation. eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor.html)
-  - [4.1](#arrays--literals) 配列を作成する際は、リテラル構文を使用すること。eslint: [`no-array-constructor`]
+  - [4.1](#arrays--literals) 配列を作成する際は、リテラル構文を使用すること。eslint: [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor.html)
 
     ```javascript
     // bad
@@ -542,7 +542,7 @@ Other Style Guides
 
   <a name="destructuring--object"></a><a name="5.1"></a>
   - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
-  - [5.1](#destructuring--object) 複数のプロパティからなるオブジェクトにアクセスする際は、オブジェクト構造化代入を使用すること。eslint: [`prefer-destructuring`]
+  - [5.1](#destructuring--object) 複数のプロパティからなるオブジェクトにアクセスする際は、オブジェクト構造化代入を使用すること。eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
     > Why? Destructuring saves you from creating temporary references for those properties.
 
@@ -571,7 +571,7 @@ Other Style Guides
 
   <a name="destructuring--array"></a><a name="5.2"></a>
   - [5.2](#destructuring--array) Use array destructuring. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
-  - [5.2](#destructuring--array) 配列の構造化代入を使用すること。eslint: [`prefer-destructuring`]
+  - [5.2](#destructuring--array) 配列の構造化代入を使用すること。eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -586,7 +586,7 @@ Other Style Guides
 
   <a name="destructuring--object-over-array"></a><a name="5.3"></a>
   - [5.3](#destructuring--object-over-array) Use object destructuring for multiple return values, not array destructuring.
-  - [[5.3](#destructuring--object-over-array) 複数の値を返却する場合は、配列の構造化代入ではなく、オブジェクトの構造化代入を使用すること。
+  - [5.3](#destructuring--object-over-array) 複数の値を返却する場合は、配列の構造化代入ではなく、オブジェクトの構造化代入を使用すること。
 
     > Why? You can add new properties over time or change the order of things without breaking call sites.
 
@@ -641,7 +641,7 @@ Other Style Guides
 
     > Why? Broken strings are painful to work with and make code less searchable.
 
-    > なぜ? 壊れた文字列は作業する上で辛すぎます、さらにコードの検索容易性を損ないます
+    > なぜ? 壊れた文字列は作業する上で辛すぎます、さらにコードの検索容易性を損ないます。
 
     ```javascript
     // bad
@@ -661,7 +661,7 @@ Other Style Guides
 
   <a name="es6-template-literals"></a><a name="6.4"></a>
   - [6.3](#es6-template-literals) When programmatically building up strings, use template strings instead of concatenation. eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
-  - [6.3](#es6-template-literals) プログラムで文字列を生成する場合は、文字列連結ではなく、template stringsを使用すること。eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`]
+  - [6.3](#es6-template-literals) プログラムで文字列を生成する場合は、文字列連結ではなく、template stringsを使用すること。eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
 
     > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
 
@@ -691,7 +691,7 @@ Other Style Guides
 
   <a name="strings--eval"></a><a name="6.5"></a>
   - [6.4](#strings--eval) Never use `eval()` on a string, it opens too many vulnerabilities. eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
-  - [6.4](#strings--eval) 絶対に `eval()` を利用しない。これは、いままで数多くの脆弱性を作って来たからです。eslint: [`no-eval`]
+  - [6.4](#strings--eval) 絶対に `eval()` を利用しない。これは、いままで数多くの脆弱性を作って来たからです。eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
 
   <a name="strings--escaping"></a>
   - [6.5](#strings--escaping) Do not unnecessarily escape characters in strings. eslint: [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
@@ -716,7 +716,7 @@ Other Style Guides
 
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
-  - [7.1](#functions--declarations) 関数式より関数宣言を使用すること。eslint: [`func-style`]
+  - [7.1](#functions--declarations) 関数式より関数宣言を使用すること。eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
 
     > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error’s call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
 
@@ -797,7 +797,7 @@ Other Style Guides
 
   <a name="es6-rest"></a><a name="7.6"></a>
   - [7.6](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
-  - [7.6](#es6-rest) `arguments` を利用しない。代わりにrest syntax `...` を使用すること。eslint: [`prefer-rest-params`]
+  - [7.6](#es6-rest) `arguments` を利用しない。代わりにrest syntax `...` を使用すること。eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
 
     > Why? `...` is explicit about which arguments you want pulled. Plus rest arguments are a real Array and not Array-like like `arguments`.
 
@@ -886,7 +886,7 @@ Other Style Guides
 
   <a name="functions--constructor"></a><a name="7.10"></a>
   - [7.10](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
-  - [7.10](#functions--constructor) 新しい関数を作成するためにFunctionコンストラクタを使用しない。
+  - [7.10](#functions--constructor) 新しい関数を作成するためにFunctionコンストラクタを使用しない。 eslint: [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
 
     > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
 
@@ -1060,7 +1060,7 @@ Other Style Guides
 
   <a name="arrows--implicit-return"></a><a name="8.2"></a>
   - [8.2](#arrows--implicit-return) If the function body consists of a single statement returning an [expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) without side effects, omit the braces and use the implicit return. Otherwise, keep the braces and use a `return` statement. eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
-  - [8.2](#arrows--implicit-return) 関数本体が副作用のない式を返す単一の文で構成されている場合は、中括弧を省略して暗黙の戻り値を使用すること。 そうでなければ、中括弧を付けて`return`文を使うこと。
+  - [8.2](#arrows--implicit-return) 関数本体が副作用のない式を返す単一の文で構成されている場合は、中括弧を省略して暗黙の戻り値を使用すること。 そうでなければ、中括弧を付けて`return`文を使うこと。 eslint: [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style.html)
 
     > Why? Syntactic sugar. It reads well when multiple functions are chained together.
 
@@ -1165,8 +1165,7 @@ Other Style Guides
 
   <a name="arrows--confusing"></a><a name="8.5"></a>
   - [8.5](#arrows--confusing) Avoid confusing arrow function syntax (`=>`) with comparison operators (`<=`, `>=`). eslint: [`no-confusing-arrow`](https://eslint.org/docs/rules/no-confusing-arrow)
-  - [8.5](#arrows--confusing) アロー関数の構文(`=>`)と比較演算子(`<=`、`>=`)を混同しない。eslint: [`no-confusing-arrow`]
-
+  - [8.5](#arrows--confusing) アロー関数の構文(`=>`)と比較演算子(`<=`、`>=`)を混同しない。eslint: [`no-confusing-arrow`](https://eslint.org/docs/rules/no-confusing-arrow)
     ```javascript
     // bad
     const itemHeight = item => item.height <= 256 ? item.largeSize : item.smallSize;
@@ -1186,7 +1185,7 @@ Other Style Guides
 
   <a name="whitespace--implicit-arrow-linebreak"></a>
   - [8.6](#whitespace--implicit-arrow-linebreak) Enforce the location of arrow function bodies with implicit returns. eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
-  - [8.6](#whitespace--implicit-arrow-linebreak) 暗黙的な戻り値でアロー関数本体の位置を強制すること。eslint: [`implicit-arrow-linebreak`]
+  - [8.6](#whitespace--implicit-arrow-linebreak) 暗黙的な戻り値でアロー関数本体の位置を強制すること。eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
 
     ```javascript
     // bad
@@ -1386,7 +1385,7 @@ Other Style Guides
 ## Modules
   <a name="modules--use-them"></a><a name="10.1"></a>
   - [10.1](#modules--use-them) Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
-  - 非標準モジュールシステム上では常にモジュール（`import`/`export`）を使用すること。いつもあなたの好みのモジュールシステムにトランスパイルすることができます。
+  - [10.1](#modules--use-them) 非標準モジュールシステム上では常にモジュール（`import`/`export`）を使用すること。いつもあなたの好みのモジュールシステムにトランスパイルすることができます。
 
     > Why? Modules are the future, let’s start using the future now.
 
@@ -1444,7 +1443,7 @@ Other Style Guides
   <a name="modules--no-duplicate-imports"></a>
   - [10.4](#modules--no-duplicate-imports) Only import from a path in one place.
  eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
-  - [10.4](#modules--no-duplicate-imports) パスからは一箇所のみでインポートすること。eslint: [`no-duplicate-imports`]
+  - [10.4](#modules--no-duplicate-imports) パスからは一箇所のみでインポートすること。eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
 
     > Why? Having multiple lines that import from the same path can make code harder to maintain.
 
@@ -1552,7 +1551,7 @@ Other Style Guides
   <a name="modules--no-webpack-loader-syntax"></a>
   - [10.9](#modules--no-webpack-loader-syntax) Disallow Webpack loader syntax in module import statements.
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
-  - [10.9](#modules--no-webpack-loader-syntax) モジュールのインポート文でWebpackローダーの構文を許可しない
+  - [10.9](#modules--no-webpack-loader-syntax) モジュールのインポート文でWebpackローダーの構文を許可しない。
  eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
     > Why? Since using Webpack syntax in the imports couples the code to a module bundler. Prefer using the loader syntax in `webpack.config.js`.
@@ -1700,7 +1699,7 @@ Other Style Guides
 
   <a name="properties--dot"></a><a name="12.1"></a>
   - [12.1](#properties--dot) Use dot notation when accessing properties. eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
-  - [12.1](#properties--dot) プロパティにアクセスする場合はドット(`.`)を使用すること。eslint: [`dot-notation`]
+  - [12.1](#properties--dot) プロパティにアクセスする場合はドット(`.`)を使用すること。eslint: [`dot-notation`](https://eslint.org/docs/rules/dot-notation.html)
 
     ```javascript
     const luke = {
@@ -1859,7 +1858,7 @@ Other Style Guides
 
   <a name="variables--no-chain-assignment"></a><a name="13.5"></a>
   - [13.5](#variables--no-chain-assignment) Don’t chain variable assignments. eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
-  - 変数代入を連結しない。eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
+  - [13.5](#variables--no-chain-assignment) 変数代入を連結しない。eslint: [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
 
     > Why? Chaining variable assignments creates implicit global variables.
 
@@ -1936,7 +1935,7 @@ Other Style Guides
 
 <a name="variables--linebreak"></a>
   - [13.7](#variables--linebreak) Avoid linebreaks before or after `=` in an assignment. If your assignment violates [`max-len`](https://eslint.org/docs/rules/max-len.html), surround the value in parens. eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
-  - [13.7](#variables--linebreak) 代入で`=`の前後に改行を入れない。あなたの代入が[`max-len`](https://eslint.org/docs/rules/max-len.html)に違反している場合は、値を丸括弧()で囲むこと。
+  - [13.7](#variables--linebreak) 代入で`=`の前後に改行を入れない。あなたの代入が[`max-len`](https://eslint.org/docs/rules/max-len.html)に違反している場合は、値を丸括弧()で囲むこと。 eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html)
 
     > Why? Linebreaks surrounding `=` can obfuscate the value of an assignment.
 
@@ -2158,7 +2157,7 @@ Other Style Guides
 
   <a name="comparison--shortcuts"></a><a name="15.3"></a>
   - [15.3](#comparison--shortcuts) Use shortcuts for booleans, but explicit comparisons for strings and numbers.
-  - [15.3](#comparison--shortcuts)真偽値にはショートカットを使用しますが、文字列と数値には明示的な比較を使用すること。
+  - [15.3](#comparison--shortcuts) 真偽値にはショートカットを使用しますが、文字列と数値には明示的な比較を使用すること。
 
     ```javascript
     // bad
@@ -2198,7 +2197,7 @@ Other Style Guides
 
   <a name="comparison--switch-blocks"></a><a name="15.5"></a>
   - [15.5](#comparison--switch-blocks) Use braces to create blocks in `case` and `default` clauses that contain lexical declarations (e.g. `let`, `const`, `function`, and `class`). eslint: [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations.html)
-  - `case`と`default`節でブロックを作成するには中括弧(`{}`)を使うこと。(例えば `let`、`const`、`function`、`class`)
+  - [15.5](#comparison--switch-blocks) `case`と`default`節でブロックを作成するには中括弧(`{}`)を使うこと。(例えば `let`、`const`、`function`、`class`) eslint: [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations.html)
 
     > Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
 
@@ -2695,7 +2694,7 @@ Other Style Guides
 
   <a name="whitespace--before-blocks"></a><a name="18.2"></a>
   - [19.2](#whitespace--before-blocks) Place 1 space before the leading brace. eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
-  - [19.2](#whitespace--before-blocks) 重要な中括弧（`{}`）の前にはスペースを1つ入れること。eslint: [`space-before-blocks`]
+  - [19.2](#whitespace--before-blocks) 重要な中括弧（`{}`）の前にはスペースを1つ入れること。eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
 
     ```javascript
     // bad
@@ -2761,7 +2760,7 @@ Other Style Guides
 
   <a name="whitespace--newline-at-end"></a><a name="18.5"></a>
   - [19.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
-  - [19.5](#whitespace--newline-at-end) ファイルの最後は改行文字を1つ入れること。eslint: [`eol-last`]
+  - [19.5](#whitespace--newline-at-end) ファイルの最後は改行文字を1つ入れること。eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
 
     ```javascript
     // bad
@@ -3038,7 +3037,7 @@ Other Style Guides
 
   <a name="whitespace--computed-property-spacing"></a>
   - [19.15](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
-  - [19.15](#whitespace--computed-property-spacing) 計算用プロパティの括弧の中のスペースを強制する。eslint: [`computed-property-spacing`]
+  - [19.15](#whitespace--computed-property-spacing) 計算用プロパティの括弧の中のスペースを強制する。eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
     // bad
