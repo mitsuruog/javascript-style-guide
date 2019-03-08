@@ -1419,7 +1419,7 @@ Other Style Guides
 
     // good
     import AirbnbStyleGuide from './AirbnbStyleGuide';
-    ``` 
+    ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
   - [10.3](#modules--no-export-from-import) And do not export directly from an import.
@@ -3849,19 +3849,19 @@ Other Style Guides
   - [28.1](#es6-styles) これは、さまざまなES6+機能へのリンク集です。
 
 1. [Arrow Functions](#arrow-functions)
-2. [Classes](#classes--constructors)
-3. [Object Shorthand](#es6-object-shorthand)
-4. [Object Concise](#es6-object-concise)
-5. [Object Computed Properties](#es6-computed-properties)
-6. [Template Strings](#es6-template-literals)
-7. [Destructuring](#destructuring)
-8. [Default Parameters](#es6-default-parameters)
-9. [Rest](#es6-rest)
-10. [Array Spreads](#es6-array-spreads)
-11. [Let and Const](#references)
-12. [Exponentiation Operator](#es2016-properties--exponentiation-operator)
-13. [Iterators and Generators](#iterators-and-generators)
-14. [Modules](#modules)
+1. [Classes](#classes--constructors)
+1. [Object Shorthand](#es6-object-shorthand)
+1. [Object Concise](#es6-object-concise)
+1. [Object Computed Properties](#es6-computed-properties)
+1. [Template Strings](#es6-template-literals)
+1. [Destructuring](#destructuring)
+1. [Default Parameters](#es6-default-parameters)
+1. [Rest](#es6-rest)
+1. [Array Spreads](#es6-array-spreads)
+1. [Let and Const](#references)
+1. [Exponentiation Operator](#es2016-properties--exponentiation-operator)
+1. [Iterators and Generators](#iterators-and-generators)
+1. [Modules](#modules)
 
   <a name="tc39-proposals"></a>
   - [28.2](#tc39-proposals) Do not use [TC39 proposals](https://github.com/tc39/proposals) that have not reached stage 3.
