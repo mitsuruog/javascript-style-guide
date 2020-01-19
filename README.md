@@ -1749,7 +1749,7 @@ Other Style Guides
 
   <a name="variables--const"></a><a name="13.1"></a>
   - [13.1](#variables--const) Always use `const` or `let` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that. eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
-  - [13.1](#variables--const) 変数を宣言する際は、常に`const`を使用すること。使用しない場合はグローバル変数として宣言されてしまいます。グローバルな名前空間を汚染しないように、キャプテンプラネット（環境保護とエコロジーをテーマにしたスーパーヒーローアニメ）も警告しています。eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
+  - [13.1](#variables--const) 変数を宣言する際は、常に`const`か`let`を使用すること。使用しない場合はグローバル変数として宣言されてしまいます。グローバルな名前空間を汚染しないように、キャプテンプラネット（環境保護とエコロジーをテーマにしたスーパーヒーローアニメ）も警告しています。eslint: [`no-undef`](https://eslint.org/docs/rules/no-undef) [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
 
     ```javascript
     // bad
