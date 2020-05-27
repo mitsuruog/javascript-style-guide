@@ -1510,7 +1510,7 @@ Other Style Guides
 
     > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
 
-    > なぜ? `import`は巻き上げられているので、それらすべてを一番上にしておくことは驚くべき振る舞いが怒るのを防ぎます。
+    > なぜ? `import`は巻き上げられているので、それらすべてを一番上にしておくことは驚くべき振る舞いが起こるのを防ぎます。
 
     ```javascript
     // bad
