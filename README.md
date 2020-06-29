@@ -2504,7 +2504,7 @@ Other Style Guides
 
   <a name="control-statement--value-selection"></a><a name="control-statements--value-selection"></a>
   - [17.2](#control-statements--value-selection) Don't use selection operators in place of control statements.
-  - [17.2](#control-statements--value-selection) 制御文の中に後続処理を選択するための演算子を使用しない。
+  - [17.2](#control-statements--value-selection) 後続処理を選択するための演算子を制御文の代わりに使用しない。
 
     ```javascript
     // bad
