@@ -2001,7 +2001,7 @@ Other Style Guides
 
     // 'type' is ignored even if unused because it has a rest property sibling.
     // This is a form of extracting an object that omits the specified keys.
-    // 'type'はrestプロパティを隣に持つため、未使用でも無視されます。
+    // 残りのプロパティがあるため、'type' は未使用でも無視されます。
     // これは、指定されたキーを省略したオブジェクトを抽出する形式です。
     var { type, ...coords } = data;
     // 'coords' is now the 'data' object without its 'type' property.
@@ -3037,7 +3037,7 @@ Other Style Guides
 
   <a name="whitespace--computed-property-spacing"></a>
   - [19.15](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
-  - [19.15](#whitespace--computed-property-spacing) 計算用プロパティの括弧の中のスペースを強制する。eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+  - [19.15](#whitespace--computed-property-spacing) 計算プロパティの括弧の中にスペースは入れないこと。eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
     // bad
