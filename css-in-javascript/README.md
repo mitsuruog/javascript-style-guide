@@ -1,6 +1,7 @@
 # Airbnb CSS-in-JavaScript Style Guide
 
 _A mostly reasonable approach to CSS-in-JavaScript_
+
 _CSS-in-JavaScript に対する、程よく健全なアプローチ_
 
 ## Table of Contents
