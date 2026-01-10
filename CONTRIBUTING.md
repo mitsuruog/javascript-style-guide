@@ -4,9 +4,9 @@
 
 Please run the test by the following commands before making PR to keep consistency of the document format.
 
- ドキュメントのフォーマットを統一するために、PR作成の前に次の手順でテストを実行してください。
+ドキュメントのフォーマットを統一するために、PR 作成の前に次の手順でテストを実行してください。
 
- ```sh
+```sh
 npm install
 npm test
 ```
