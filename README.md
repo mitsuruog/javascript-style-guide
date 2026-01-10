@@ -3,6 +3,7 @@
 > [元文書:https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 
 _A mostly reasonable approach to JavaScript_
+
 _JavaScript に対する、程よく健全なアプローチ_
 
 > **Note**: this guide assumes you are using [Babel](https://babeljs.io), and requires that you use [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) or the equivalent. It also assumes you are installing shims/polyfills in your app, with [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) or the equivalent.
